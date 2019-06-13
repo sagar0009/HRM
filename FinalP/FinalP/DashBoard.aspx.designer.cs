@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HRMS {
+namespace FinalP {
     
     
     public partial class DashBoard {
