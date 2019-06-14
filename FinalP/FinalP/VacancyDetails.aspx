@@ -44,7 +44,13 @@
             <asp:TableRow runat="server">
                 <asp:TableCell runat="server" HorizontalAlign="Right">Post</asp:TableCell>
                 <asp:TableCell runat="server" HorizontalAlign="Left">
-                    <asp:TextBox ID="TBPost" runat="server"></asp:TextBox>
+                    <asp:DropDownList ID="DDPost" runat="server"></asp:DropDownList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow runat="server">
+                <asp:TableCell runat="server" HorizontalAlign="Right">Post ID</asp:TableCell>
+                <asp:TableCell runat="server" HorizontalAlign="Left">
+                    <asp:TextBox ID="TBPostID" runat="server" ReadOnly="true"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
 
@@ -80,6 +86,12 @@
                 <asp:TableCell runat="server" HorizontalAlign="Right">Level</asp:TableCell>
                 <asp:TableCell runat="server" HorizontalAlign="Left">
                     <asp:DropDownList ID="DDLevel" runat="server"></asp:DropDownList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow runat="server">
+                <asp:TableCell runat="server" HorizontalAlign="Right">Salary</asp:TableCell>
+                <asp:TableCell runat="server" HorizontalAlign="Left">
+                    <asp:TextBox ID="TBSalary" runat="server"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow runat="server">

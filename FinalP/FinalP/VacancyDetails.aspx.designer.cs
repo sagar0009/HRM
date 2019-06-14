@@ -31,13 +31,22 @@ namespace FinalP {
         protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
-        /// TBPost control.
+        /// DDPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBPost;
+        protected global::System.Web.UI.WebControls.DropDownList DDPost;
+        
+        /// <summary>
+        /// TBPostID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBPostID;
         
         /// <summary>
         /// TBSkill control.
@@ -119,6 +128,15 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDLevel;
+        
+        /// <summary>
+        /// TBSalary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBSalary;
         
         /// <summary>
         /// TBNoVacancy control.
