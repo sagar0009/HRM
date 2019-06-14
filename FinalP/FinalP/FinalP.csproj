@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="DashBoard.aspx" />
     <Content Include="Images\Cal.png" />
+    <Content Include="Login.html" />
+    <Content Include="Register.html" />
     <Content Include="VacancyAnnouncement.aspx" />
     <Content Include="VacancyDetails.aspx" />
     <Content Include="VacancyReceived.aspx" />
