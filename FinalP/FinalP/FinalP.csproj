@@ -71,6 +71,7 @@
     <Content Include="Images\Cal.png" />
     <Content Include="VacancyAnnouncement.aspx" />
     <Content Include="VacancyDetails.aspx" />
+    <Content Include="VacancyReceived.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +96,13 @@
     </Compile>
     <Compile Include="VacancyDetails.aspx.designer.cs">
       <DependentUpon>VacancyDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VacancyReceived.aspx.cs">
+      <DependentUpon>VacancyReceived.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VacancyReceived.aspx.designer.cs">
+      <DependentUpon>VacancyReceived.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

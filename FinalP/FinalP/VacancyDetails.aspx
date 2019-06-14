@@ -109,10 +109,10 @@
             </asp:TableRow>
              <asp:TableRow runat="server">
                 <asp:TableCell runat="server" HorizontalAlign="Right">
-                    <asp:Button ID="BtnSubmit" runat="server" Text="Done"  OnClick="Btn1Submit_Click"/>
+                    <asp:Button ID="BtnSubmit" runat="server" Text="Done" width="50%" OnClick="Btn1Submit_Click"/>
                 </asp:TableCell>
                 <asp:TableCell runat="server" HorizontalAlign="Left">
-                     <asp:Button ID="BtnBack" runat="server" Text="Cancel"  OnClick="Btn2Submit_Click"/>
+                     <asp:Button ID="BtnBack" runat="server" Text="Cancel" Width="30%"  OnClick="Btn2Submit_Click"/>
                 </asp:TableCell>
             </asp:TableRow>
             
