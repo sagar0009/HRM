@@ -75,7 +75,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="#">
+            <a class="nav-link"  href="FinalP/VacancyDetails.aspx">
               <i class="mdi mdi-account-group menu-icon"></i>
               <span class="menu-title">Vacancy Announcements</span> 
             </a>            
