@@ -60,7 +60,8 @@
         </div>
         <div class="center">
             <h2 align="center">Job Details</h2>
-           <p class="MsoNormal" ><span style="font-size: 14pt;"><strong><span style="font-family: Verdana, sans-serif;">Skills required:</span></strong></span></p>
+           <p class="MsoNormal" ><span style="font-size: 14pt;"><strong><span style="font-family: Verdana, sans-serif;">Skills required:</span></strong></span></p>
+
             <textarea id="TASkillReq" rows="4" cols="50"></textarea>
 
             <p class="MsoNormal" ><span style="font-size: 14pt;"><strong><span style="font-family: Arial, sans-serif;">Benefits:</span></strong></span></p>
@@ -74,15 +75,16 @@
                     <li><span style="font-size: 14pt;">Incentives based on performances</span></li>
                     <li><span style="font-size: 14pt;">Salary revisions based on performance</span></li>
                     <li><span style="font-size: 14pt;">Travel opportunity to Europe</span></li>
-                </ul>            <p class="MsoNormal"><span style="font-size: 14pt;"><strong><span style="font-family: Verdana, sans-serif;">Note:</span></strong></span></p>
+                </ul>
+            <p class="MsoNormal"><span style="font-size: 14pt;"><strong><span style="font-family: Verdana, sans-serif;">Note:</span></strong></span></p>
             <ul>               
                 <li><span style="font-size: 14pt;">Candidates who are trying abroad are discouraged to apply, we are looking for stable additions</span></li>
                 <li><span style="font-size: 14pt;">Shortlisted candidates will be called for interview</span></li>
             </ul>
         </div>
         <div class="center">
-            <asp:Button ID="BtnApply" runat="server" Width  ="30%" Text="Apply Now" OnClick="BtnSubmit1_Click" />
-            <asp:Button ID="BtnBack" runat="server"  Width  ="30%" Text="Back"  OnClick="BtnSubmit2_Click"/>
+            <asp:Button ID="BtnApply" runat="server" ForeColor="White" BackColor="Blue" Width  ="30%" Text="Apply Now" OnClick="BtnSubmit1_Click" />
+            <asp:Button ID="BtnBack" runat="server"  ForeColor="White" BackColor="Blue" Width  ="30%" Text="Back"  OnClick="BtnSubmit2_Click"/>
         </div>
 
 

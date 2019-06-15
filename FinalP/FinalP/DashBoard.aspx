@@ -87,39 +87,37 @@
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="Evaluation.aspx">
               <i class="mdi mdi-table-edit menu-icon"></i>
               <span class="menu-title">Evaluation</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="ShortList.aspx">
               <i class="mdi mdi-minus-circle menu-icon"></i>
               <span class="menu-title">ShortList</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="WrittenTest.aspx">
               <i class="mdi mdi-pen menu-icon"></i>
               <span class="menu-title">Calls for written Test</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="Interview.aspx">
               <i class="mdi mdi-phone-in-talk menu-icon"></i>
               <span class="menu-title">Calls for Interview</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" >
+            <a class="nav-link" href="Status.aspx" >
               <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-              <span class="menu-title">Status</span>
-              
-            </a>
-            
+              <span class="menu-title">Status</span>              
+            </a>            
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="Contract.aspx">
               <i class="mdi mdi-marker menu-icon"></i>
               <span class="menu-title">Contract</span>
             </a>
