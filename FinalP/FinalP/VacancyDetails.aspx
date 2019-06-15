@@ -55,9 +55,9 @@
             </asp:TableRow>
 
             <asp:TableRow runat="server">
-                <asp:TableCell runat="server" HorizontalAlign="Right">Skill</asp:TableCell>
+                <asp:TableCell runat="server" HorizontalAlign="Right">Skills</asp:TableCell>
                 <asp:TableCell runat="server" HorizontalAlign="Left">
-                     <asp:TextBox ID="TBSkill" runat="server"></asp:TextBox>
+                     <textarea id="TASkills" rows="4" cols="20"></textarea>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow runat="server">

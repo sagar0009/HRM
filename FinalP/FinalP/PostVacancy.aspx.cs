@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
+using System.Windows.Forms;
 namespace FinalP
 {
     public partial class PostVacancy : System.Web.UI.Page
@@ -16,8 +11,13 @@ namespace FinalP
 
         protected void BtnSubmit1_Click(Object sender, EventArgs e)
         {
-            Visible = false;
-            Response.Redirect("MoreDetails.aspx");
+            
+            MessageBoxButtons Btn = MessageBoxButtons.YesNo;
+            DialogResult res = MessageBox.Show("Do you want to apply for the post?","Apply Form",Btn);
+            if(res==DialogResult.Yes)
+            {
+                Response.Redirect("Confirmation.aspx");
+            }
         }
 
         protected void BtnSubmit2_Click(Object sender, EventArgs e)
