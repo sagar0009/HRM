@@ -67,16 +67,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Contract.aspx" />
     <Content Include="DashBoard.aspx" />
+    <Content Include="Evaluation.aspx" />
     <Content Include="Images\Cal.png" />
+    <Content Include="Interview.aspx" />
     <Content Include="Login.html" />
+    <Content Include="MoreDetails.aspx" />
+    <Content Include="PostVacancy.aspx" />
     <Content Include="Register.html" />
+    <Content Include="ShortList.aspx" />
+    <Content Include="Status.aspx" />
     <Content Include="VacancyAnnouncement.aspx" />
     <Content Include="VacancyDetails.aspx" />
     <Content Include="VacancyReceived.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WrittenTest.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contract.aspx.cs">
+      <DependentUpon>Contract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract.aspx.designer.cs">
+      <DependentUpon>Contract.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard.aspx.cs">
       <DependentUpon>DashBoard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -84,7 +99,49 @@
     <Compile Include="DashBoard.aspx.designer.cs">
       <DependentUpon>DashBoard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Evaluation.aspx.cs">
+      <DependentUpon>Evaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Evaluation.aspx.designer.cs">
+      <DependentUpon>Evaluation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interview.aspx.cs">
+      <DependentUpon>Interview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interview.aspx.designer.cs">
+      <DependentUpon>Interview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MoreDetails.aspx.cs">
+      <DependentUpon>MoreDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MoreDetails.aspx.designer.cs">
+      <DependentUpon>MoreDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostVacancy.aspx.cs">
+      <DependentUpon>PostVacancy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostVacancy.aspx.designer.cs">
+      <DependentUpon>PostVacancy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShortList.aspx.cs">
+      <DependentUpon>ShortList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShortList.aspx.designer.cs">
+      <DependentUpon>ShortList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VacancyAnnouncement.aspx.cs">
       <DependentUpon>VacancyAnnouncement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,6 +162,13 @@
     </Compile>
     <Compile Include="VacancyReceived.aspx.designer.cs">
       <DependentUpon>VacancyReceived.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WrittenTest.aspx.cs">
+      <DependentUpon>WrittenTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WrittenTest.aspx.designer.cs">
+      <DependentUpon>WrittenTest.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

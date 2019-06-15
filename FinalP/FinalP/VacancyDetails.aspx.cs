@@ -18,6 +18,7 @@ namespace FinalP
             }
 
         }
+
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
             if(Calendar1.Visible==false)
@@ -29,10 +30,12 @@ namespace FinalP
                 Calendar1.Visible = false;
             }
         }
+
         protected void Selection_Change(Object sender, EventArgs e)
         {
             TBOpenDate.Text = Calendar1.SelectedDate.ToShortDateString();
         }
+
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
             if (Calendar2.Visible == false)
@@ -44,21 +47,21 @@ namespace FinalP
                 Calendar2.Visible = false;
             }
         }
+
         protected void Selection1_Change(Object sender, EventArgs e)
         {
             TBEndDate.Text = Calendar2.SelectedDate.ToShortDateString();
         }
+
         protected void Btn1Submit_Click(Object sender, EventArgs e)
         {
-
+            Response.Redirect("PostVacancy.aspx");
         }
+
         protected void Btn2Submit_Click(Object sender, EventArgs e)
         {
             Visible = false;
             Response.Redirect("DashBoard.aspx");
-
-
-
         }
 
     }
