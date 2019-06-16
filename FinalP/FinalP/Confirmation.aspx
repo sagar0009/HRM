@@ -1,12 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Confirmation.aspx.cs" Inherits="FinalP.Confirmation" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Confirmation.aspx.cs" Inherits="FinalP.Confirmation" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
         <div>
             <p> Congratulations!!!</p>
@@ -15,5 +10,4 @@
             <p> Stay Connected !</p>
         </div>
     </form>
-</body>
-</html>
+</asp:Content>

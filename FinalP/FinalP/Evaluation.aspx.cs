@@ -15,9 +15,9 @@ namespace FinalP
         }
 
         protected void BtnBack_Click(object sender, EventArgs e)
-        {                   
-                Visible = false;
-                Response.Redirect("DashBoard.aspx");            
+        {
+            Visible = false;
+            Response.Redirect("DashBoard.aspx");
         }
     }
 }

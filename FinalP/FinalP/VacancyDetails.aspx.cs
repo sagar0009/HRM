@@ -11,7 +11,7 @@ namespace FinalP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 Calendar1.Visible = false;
                 Calendar2.Visible = false;
@@ -21,7 +21,7 @@ namespace FinalP
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            if(Calendar1.Visible==false)
+            if (Calendar1.Visible == false)
             {
                 Calendar1.Visible = true;
             }
@@ -63,6 +63,5 @@ namespace FinalP
             Visible = false;
             Response.Redirect("DashBoard.aspx");
         }
-
     }
 }

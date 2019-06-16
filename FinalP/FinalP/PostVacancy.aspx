@@ -1,29 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PostVacancy.aspx.cs" Inherits="FinalP.PostVacancy" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Vacancy Announcements</title>
-    <style>
-        .header {
-            margin: auto;
-            background-color: #f1f1f1;
-            padding: 10px;
-            width: 60%;
-            text-align: center;
-        }
-        .center
-        {
-            margin: auto;
-            width: 60%;
-            
-            padding: 10px;
-            font:bold 12px;
-        }
-        </style>
-</head>
-<body>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="PostVacancy.aspx.cs" Inherits="FinalP.PostVacancy" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
         <div class="header">
             <h1> Vacancy! Vacancy! Vacancy!</h1>
@@ -86,25 +64,5 @@
             <asp:Button ID="BtnApply" runat="server" ForeColor="White" BackColor="Blue" Width  ="30%" Text="Apply Now" OnClick="BtnSubmit1_Click" />
             <asp:Button ID="BtnBack" runat="server"  ForeColor="White" BackColor="Blue" Width  ="30%" Text="Back"  OnClick="BtnSubmit2_Click"/>
         </div>
-
-
-                 <%-- <asp:TableRow runat="server">
-                    <asp:TableCell runat="server" HorizontalAlign="Right">Job Details</asp:TableCell>
-                    <asp:TableCell runat="server" HorizontalAlign="Left">
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server" HorizontalAlign="Right">
-                        <asp:Button ID="BtnApply" runat="server" Text="Apply Now" OnClick="BtnSubmit1_Click" />
-                    </asp:TableCell>
-                    <asp:TableCell runat="server" HorizontalAlign="Left">
-                       <asp:Button ID="BtnBack" runat="server"  Width  ="60%" Text="Back"  OnClick="BtnSubmit2_Click"/>
-                    </asp:TableCell>
-                </asp:TableRow>--%>
-            
-       
     </form>
-</body>
-</html>
+</asp:Content>

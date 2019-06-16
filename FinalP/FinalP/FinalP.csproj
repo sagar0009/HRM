@@ -80,7 +80,6 @@
     <Content Include="Register.html" />
     <Content Include="ShortList.aspx" />
     <Content Include="Status.aspx" />
-    <Content Include="VacancyAnnouncement.aspx" />
     <Content Include="VacancyDetails.aspx" />
     <Content Include="VacancyReceived.aspx" />
     <Content Include="Web.config" />
@@ -122,6 +121,13 @@
     <Compile Include="Interview.aspx.designer.cs">
       <DependentUpon>Interview.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
     <Compile Include="PostVacancy.aspx.cs">
       <DependentUpon>PostVacancy.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -143,13 +149,6 @@
     </Compile>
     <Compile Include="Status.aspx.designer.cs">
       <DependentUpon>Status.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="VacancyAnnouncement.aspx.cs">
-      <DependentUpon>VacancyAnnouncement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VacancyAnnouncement.aspx.designer.cs">
-      <DependentUpon>VacancyAnnouncement.aspx</DependentUpon>
     </Compile>
     <Compile Include="VacancyDetails.aspx.cs">
       <DependentUpon>VacancyDetails.aspx</DependentUpon>
@@ -174,6 +173,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Master.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

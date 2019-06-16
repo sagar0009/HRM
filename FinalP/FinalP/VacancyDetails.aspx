@@ -1,37 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VacancyDetails.aspx.cs" Inherits="FinalP.VacancyDetails" %>
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Vacancy Details</title>
-    <style>
-        .header {
-            margin: auto;
-            background-color: #f1f1f1;
-            padding: 10px;
-            width: 60%;
-            text-align: center;
-        }
-
-        .center
-        {
-            margin: auto;
-            width: 60%;
-            border: 3px solid #73AD21;
-            padding: 10px;
-            font:bold 12px;
-        }
-        .right
-        {
-            margin: auto;
-            width: 60%;
-            border: 3px solid #73AD21;
-            padding: 10px;
-        }
-
-</style>
-</head>
-<body>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="VacancyDetails.aspx.cs" Inherits="FinalP.VacancyDetails" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
         <div class="header">
             <h1>New Job Details</h1>
@@ -119,5 +89,4 @@
         </asp:Table>
         </div>
     </form>
-</body>
-</html>
+</asp:Content>
