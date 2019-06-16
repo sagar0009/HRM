@@ -18,7 +18,7 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="DashBoard.aspx">Recruitment</a>
+          <a class="navbar-brand brand-logo" href="DashBoard.aspx">Logo Company</a>
          
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
@@ -68,60 +68,83 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="mdi mdi-home menu-icon"></i>
-              <span class="menu-title">Home</span>
+         <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Recruitment</span>
+              <i class="menu-arrow"></i>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="VacancyDetails.aspx">
-              <i class="mdi mdi-account-group menu-icon"></i>
-              <span class="menu-title">Vacancy Announcements</span> 
-            </a>            
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="VacancyReceived.aspx">
-              <i class="mdi mdi-file-import menu-icon"></i>
-              <span class="menu-title">Applications Received</span>
-            </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="Evaluation.aspx">
-              <i class="mdi mdi-table-edit menu-icon"></i>
-              <span class="menu-title">Evaluation</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ShortList.aspx">
-              <i class="mdi mdi-minus-circle menu-icon"></i>
-              <span class="menu-title">ShortList</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="WrittenTest.aspx">
-              <i class="mdi mdi-pen menu-icon"></i>
-              <span class="menu-title">Calls for written Test</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Interview.aspx">
-              <i class="mdi mdi-phone-in-talk menu-icon"></i>
-              <span class="menu-title">Calls for Interview</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Status.aspx" >
-              <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-              <span class="menu-title">Status</span>              
-            </a>            
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Contract.aspx">
-              <i class="mdi mdi-marker menu-icon"></i>
-              <span class="menu-title">Contract</span>
-            </a>
-          </li>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                    <a class="nav-link"  href="VacancyDetails.aspx">
+                        <i class="mdi mdi-account-group menu-icon"></i>
+                        <span class="menu-title">Vacancy Announcements</span> 
+                     </a>            
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="VacancyReceived.aspx">
+                    <i class="mdi mdi-file-import menu-icon"></i>
+                    <span class="menu-title">Applications Received</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Evaluation.aspx">
+                    <i class="mdi mdi-table-edit menu-icon"></i>
+                    <span class="menu-title">Evaluation</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ShortList.aspx">
+                    <i class="mdi mdi-minus-circle menu-icon"></i>
+                    <span class="menu-title">ShortList</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="WrittenTest.aspx">
+                  <i class="mdi mdi-pen menu-icon"></i>
+                  <span class="menu-title">Calls for written Test</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Interview.aspx">
+                    <i class="mdi mdi-phone-in-talk menu-icon"></i>
+                    <span class="menu-title">Calls for Interview</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Status.aspx" >
+                    <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+                    <span class="menu-title">Status</span>              
+                    </a>            
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contract.aspx">
+                    <i class="mdi mdi-marker menu-icon"></i>
+                    <span class="menu-title">Contract</span>
+                    </a>
+                </li>
+              </ul>
+            </div>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="Contract.aspx">
+          <i class="mdi mdi-marker menu-icon"></i>
+          <span class="menu-title">Attendance</span>
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="Contract.aspx">
+          <i class="mdi mdi-marker menu-icon"></i>
+          <span class="menu-title">Payroll</span>
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="Contract.aspx">
+          <i class="mdi mdi-marker menu-icon"></i>
+          <span class="menu-title">Training</span>
+          </a>
+         </li>  
         </ul>
       </nav>
       <!-- partial -->
