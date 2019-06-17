@@ -73,6 +73,7 @@
     <Content Include="Contract.aspx" />
     <Content Include="DashBoard.aspx" />
     <Content Include="Evaluation.aspx" />
+    <Content Include="Images\bg.jpg" />
     <Content Include="Images\Cal.png" />
     <Content Include="Interview.aspx" />
     <Content Include="Login.html" />
