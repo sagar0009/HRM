@@ -71,6 +71,8 @@
   <ItemGroup>
     <Content Include="Confirmation.aspx" />
     <Content Include="Contract.aspx" />
+    <Content Include="css1\css\QMXWPE.css" />
+    <Content Include="css1\scss\QMXWPE_2.css" />
     <Content Include="DashBoard.aspx" />
     <Content Include="Evaluation.aspx" />
     <Content Include="Images\bg.jpg" />
@@ -78,6 +80,7 @@
     <Content Include="Interview.aspx" />
     <Content Include="Login.html" />
     <Content Include="PostVacancy.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Register.html" />
     <Content Include="ShortList.aspx" />
     <Content Include="Status.aspx" />
@@ -137,6 +140,13 @@
       <DependentUpon>PostVacancy.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShortList.aspx.cs">
       <DependentUpon>ShortList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -183,6 +193,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
