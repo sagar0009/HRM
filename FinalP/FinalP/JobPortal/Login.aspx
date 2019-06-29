@@ -1,23 +1,22 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="FinalP.JobPortal.Login" %>
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
     <title>HRMS User Login</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="Resources/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="Resources/vendors/base/vendor.bundle.base.css">   
-    <link rel="stylesheet" href="Resources/css/style.css">
 
+    <link rel="stylesheet" href="~/Resources/vendors/mdi/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="~/Resources/vendors/base/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="~/Resources/css/style.css" />
     <style>
         .input-container {
-            display: -ms-flexbox; 
+            display: -ms-flexbox;
             display: flex;
             width: 100%;
             margin-bottom: 15px;
         }
+
         .icon {
             padding: 10px;
             background: dodgerblue;
@@ -26,9 +25,7 @@
             text-align: center;
         }
     </style>
-    
 </head>
-
 <body>
     <div class="container-scroller">
         <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -43,27 +40,23 @@
 
                                 <div class="input-container">
                                     <i class="mdi mdi-account icon"></i>
-                                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username"/>
                                 </div>
                                 <div class="input-container">
                                     <i class="mdi mdi-lock icon"></i>
-                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"/>
                                 </div>
                                 <div class="mt-3">
                                     <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="DashBoard.aspx" >SIGN IN</a>
                                 </div>
                                 <div class="my-2 d-flex justify-content-between align-items-center">
-                                    <div class="form-check">
-                                        <label class="form-check-label text-muted">
-                                            <input type="checkbox" class="form-check-input">
-                                            Keep me signed in
-                                        </label>
-                                    </div>
+                                    
                                     <a href="#" class="auth-link text-black">Forgot password?</a>
                                 </div>                                
                                 <div class="text-center mt-4 font-weight-light">
-                                    Don't have an account? <a href="Register.html" class="text-primary">Create</a>
+                                    Don't have an account? <a href="Register.aspx" class="text-primary">Create</a>
                                 </div>
+                               
                             </form>
                         </div>
                     </div>
@@ -73,13 +66,10 @@
         </div>
         <!-- page-body-wrapper ends -->
     </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="Resources/vendors/base/vendor.bundle.base.js"></script>   
-    <script src="Resources/js/off-canvas.js"></script>
-    <script src="Resources/js/hoverable-collapse.js"></script>
-    <script src="Resources/js/template.js"></script>
-    <!-- endinject -->
-</body>
 
+    <script src="~/Resources/vendors/base/vendor.bundle.base.js"></script>
+    <script src="~/Resources/js/off-canvas.js"></script>
+    <script src="~/Resources/js/hoverable-collapse.js"></script>
+    <script src="~/Resources/js/template.js"></script>
+</body>
 </html>

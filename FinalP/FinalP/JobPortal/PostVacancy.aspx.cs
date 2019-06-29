@@ -27,10 +27,6 @@ namespace FinalP
             }
         }
 
-        protected void BtnSubmit2_Click(Object sender, EventArgs e)
-        {
-            Visible = false;
-            Response.Redirect("DashBoard.aspx");
-        }
+        
     }
 }
