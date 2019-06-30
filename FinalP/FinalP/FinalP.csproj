@@ -83,6 +83,7 @@
     <Content Include="JobPortal\Contact.aspx" />
     <Content Include="JobPortal\Home.aspx" />
     <Content Include="JobPortal\Login.aspx" />
+    <Content Include="JobPortal\User.aspx" />
     <Content Include="Login.html" />
     <Content Include="JobPortal\PostVacancy.aspx" />
     <Content Include="ShortList.aspx" />
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="JobPortal\Portal.Master.designer.cs">
       <DependentUpon>Portal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="JobPortal\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobPortal\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>

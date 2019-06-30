@@ -11,6 +11,52 @@
     <link href="~/Resources/vendors/base/vendor.bundle.base.css" rel="stylesheet" />
     <link href="~/Resources/css/style.css" rel="stylesheet" />
     <style>
+        .menu-titler {
+            color: inherit;
+            display: inline-block;
+            font-size: 0.875rem;
+            line-height: 1;
+            vertical-align: middle;
+        }
+
+        .bdr {
+            border: 2px solid gray;
+            background-color: lightgrey;
+        }       
+
+        .img-circle {
+            background: black;
+            width: 100%;
+        }
+
+        .spans {
+            left: 0;
+            text-align: center;
+            width: 100%;
+            background: rgba(255,255,255,0.5);
+            bottom: 0;
+            padding: 0px;
+        }
+
+        .img-thumbnails {
+            border-radius: 0;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background: #dbdbdb;
+            padding: 20px;
+        }
+
+            .img-thumbnails > div {
+                display: inline-block;
+                overflow: hidden;
+                height: 140px;
+                border: 5px solid #fff;
+                -webkit-box-shadow: 0 2px 0 2px #333;
+                box-shadow: 0 2px 0 2px #333;
+                border-radius: 50%;
+            }
+
         .header {
             margin: auto;
             background-color: #f1f1f1;
@@ -73,12 +119,12 @@
             </div>
         </nav>
         <!-- partial -->
-        <div class="container-fluid page-body-wrapper">            
+        <div class="container-fluid page-body-wrapper">
             <div class="full">
                 <div class="content-wrapper">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
-                </div>              
+                </div>
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
 
