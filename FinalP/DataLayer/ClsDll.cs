@@ -46,5 +46,11 @@ namespace DataLayer
             return ds;
         }
 
+        public void InsertUserDetails(string query)
+        {
+            DataSet ds = new DataSet();
+            ConnectDb(query);
+        }
+
     }
 }

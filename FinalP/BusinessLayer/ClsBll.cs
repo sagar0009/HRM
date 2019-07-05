@@ -18,5 +18,12 @@ namespace BusinessLayer
             return objDll.GetDataFromSP(SPName,SPParameter);
 
         }
+
+        public void AddUser(string query)
+        {
+            DataSet ds = new DataSet();
+            
+             objDll.InsertUserDetails(query);
+        }
     }
 }

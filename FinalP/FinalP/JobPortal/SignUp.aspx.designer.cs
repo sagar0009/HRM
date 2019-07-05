@@ -40,13 +40,13 @@ namespace FinalP.JobPortal {
         protected global::System.Web.UI.HtmlControls.HtmlInputText LName;
         
         /// <summary>
-        /// TBEmail control.
+        /// Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl TBEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Email;
         
         /// <summary>
         /// Password control.
@@ -67,13 +67,13 @@ namespace FinalP.JobPortal {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword CPassword;
         
         /// <summary>
-        /// Contact control.
+        /// Phone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Contact;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Phone;
         
         /// <summary>
         /// DdlState control.

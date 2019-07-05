@@ -58,25 +58,22 @@ namespace FinalP.JobPortal
 
         protected void BtnSignUp_Click(object sender, EventArgs e)
         {
+
             address = municipality + "," + district + "," + state;
             Boolean useravailable;
-            useravailable = Checkusername(TBEmail.ToString());
-            if (useravailable)
+            //useravailable = Checkusername(TBEmail.ToString());
+            //if (useravailable)
             {
                 if (Password.ToString() == CPassword.ToString())
                 {
-                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["HumanResource"].ToString());
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = con;
-                    cmd.CommandText = "insert into UserSignup(Fname,Lname,Email,Address,Phone,Gender,Password) values('" + FName.ToString() + "','" + LName.ToString() + "', '" + TBEmail.ToString() + "','" + address + "','" + Contact.ToString() + "','" + RadioButtonList1.SelectedValue + "','" + Password.ToString() + "')";
+
+                    string query = "insert into UserSignup(Fname,Lname,Email,Address,Phone,Gender,Password) values('" + Request["Fname"] + "','" + Request["Lname"] + "', '" + Request.Form["Email"] + "','" + address + "','" + Request["Phone"] + "','" + RadioButtonList1.SelectedValue + "','" + Request["Password"] + "')";
+                    objBll.AddUser(query);
 
 
 
-                    cmd.ExecuteNonQuery();
-                    con.Close();
                     Response.Redirect("Login.aspx?id=regidtor");
-                    //   LblSucessMessage.Text = "New Registration Successfully Saved - Thanks For Registration";
+                      //LblSucessMessage.Text = "New Registration Successfully Saved - Thanks For Registration";
 
 
                 }
@@ -84,38 +81,33 @@ namespace FinalP.JobPortal
                 {
                     MessageBox.Show("Password Not Matched - ReEnter Password");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Email Already Exists");
-            }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Email Already Exists");
+                //}
 
+            }
         }
 
-        public Boolean Checkusername(String username)
-        {
-            Boolean userstatus;
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["HumanResource"].ToString());
-            con.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "Select * from UserSignup where Email='" + TBEmail.ToString() + "'";
-            cmd.Connection = con;
-            SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = cmd;
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                userstatus = false;
-            }
-            else
-            {
-                userstatus = true;
-            }
-            con.Close();
-            return userstatus;
-        }
+        //public Boolean Checkusername(String username)
+        //{
+        //    Boolean userstatus;
+           
+        //    string query = "Select * from UserSignup where Email='" + TBEmail.ToString() + "'";
+        //    objBll.AddUser(query);
+        //    da.Fill(ds);
+        //    if (ds.Tables[0].Rows.Count > 0)
+        //    {
+        //        userstatus = false;
+        //    }
+        //    else
+        //    {
+        //        userstatus = true;
+        //    }
+        //    con.Close();
+        //    return userstatus;
+        //}
 
         protected void DdlState_SelectedIndexChanged(object sender, EventArgs e)
         {

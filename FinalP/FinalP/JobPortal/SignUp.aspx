@@ -22,23 +22,23 @@
                                 <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
                             </div>
                             <div class="form-group">
-                                <input type="text" runat="server" class="form-control form-control-lg" id="FName" placeholder="First Name" />
+                                <input type="text" runat="server" name="Fname" class="form-control form-control-lg" id="FName" placeholder="First Name" />
                             </div>
                             <div class="form-group">
-                                <input type="text" runat="server" class="form-control form-control-lg" id="LName" placeholder="Last Name" />
+                                <input type="text" runat="server" name="Lname" class="form-control form-control-lg" id="LName" placeholder="Last Name" />
                             </div>
                             <div class="form-group">
-                                <input type="email" runat="server" class="form-control form-control-lg" id="TBEmail" placeholder="Email" />
+                                <input type="email" runat="server" name="Email" class="form-control form-control-lg" id="Email" placeholder="Email" />
                             </div>
                             <div class="form-group">
-                                <input type="password" runat="server" class="form-control form-control-lg" id="Password" placeholder="Password" />
+                                <input type="password" runat="server" name="Password" class="form-control form-control-lg" id="Password" placeholder="Password" />
                             </div>
                             <div class="form-group">
                                 <input type="password" runat="server" class="form-control form-control-lg" id="CPassword" placeholder="Confirm Password" />
                             </div>
                             <div class="form-group">
 
-                                <input type="text" class="form-control form-control-lg" runat="server" id="Contact" placeholder="Contact Number" />
+                                <input type="text" runat="server" name="Phone" class="form-control form-control-lg"  id="Phone" placeholder="Contact Number" />
                             </div>
                             <div class="form-group">
                                 Address<br />
