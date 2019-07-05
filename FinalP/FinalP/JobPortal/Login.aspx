@@ -47,14 +47,14 @@
                                     <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"/>
                                 </div>
                                 <div class="mt-3">
-                                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="DashBoard.aspx" >SIGN IN</a>
+                                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="User.aspx" >SIGN IN</a>
                                 </div>
                                 <div class="my-2 d-flex justify-content-between align-items-center">
                                     
                                     <a href="#" class="auth-link text-black">Forgot password?</a>
                                 </div>                                
                                 <div class="text-center mt-4 font-weight-light">
-                                    Don't have an account? <a href="Register.aspx" class="text-primary">Create</a>
+                                    Don't have an account? <a href="SignUp.aspx" class="text-primary">Create</a>
                                 </div>
                                
                             </form>

@@ -18,12 +18,15 @@ namespace FinalP
 
         protected void BtnSubmit1_Click(Object sender, EventArgs e)
         {
-
-            MessageBoxButtons Btn = MessageBoxButtons.YesNo;
-            DialogResult res = MessageBox.Show("Do you want to apply for the post?", "Apply Form", Btn);
-            if (res == DialogResult.Yes)
+            if (IsPostBack)
             {
-                Response.Redirect("Confirmation.aspx");
+
+                MessageBoxButtons Btn = MessageBoxButtons.YesNo;
+                DialogResult res = MessageBox.Show("Do you want to apply for the post?", "Apply Form", Btn);
+                if (res == DialogResult.Yes)
+                {
+                    Response.Redirect("Confirmation.aspx");
+                }
             }
         }
 
