@@ -74,5 +74,27 @@ namespace DataLayer
             return us;
         }
 
+        public string ValidatePassword(string query,string pw)
+        {
+            SqlConnection con = new SqlConnection(Conn);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                pw = ds.Tables[0].Rows[0][0].ToString();
+            }
+            else
+            {
+                pw = string.Empty;
+            }
+            con.Close();
+            return pw;
+        }
+
     }
 }

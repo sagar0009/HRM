@@ -30,5 +30,10 @@ namespace BusinessLayer
         {
             return objDll.CheckUserEmail(query, us);
         }
+
+        public string ValidatePw(string query,string pw)
+        {
+            return objDll.ValidatePassword(query, pw);
+        }
     }
 }

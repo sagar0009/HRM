@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessLayer;
 using System.Windows.Forms;
@@ -14,23 +8,19 @@ namespace FinalP.JobPortal
 {
     public partial class SignUp : System.Web.UI.Page
     {
-        public ClsBll objBll = new ClsBll() ;
-        public string address=null;
-        public static string state ;
+        public ClsBll objBll = new ClsBll();
+        public string address = null;
+        public static string state;
         public static string district;
-        public static string municipality ;
+        public static string municipality;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                PopulateStateDropDownList();                               
-                BtnSignUp.Enabled = false;                
-            }
-            else
-            {
-                LblWarning.Visible = false;
-            }
+                PopulateStateDropDownList();
+                BtnSignUp.Enabled = false;
+            }            
         }
 
         private void PopulateStateDropDownList()
@@ -49,14 +39,14 @@ namespace FinalP.JobPortal
 
             DdlMunicipality.Enabled = false;
             DdlDistrict.Enabled = false;
-        }      
+        }
 
         protected void BtnSignUp_Click(object sender, EventArgs e)
         {
             address = municipality + "," + district + "," + state;
             bool useravailable;
-            useravailable = Checkusername(Request["Email"]);
-            if (Request["Fname"] != null && Request["Lname"] != null && Request.Form["Email"] != null && Request["Phone"] != null && RadioButtonList1.SelectedIndex != -1 && Request["Password"] != null && DdlDistrict.SelectedIndex!=0&& DdlState.SelectedIndex != 0 && DdlMunicipality.SelectedIndex != 0 )
+            useravailable = Checkusername(Request.Form["Email"]);
+            if (Request["Fname"] != null && Request["Lname"] != null && Request.Form["Email"] != null && Request["Phone"] != null && RadioButtonList1.SelectedIndex != -1 && Request["Password"] != null && DdlDistrict.SelectedIndex != 0 && DdlState.SelectedIndex != 0 && DdlMunicipality.SelectedIndex != 0)
             {
                 if (useravailable)
                 {
@@ -66,7 +56,6 @@ namespace FinalP.JobPortal
                         objBll.AddUser(query);
                         MessageBox.Show("New Registration Successfully Saved - Thanks For Registration" + "\nWelcome " + Request["Fname"]);
                         Response.Redirect("Login.aspx?id=regidtor");
-                        
                     }
                     else
                     {
@@ -79,23 +68,21 @@ namespace FinalP.JobPortal
                 }
             }
             else
-            {
-                LblWarning.Visible = true;
-                LblWarning.Text = "please fill out the form properly\nAll field are compulsory";
+            {             
+                MessageBox.Show("please fill out the form properly\nAll field are compulsory");
             }
 
-        }
-        
+        }       
 
-    public bool Checkusername(String username)
-    {
-            bool userstatus=true;                      
-            string query = "Select * from UserSignup where Email='" + Request["Email"] + "'";
-            userstatus=objBll.CheckEmail(query, userstatus);
+        public bool Checkusername(String username)
+        {
+            bool userstatus = true;
+            string query = "Select * from UserSignup where Email='" + Request.Form["Email"] + "'";
+            userstatus = objBll.CheckEmail(query, userstatus);
             return userstatus;
         }
 
-    protected void DdlState_SelectedIndexChanged(object sender, EventArgs e)
+        protected void DdlState_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DdlState.SelectedValue == "-1")
             {
@@ -122,9 +109,9 @@ namespace FinalP.JobPortal
                 DdlMunicipality.Enabled = false;
             }
             state = DdlState.SelectedItem.Text;
-        }       
+        }
 
-    protected void DdlDistrict_SelectedIndexChanged(object sender, EventArgs e)
+        protected void DdlDistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DdlDistrict.SelectedValue == "-1")
             {
@@ -147,12 +134,12 @@ namespace FinalP.JobPortal
             district = DdlDistrict.SelectedItem.ToString();
         }
 
-    protected void DdlMunicipality_SelectedIndexChanged(object sender, EventArgs e)
+        protected void DdlMunicipality_SelectedIndexChanged(object sender, EventArgs e)
         {
             municipality = DdlMunicipality.SelectedItem.ToString();
         }
 
-    protected void ChkBox_CheckedChanged(object sender, EventArgs e)
+        protected void ChkBox_CheckedChanged(object sender, EventArgs e)
         {
             if (ChkBox.Checked == true)
             {

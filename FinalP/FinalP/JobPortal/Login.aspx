@@ -36,18 +36,19 @@
                             
                             <h4>Hello! let's get started</h4>
                             <h6 class="font-weight-light">Sign in to continue.</h6>
-                            <form class="pt-3">
+                            <form class="pt-3" runat="server">
 
                                 <div class="input-container">
                                     <i class="mdi mdi-account icon"></i>
-                                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username"/>
+                                    <input type="email" runat="server" class="form-control form-control-lg" id="Email" name="Email" placeholder="Username"/>
                                 </div>
                                 <div class="input-container">
                                     <i class="mdi mdi-lock icon"></i>
-                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"/>
+                                    <input type="password" runat="server" class="form-control form-control-lg" name="Password" id="Password" placeholder="Password"/>
                                 </div>
                                 <div class="mt-3">
-                                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="User.aspx" >SIGN IN</a>
+                                    <asp:Button ID="BtnLogin"  OnClick="BtnLogin_Click" CssClass="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" runat="server" Text="Sign In" />
+                                   
                                 </div>
                                 <div class="my-2 d-flex justify-content-between align-items-center">
                                     

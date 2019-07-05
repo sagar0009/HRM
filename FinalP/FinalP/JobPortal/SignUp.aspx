@@ -39,7 +39,7 @@
                             </div>
                             <div class="form-group">
 
-                                <input type="text" runat="server" name="Phone" class="form-control form-control-lg"  id="Phone" placeholder="Contact Number" />
+                                <input type="text" runat="server" title="phone numbers are 10 digit long" name="Phone" pattern="[1-9]{1}[0-9]{9}" class="form-control form-control-lg"  id="Phone" placeholder="Contact Number" />
                             </div>
                             <div class="form-group">
                                 Address<br />
