@@ -25,5 +25,10 @@ namespace BusinessLayer
             
              objDll.InsertUserDetails(query);
         }
+
+        public bool CheckEmail(string query, bool us)
+        {
+            return objDll.CheckUserEmail(query, us);
+        }
     }
 }

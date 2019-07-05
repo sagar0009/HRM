@@ -20,6 +20,7 @@
                             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                                 <h4>New here?</h4>
                                 <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+                                <asp:Label ID="LblWarning" runat="server"  Visible="false"></asp:Label>
                             </div>
                             <div class="form-group">
                                 <input type="text" runat="server" name="Fname" class="form-control form-control-lg" id="FName" placeholder="First Name" />
@@ -34,7 +35,7 @@
                                 <input type="password" runat="server" name="Password" class="form-control form-control-lg" id="Password" placeholder="Password" />
                             </div>
                             <div class="form-group">
-                                <input type="password" runat="server" class="form-control form-control-lg" id="CPassword" placeholder="Confirm Password" />
+                                <input type="password" runat="server" name="CPassword" class="form-control form-control-lg" id="CPassword" placeholder="Confirm Password" />
                             </div>
                             <div class="form-group">
 

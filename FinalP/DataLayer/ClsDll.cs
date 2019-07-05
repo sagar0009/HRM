@@ -52,5 +52,27 @@ namespace DataLayer
             ConnectDb(query);
         }
 
+        public bool CheckUserEmail(string query,bool us)
+        {
+            SqlConnection con = new SqlConnection(Conn);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();                             
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                us = false;
+            }
+            else
+            {
+                us = true;
+            }
+            con.Close();
+            return us;
+        }
+
     }
 }

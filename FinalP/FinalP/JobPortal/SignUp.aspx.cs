@@ -10,8 +10,6 @@ using System.Web.UI.WebControls;
 using BusinessLayer;
 using System.Windows.Forms;
 
-
-
 namespace FinalP.JobPortal
 {
     public partial class SignUp : System.Web.UI.Page
@@ -21,12 +19,17 @@ namespace FinalP.JobPortal
         public static string state ;
         public static string district;
         public static string municipality ;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 PopulateStateDropDownList();                               
                 BtnSignUp.Enabled = false;                
+            }
+            else
+            {
+                LblWarning.Visible = false;
             }
         }
 
@@ -46,70 +49,53 @@ namespace FinalP.JobPortal
 
             DdlMunicipality.Enabled = false;
             DdlDistrict.Enabled = false;
-        }
-
-        //protected void BtnSignUp_Click(object sender, EventArgs e)
-        //{
-        //   // Response.Redirect("Login.aspx");
-        //    address = municipality + "," + district + "," + state;
-        //    MessageBox.Show(address);
-        //}
-
+        }      
 
         protected void BtnSignUp_Click(object sender, EventArgs e)
         {
-
             address = municipality + "," + district + "," + state;
-            Boolean useravailable;
-            //useravailable = Checkusername(TBEmail.ToString());
-            //if (useravailable)
+            bool useravailable;
+            useravailable = Checkusername(Request["Email"]);
+            if (Request["Fname"] != null && Request["Lname"] != null && Request.Form["Email"] != null && Request["Phone"] != null && RadioButtonList1.SelectedIndex != -1 && Request["Password"] != null && DdlDistrict.SelectedIndex!=0&& DdlState.SelectedIndex != 0 && DdlMunicipality.SelectedIndex != 0 )
             {
-                if (Password.ToString() == CPassword.ToString())
+                if (useravailable)
                 {
-
-                    string query = "insert into UserSignup(Fname,Lname,Email,Address,Phone,Gender,Password) values('" + Request["Fname"] + "','" + Request["Lname"] + "', '" + Request.Form["Email"] + "','" + address + "','" + Request["Phone"] + "','" + RadioButtonList1.SelectedValue + "','" + Request["Password"] + "')";
-                    objBll.AddUser(query);
-
-
-
-                    Response.Redirect("Login.aspx?id=regidtor");
-                      //LblSucessMessage.Text = "New Registration Successfully Saved - Thanks For Registration";
-
-
+                    if (Request["Password"] == Request["CPassword"])
+                    {
+                        string query = "insert into UserSignup(Fname,Lname,Email,Address,Phone,Gender,Password) values('" + Request["Fname"] + "','" + Request["Lname"] + "', '" + Request.Form["Email"] + "','" + address + "','" + Request["Phone"] + "','" + RadioButtonList1.SelectedValue + "','" + Request["Password"] + "')";
+                        objBll.AddUser(query);
+                        MessageBox.Show("New Registration Successfully Saved - Thanks For Registration" + "\nWelcome " + Request["Fname"]);
+                        Response.Redirect("Login.aspx?id=regidtor");
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password Not Matched - Re-Enter Password");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Password Not Matched - ReEnter Password");
+                    MessageBox.Show("Email Already Exists");
                 }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Email Already Exists");
-                //}
-
             }
+            else
+            {
+                LblWarning.Visible = true;
+                LblWarning.Text = "please fill out the form properly\nAll field are compulsory";
+            }
+
+        }
+        
+
+    public bool Checkusername(String username)
+    {
+            bool userstatus=true;                      
+            string query = "Select * from UserSignup where Email='" + Request["Email"] + "'";
+            userstatus=objBll.CheckEmail(query, userstatus);
+            return userstatus;
         }
 
-        //public Boolean Checkusername(String username)
-        //{
-        //    Boolean userstatus;
-           
-        //    string query = "Select * from UserSignup where Email='" + TBEmail.ToString() + "'";
-        //    objBll.AddUser(query);
-        //    da.Fill(ds);
-        //    if (ds.Tables[0].Rows.Count > 0)
-        //    {
-        //        userstatus = false;
-        //    }
-        //    else
-        //    {
-        //        userstatus = true;
-        //    }
-        //    con.Close();
-        //    return userstatus;
-        //}
-
-        protected void DdlState_SelectedIndexChanged(object sender, EventArgs e)
+    protected void DdlState_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DdlState.SelectedValue == "-1")
             {
@@ -138,7 +124,7 @@ namespace FinalP.JobPortal
             state = DdlState.SelectedItem.Text;
         }       
 
-        protected void DdlDistrict_SelectedIndexChanged(object sender, EventArgs e)
+    protected void DdlDistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DdlDistrict.SelectedValue == "-1")
             {
@@ -161,12 +147,12 @@ namespace FinalP.JobPortal
             district = DdlDistrict.SelectedItem.ToString();
         }
 
-        protected void DdlMunicipality_SelectedIndexChanged(object sender, EventArgs e)
+    protected void DdlMunicipality_SelectedIndexChanged(object sender, EventArgs e)
         {
             municipality = DdlMunicipality.SelectedItem.ToString();
         }
 
-        protected void ChkBox_CheckedChanged(object sender, EventArgs e)
+    protected void ChkBox_CheckedChanged(object sender, EventArgs e)
         {
             if (ChkBox.Checked == true)
             {
@@ -178,5 +164,6 @@ namespace FinalP.JobPortal
             }
 
         }
+
     }
 }
