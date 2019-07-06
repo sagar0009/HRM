@@ -11,7 +11,7 @@ namespace DataLayer
 {
     public class ClsDll
     {
-        public string Conn = ConfigurationManager.ConnectionStrings["hrms"].ToString();
+        public static string Conn = ConfigurationManager.ConnectionStrings["hrms"].ToString();
 
         public void ConnectDb(string query)
         {
@@ -32,6 +32,32 @@ namespace DataLayer
             return ds;
         }
 
+        public static SqlParameter AddParameter(string pName,object value,SqlDbType dbType, int size)
+        {
+            SqlParameter param = new SqlParameter();
+            param.ParameterName = pName;
+            param.Value = value;
+            param.SqlDbType = dbType;
+            param.Size = size;
+            param.Direction = ParameterDirection.Input;
+            return param;
+        }
+
+        public static DataTable ExecuteDTByProcedure(string pName,SqlParameter[] Params)
+        {
+
+            SqlConnection con = new SqlConnection(Conn);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = pName;
+            cmd.Parameters.AddRange(Params);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            con.Open();
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
         public DataSet GetDataFromSP(string SPName, SqlParameter SPParameter)
         {
             SqlConnection con = new SqlConnection(Conn);

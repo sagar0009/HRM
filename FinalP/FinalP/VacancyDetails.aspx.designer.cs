@@ -40,13 +40,13 @@ namespace FinalP {
         protected global::System.Web.UI.WebControls.DropDownList DDPost;
         
         /// <summary>
-        /// TBPostID control.
+        /// LblSkills control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBPostID;
+        protected global::System.Web.UI.WebControls.Label LblSkills;
         
         /// <summary>
         /// TBOpenDate control.
@@ -103,31 +103,31 @@ namespace FinalP {
         protected global::System.Web.UI.WebControls.Calendar Calendar2;
         
         /// <summary>
-        /// TBExperience control.
+        /// LblExperience control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBExperience;
+        protected global::System.Web.UI.WebControls.Label LblExperience;
         
         /// <summary>
-        /// DDLevel control.
+        /// LblQual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLevel;
+        protected global::System.Web.UI.WebControls.Label LblQual;
         
         /// <summary>
-        /// TBSalary control.
+        /// LblSalary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBSalary;
+        protected global::System.Web.UI.WebControls.Label LblSalary;
         
         /// <summary>
         /// TBNoVacancy control.
@@ -137,6 +137,15 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TBNoVacancy;
+        
+        /// <summary>
+        /// TBJobDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBJobDesc;
         
         /// <summary>
         /// BtnSubmit control.

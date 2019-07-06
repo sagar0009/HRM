@@ -1,22 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BusinessLayer;
+using System.Data;
+using System.Windows.Forms;
 
 namespace FinalP
 {
     public partial class VacancyDetails : System.Web.UI.Page
     {
+
+        ClsBll objBll = new ClsBll();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 Calendar1.Visible = false;
                 Calendar2.Visible = false;
+                PopulatePost();
             }
+        }
 
+        private void PopulatePost()
+        {
+            DDPost.DataSource = objBll.GetData("spGetPost", null);
+            DDPost.DataBind();
+
+            ListItem liPost = new ListItem("Select Post", "-1");
+            DDPost.Items.Insert(0, liPost);
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
@@ -52,15 +69,61 @@ namespace FinalP
         {
             TBEndDate.Text = Calendar2.SelectedDate.ToShortDateString();
         }
-
-        protected void Btn1Submit_Click(Object sender, EventArgs e)
+       
+        protected void DDPost_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Response.Redirect("PostVacancy.aspx");
+            if (DDPost.SelectedValue != "-1")
+            {
+                SqlParameter parameter = new SqlParameter();
+                parameter.ParameterName = "@PostId";
+                parameter.Value = DDPost.SelectedValue;
+                DataSet ds = new DataSet();
+                ds = objBll.GetData("spGetVacancyDetails", parameter);
+                LblSkills.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
+                LblExperience.Text = Convert.ToString(ds.Tables[0].Rows[0][4]) + " years";
+                LblQual.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
+                LblSalary.Text ="Rs. "+ Convert.ToString(ds.Tables[0].Rows[0][2]);
+            }
+
         }
 
-        protected void Btn2Submit_Click(Object sender, EventArgs e)
+        protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-            Visible = false;
+            if (DDPost.SelectedValue != "-1")
+            {
+                if(TBEndDate.Text!=string.Empty&&TBOpenDate.Text != string.Empty&&TBNoVacancy.Text != string.Empty&&TBJobDesc.Text!=string.Empty)
+                {
+                    DateTime startDate = Convert.ToDateTime(TBOpenDate.Text.Trim());
+                    DateTime endDate = Convert.ToDateTime(TBEndDate.Text.Trim());
+                    if (startDate < endDate)
+                    {
+                        objBll.PostId = Convert.ToInt32(DDPost.SelectedValue);
+                        objBll.OpenDate = Convert.ToDateTime(TBOpenDate.Text);
+                        objBll.CloseDate = Convert.ToDateTime(TBEndDate.Text);
+                        objBll.Number = Convert.ToInt32(TBNoVacancy.Text);
+                        objBll.AddVacancy();
+                        MessageBox.Show("Successfully posted");
+                        Response.Redirect("DashBoard.aspx");
+                    }
+                    else
+                    {
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('End date should be greater than Start date')", true);
+                    }
+
+                }
+                else
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('Please fill out all the fields')", true);
+                }
+            }
+            else
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('Please select the post')", true);                
+            }
+        }
+
+        protected void BtnBack_Click(object sender, EventArgs e)
+        {
             Response.Redirect("DashBoard.aspx");
         }
     }
