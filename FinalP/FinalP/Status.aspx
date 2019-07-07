@@ -6,17 +6,20 @@
         <div class="header">
             <h1>Status</h1>
         </div>        
-        <div class="center">
-            <asp:GridView ID="GVStatus" runat="server" CssClass="center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
-                <Columns>
-                    <asp:BoundField HeaderText="ApplicantID" />
-                    <asp:BoundField HeaderText="VacancyID" />
-                    <asp:CheckBoxField HeaderText="Status" />
-                </Columns>               
-            </asp:GridView>                        
+        <div class="center">                                    
         </div>
-        <div align="center" >
-            <asp:Button ID="BtnBack" width="20%"  runat="server" Text="Back" CssClass="center " OnClick="BtnBack_Click" />
+         <asp:GridView ID="GVStatus" runat="server" CssClass="center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField HeaderText="ReceivalID" DataField="ReceivalId" />
+                    <asp:BoundField HeaderText="ApplicantID" DataField="ApplicantId" />
+                    <asp:BoundField HeaderText="FirstName" DataField="Fname"/>
+                    <asp:BoundField HeaderText="LastName" DataField="Lname"/>                    
+                    <asp:BoundField HeaderText="PostID" DataField="PostId"/>                                                                              
+                </Columns>               
+            </asp:GridView>  
+       <div align="center" >
+            <asp:Button ID="BtnDone" width="30%"  runat="server" Text="Done" OnClick="BtnDone_Click" CssClass="center"/>
+            <asp:Button ID="BtnBack" width="30%"  runat="server" Text="Back" OnClick="BtnBack_Click" CssClass="center "  />
         </div>
     </form>
 </asp:Content>

@@ -12,11 +12,15 @@ namespace FinalP
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }        
+
+        protected void BtnDone_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Interview.aspx");
         }
 
-        protected void BtnBack_Click(object sender, EventArgs e)
+        protected void BtnBack_Click1(object sender, EventArgs e)
         {
-            Visible = false;
             Response.Redirect("DashBoard.aspx");
         }
     }

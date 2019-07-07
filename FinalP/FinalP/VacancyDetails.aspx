@@ -8,8 +8,6 @@
 
         </div>
         <div >
-
-      
         <asp:Table ID="Table1" runat="server"  CssClass="center">
             <asp:TableRow runat="server">
                 <asp:TableCell runat="server" HorizontalAlign="Right">Post</asp:TableCell>
@@ -58,10 +56,20 @@
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow runat="server">
+                <asp:TableCell runat="server" HorizontalAlign="Right">Job Type</asp:TableCell>
+                <asp:TableCell runat="server" HorizontalAlign="Left">
+                    <asp:DropDownList ID="DdlJobType" runat="server" OnSelectedIndexChanged="DdlJobType_SelectedIndexChanged" AutoPostBack="True">
+                        <asp:ListItem Selected="True" Value="-1">Select Job Type</asp:ListItem>
+                        <asp:ListItem Value="1" Text="Part-Time" >
+                            </asp:ListItem>
+                        <asp:ListItem Value="2" Text="Full-Time"></asp:ListItem>
+                    </asp:DropDownList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow runat="server">
                 <asp:TableCell runat="server" HorizontalAlign="Right">Number Of Vacancies</asp:TableCell>
                 <asp:TableCell runat="server" HorizontalAlign="Left">
-                     <asp:TextBox ID="TBNoVacancy" runat="server"></asp:TextBox>
-                    
+                     <asp:TextBox ID="TBNoVacancy" runat="server"></asp:TextBox>                    
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow runat="server">
@@ -70,7 +78,7 @@
                     <asp:TextBox ID="TBJobDesc" runat="server" Columns="40" Rows="5"></asp:TextBox>                    
                 </asp:TableCell>
             </asp:TableRow>
-             <asp:TableRow runat="server">
+            <asp:TableRow runat="server">
                 <asp:TableCell runat="server" HorizontalAlign="Right">
                     <asp:Button ID="BtnSubmit" runat="server" Text="Done" width="50%" OnClick="BtnSubmit_Click"/>
                 </asp:TableCell>

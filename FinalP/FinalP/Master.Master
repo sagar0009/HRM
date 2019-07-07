@@ -120,12 +120,7 @@
                                         <span class="menu-title">Applications Received</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="Evaluation.aspx">
-                                        <i class="mdi mdi-table-edit menu-icon"></i>
-                                        <span class="menu-title">Evaluation</span>
-                                    </a>
-                                </li>
+                                
                                 <li class="nav-item">
                                     <a class="nav-link" href="ShortList.aspx">
                                         <i class="mdi mdi-minus-circle menu-icon"></i>
@@ -150,29 +145,29 @@
                                         <span class="menu-title">Status</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <%--<li class="nav-item">
                                     <a class="nav-link" href="Contract.aspx">
                                         <i class="mdi mdi-marker menu-icon"></i>
                                         <span class="menu-title">Contract</span>
                                     </a>
-                                </li>
+                                </li>--%>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Contract.aspx">
+                        <a class="nav-link" href="#">
                             <i class="mdi mdi-marker menu-icon"></i>
                             <span class="menu-title">Attendance</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Contract.aspx">
+                        <a class="nav-link" href="#">
                             <i class="mdi mdi-marker menu-icon"></i>
                             <span class="menu-title">Payroll</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Contract.aspx">
+                        <a class="nav-link" href="#">
                             <i class="mdi mdi-marker menu-icon"></i>
                             <span class="menu-title">Training</span>
                         </a>

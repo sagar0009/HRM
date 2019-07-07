@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -74,7 +77,6 @@
     <Content Include="css1\css\QMXWPE.css" />
     <Content Include="css1\scss\QMXWPE_2.css" />
     <Content Include="DashBoard.aspx" />
-    <Content Include="Evaluation.aspx" />
     <Content Include="Images\bg.jpg" />
     <Content Include="Images\Cal.png" />
     <Content Include="Interview.aspx" />
@@ -120,13 +122,6 @@
     </Compile>
     <Compile Include="DashBoard.aspx.designer.cs">
       <DependentUpon>DashBoard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Evaluation.aspx.cs">
-      <DependentUpon>Evaluation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Evaluation.aspx.designer.cs">
-      <DependentUpon>Evaluation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interview.aspx.cs">
       <DependentUpon>Interview.aspx</DependentUpon>

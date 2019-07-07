@@ -130,6 +130,15 @@ namespace FinalP {
         protected global::System.Web.UI.WebControls.Label LblSalary;
         
         /// <summary>
+        /// DdlJobType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlJobType;
+        
+        /// <summary>
         /// TBNoVacancy control.
         /// </summary>
         /// <remarks>

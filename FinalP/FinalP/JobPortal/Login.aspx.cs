@@ -30,8 +30,15 @@ namespace FinalP.JobPortal
                     string pw = string.Empty;
                     pw=  objBll.ValidatePw(query,pw);
                     if (pw == Request["Password"])
-                    {                        
-                        Response.Redirect("User.aspx");
+                    {
+                        Session["UserEmail"] = Request["Email"];
+                        objBll.ApplicantEmail = Session["UserEmail"].ToString();
+                        Session["UserId"]=Convert.ToInt32(objBll.GetUserByEmail());                                              
+                        Response.Redirect("PostVacancy.aspx");
+                        //Response.Write("<script>");
+                        //Response.Write("window.open('PostVacamcy.aspx','_blank')");
+                        //Response.Write("</script>");
+                        
                     }
                     else
                     {

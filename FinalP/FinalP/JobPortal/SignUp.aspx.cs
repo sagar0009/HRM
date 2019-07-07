@@ -25,7 +25,7 @@ namespace FinalP.JobPortal
 
         private void PopulateStateDropDownList()
         {
-            DdlState.DataSource = objBll.GetData("spGetState", null);
+            DdlState.DataSource = objBll.GetJob("spGetState", null);
             DdlState.DataBind();
 
             ListItem liCState = new ListItem("Select State", "-1");
@@ -49,7 +49,9 @@ namespace FinalP.JobPortal
             if (Request["Fname"] != null && Request["Lname"] != null && Request.Form["Email"] != null && Request["Phone"] != null && RadioButtonList1.SelectedIndex != -1 && Request["Password"] != null && DdlDistrict.SelectedIndex != 0 && DdlState.SelectedIndex != 0 && DdlMunicipality.SelectedIndex != 0)
             {
                 if (useravailable)
-                {
+                { 
+
+
                     if (Request["Password"] == Request["CPassword"])
                     {
                         string query = "insert into UserSignup(Fname,Lname,Email,Address,Phone,Gender,Password) values('" + Request["Fname"] + "','" + Request["Lname"] + "', '" + Request.Form["Email"] + "','" + address + "','" + Request["Phone"] + "','" + RadioButtonList1.SelectedValue + "','" + Request["Password"] + "')";
@@ -61,6 +63,7 @@ namespace FinalP.JobPortal
                     {
                         MessageBox.Show("Password Not Matched - Re-Enter Password");
                     }
+                
                 }
                 else
                 {
@@ -99,7 +102,7 @@ namespace FinalP.JobPortal
                 parameter.ParameterName = "@StateId";
                 parameter.Value = DdlState.SelectedValue;
 
-                DdlDistrict.DataSource = objBll.GetData("spGetDistrict", parameter);
+                DdlDistrict.DataSource = objBll.GetJob("spGetDistrict", parameter);
                 DdlDistrict.DataBind();
 
                 ListItem liDistrict = new ListItem("Select District", "-1");
@@ -126,7 +129,7 @@ namespace FinalP.JobPortal
                 parameter.ParameterName = "@DistrictId";
                 parameter.Value = DdlDistrict.SelectedValue;
 
-                DdlMunicipality.DataSource = objBll.GetData("spGetMunicipality", parameter);
+                DdlMunicipality.DataSource = objBll.GetJob("spGetMunicipality", parameter);
                 DdlMunicipality.DataBind();
                 ListItem liMunicipality = new ListItem("Select Municipality", "-1");
                 DdlMunicipality.Items.Insert(0, liMunicipality);

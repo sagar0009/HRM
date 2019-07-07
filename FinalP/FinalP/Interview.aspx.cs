@@ -19,5 +19,10 @@ namespace FinalP
             Visible = false;
             Response.Redirect("DashBoard.aspx");
         }
+
+        protected void BtnDone_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Status.aspx");
+        }
     }
 }

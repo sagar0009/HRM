@@ -15,7 +15,7 @@ namespace FinalP
     public partial class VacancyDetails : System.Web.UI.Page
     {
 
-        ClsBll objBll = new ClsBll();
+        ClsBll objBll = new ClsBll();       
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,7 @@ namespace FinalP
 
         private void PopulatePost()
         {
-            DDPost.DataSource = objBll.GetData("spGetPost", null);
+            DDPost.DataSource = objBll.GetJob("spGetPost", null);
             DDPost.DataBind();
 
             ListItem liPost = new ListItem("Select Post", "-1");
@@ -41,6 +41,7 @@ namespace FinalP
             if (Calendar1.Visible == false)
             {
                 Calendar1.Visible = true;
+                Calendar2.Visible = false;
             }
             else
             {
@@ -58,6 +59,7 @@ namespace FinalP
             if (Calendar2.Visible == false)
             {
                 Calendar2.Visible = true;
+                Calendar1.Visible = false;
             }
             else
             {
@@ -78,7 +80,7 @@ namespace FinalP
                 parameter.ParameterName = "@PostId";
                 parameter.Value = DDPost.SelectedValue;
                 DataSet ds = new DataSet();
-                ds = objBll.GetData("spGetVacancyDetails", parameter);
+                ds = objBll.GetJob("spGetVacancyDetails", parameter);
                 LblSkills.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
                 LblExperience.Text = Convert.ToString(ds.Tables[0].Rows[0][4]) + " years";
                 LblQual.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
@@ -91,29 +93,41 @@ namespace FinalP
         {
             if (DDPost.SelectedValue != "-1")
             {
-                if(TBEndDate.Text!=string.Empty&&TBOpenDate.Text != string.Empty&&TBNoVacancy.Text != string.Empty&&TBJobDesc.Text!=string.Empty)
+                if (DdlJobType.SelectedValue != "-1")
                 {
-                    DateTime startDate = Convert.ToDateTime(TBOpenDate.Text.Trim());
-                    DateTime endDate = Convert.ToDateTime(TBEndDate.Text.Trim());
-                    if (startDate < endDate)
+                    if (TBEndDate.Text != string.Empty && TBOpenDate.Text != string.Empty && TBNoVacancy.Text != string.Empty && TBJobDesc.Text != string.Empty)
                     {
-                        objBll.PostId = Convert.ToInt32(DDPost.SelectedValue);
-                        objBll.OpenDate = Convert.ToDateTime(TBOpenDate.Text);
-                        objBll.CloseDate = Convert.ToDateTime(TBEndDate.Text);
-                        objBll.Number = Convert.ToInt32(TBNoVacancy.Text);
-                        objBll.AddVacancy();
-                        MessageBox.Show("Successfully posted");
-                        Response.Redirect("DashBoard.aspx");
+                        DateTime startDate = Convert.ToDateTime(TBOpenDate.Text.Trim());
+                        DateTime endDate = Convert.ToDateTime(TBEndDate.Text.Trim());
+                        if (startDate < endDate)
+                        {
+                            objBll.PostId = Convert.ToInt32(DDPost.SelectedValue);
+                            objBll.OpenDate = Convert.ToDateTime(TBOpenDate.Text);
+                            objBll.CloseDate = Convert.ToDateTime(TBEndDate.Text);
+                            objBll.Number = Convert.ToInt32(TBNoVacancy.Text);
+                            objBll.JobType = DdlJobType.SelectedItem.Text;
+                            objBll.AddVacancy();
+                            objBll.JobDescription = TBJobDesc.Text;
+                            objBll.AddJobDetails();
+                            MessageBox.Show("Successfully posted");
+                            Response.Write("<script>");
+                            Response.Write("window.open('JobPortal/Home.aspx','_blank')");
+                            Response.Write("</script>");
+                        }
+                        else
+                        {
+                            ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('End date should be greater than Start date')", true);
+                        }
+
                     }
                     else
                     {
-                        ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('End date should be greater than Start date')", true);
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('Please fill out all the fields')", true);
                     }
-
                 }
                 else
                 {
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('Please fill out all the fields')", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('Please select the Job-Type')", true);
                 }
             }
             else
@@ -125,6 +139,11 @@ namespace FinalP
         protected void BtnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("DashBoard.aspx");
+        }
+
+        protected void DdlJobType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

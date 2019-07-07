@@ -31,13 +31,13 @@ namespace FinalP {
         protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
-        /// TextBox1 control.
+        /// TBPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TBPost;
         
         /// <summary>
         /// TBPostVac control.
@@ -58,6 +58,33 @@ namespace FinalP {
         protected global::System.Web.UI.WebControls.TextBox TBExpReq;
         
         /// <summary>
+        /// TBQuali control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBQuali;
+        
+        /// <summary>
+        /// TBSkill control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBSkill;
+        
+        /// <summary>
+        /// TbJobType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbJobType;
+        
+        /// <summary>
         /// BtnApply control.
         /// </summary>
         /// <remarks>
@@ -65,5 +92,14 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnApply;
+        
+        /// <summary>
+        /// BtnBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnBack;
     }
 }

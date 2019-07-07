@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace FinalP
 {
@@ -15,8 +16,13 @@ namespace FinalP
         }
 
         protected void BtnBack_Click(object sender, EventArgs e)
+        {          
+            Response.Redirect("DashBoard.aspx");
+        }
+
+        protected void BtnDone_Click(object sender, EventArgs e)
         {
-            Visible = false;
+            MessageBox.Show("A new Employee has been added");
             Response.Redirect("DashBoard.aspx");
         }
     }
