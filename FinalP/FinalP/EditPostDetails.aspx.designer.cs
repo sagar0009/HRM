@@ -7,144 +7,135 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinalP.JobPortal {
+namespace FinalP {
     
     
-    public partial class SignUp {
+    public partial class EditPostDetails {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// GvAvlPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.GridView GvAvlPost;
         
         /// <summary>
-        /// LblWarning control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblWarning;
+        protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
-        /// FName control.
+        /// TBPostName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText FName;
+        protected global::System.Web.UI.WebControls.TextBox TBPostName;
         
         /// <summary>
-        /// LName control.
+        /// TBSalary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText LName;
+        protected global::System.Web.UI.WebControls.TextBox TBSalary;
         
         /// <summary>
-        /// Phone control.
+        /// DdlSkill control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Phone;
+        protected global::System.Web.UI.WebControls.DropDownList DdlSkill;
         
         /// <summary>
-        /// DdlState control.
+        /// TBExpReq control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlState;
+        protected global::System.Web.UI.WebControls.TextBox TBExpReq;
         
         /// <summary>
-        /// DdlDistrict control.
+        /// TBQuali control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlDistrict;
+        protected global::System.Web.UI.WebControls.TextBox TBQuali;
         
         /// <summary>
-        /// DdlMunicipality control.
+        /// DdlStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlMunicipality;
+        protected global::System.Web.UI.WebControls.DropDownList DdlStatus;
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// BtnInsert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.Button BtnInsert;
         
         /// <summary>
-        /// ChkBox control.
+        /// BtnUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ChkBox;
+        protected global::System.Web.UI.WebControls.Button BtnUpdate;
         
         /// <summary>
-        /// Email control.
+        /// BtnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Email;
+        protected global::System.Web.UI.WebControls.Button BtnDelete;
         
         /// <summary>
-        /// Password control.
+        /// BtnReact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password;
+        protected global::System.Web.UI.WebControls.Button BtnReact;
         
         /// <summary>
-        /// CPassword control.
+        /// BtnBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword CPassword;
-        
-        /// <summary>
-        /// BtnSignUp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSignUp;
+        protected global::System.Web.UI.WebControls.Button BtnBack;
     }
 }

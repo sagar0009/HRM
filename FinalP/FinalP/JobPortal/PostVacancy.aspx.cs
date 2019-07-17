@@ -29,8 +29,8 @@ namespace FinalP
             TBPostVac.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
             TBExpReq.Text = Convert.ToString(ds.Tables[0].Rows[0][4]) + " Years";
             TBQuali.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
-            TBSkill.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
-            TbJobType.Text = Convert.ToString(ds.Tables[0].Rows[0][12]);
+            TBSkill.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
+            TbJobType.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
         }
 
         protected void BtnApply_Click(Object sender, EventArgs e)
@@ -70,6 +70,11 @@ namespace FinalP
         protected void BtnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("Home.aspx");
+        }
+
+        protected void BtnPrint_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

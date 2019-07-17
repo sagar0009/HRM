@@ -71,13 +71,7 @@
                 <asp:TableCell runat="server" HorizontalAlign="Left">
                      <asp:TextBox ID="TBNoVacancy" runat="server"></asp:TextBox>                    
                 </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow runat="server">
-                <asp:TableCell runat="server" HorizontalAlign="Right">Job Description</asp:TableCell>
-                <asp:TableCell runat="server" HorizontalAlign="Left">
-                    <asp:TextBox ID="TBJobDesc" runat="server" Columns="40" Rows="5"></asp:TextBox>                    
-                </asp:TableCell>
-            </asp:TableRow>
+            </asp:TableRow>          
             <asp:TableRow runat="server">
                 <asp:TableCell runat="server" HorizontalAlign="Right">
                     <asp:Button ID="BtnSubmit" runat="server" Text="Done" width="50%" OnClick="BtnSubmit_Click"/>

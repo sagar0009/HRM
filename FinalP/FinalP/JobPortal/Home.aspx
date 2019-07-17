@@ -10,7 +10,7 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <asp:Panel ID="Panel1" runat="server">
-                    <asp:DataList ID="DataList1" RepeatColumns="4" runat="server">
+                    <asp:DataList ID="DataList1" RepeatColumns="5" runat="server">
                         <ItemTemplate>
                             <asp:Table ID="Table1" runat="server" Style="width: 33%;">
                                 <asp:TableRow>
@@ -22,16 +22,15 @@
                                 <asp:TableRow>
                                     <asp:TableCell HorizontalAlign="Right"> Type:</asp:TableCell>
                                     <asp:TableCell HorizontalAlign="Left">
-                                        <asp:TextBox ID="TBType" Text='<%#Eval("JobType")%>' ReadOnly="true" runat="server" BorderStyle="None"></asp:TextBox>
-                                        
+                                        <asp:TextBox ID="TBType" Text='<%#Eval("JobType")%>' ReadOnly="true" runat="server" BorderStyle="None"></asp:TextBox>                                        
                                     </asp:TableCell>
                                 </asp:TableRow>
-                                <asp:TableRow>
+                              <%--  <asp:TableRow>
                                     <asp:TableCell HorizontalAlign="Right"> Time Remaining:</asp:TableCell>
                                     <asp:TableCell HorizontalAlign="Left">
                                         <asp:TextBox ID="TBTenure" ReadOnly="true" runat="server" BorderStyle="None"></asp:TextBox>
                                     </asp:TableCell>
-                                </asp:TableRow>
+                                </asp:TableRow>--%>
                                 <asp:TableRow>
                                     <asp:TableCell HorizontalAlign="Center" ColumnSpan="2">
                                         <asp:Button ID="BtnDetails" runat="server" Text="View Details" CommandArgument='<%#Eval("VacancyId")%>' OnClick="BtnDetails_Click" />

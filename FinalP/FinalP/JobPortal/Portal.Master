@@ -22,7 +22,7 @@
         .bdr {
             border: 2px solid gray;
             background-color: lightgrey;
-        }       
+        }
 
         .img-circle {
             background: black;
@@ -112,11 +112,11 @@
 
                     <li class="nav-item active"><a href="Home.aspx" class="nav-link" style="color: black">Home</a></li>
                     <li class="nav-item">
-                        <a href="About.aspx" class="nav-link" style="color: black">About</a>                        
-                        
+                        <a href="About.aspx" class="nav-link" style="color: black">About</a>
+
                     </li>
-                    <li class="nav-item"><a href="Contact.aspx" class="nav-link" style="color: black">Contact</a></li>
-                    <li class="nav-item cta mr-md-2"><a href="Login.aspx" style="color: black" class="nav-link">Job-Seeker</a></li>
+                    <%--<li class="nav-item"><a href="Contact.aspx" class="nav-link" style="color: black">Contact</a></li>--%>
+                    <%--<li class="nav-item cta mr-md-2"><a href="Login.aspx" style="color: black" class="nav-link">Job-Seeker</a></li>--%>
                 </ul>
 
             </div>
@@ -132,10 +132,15 @@
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
 
                         <span class="center1">
-                            <script>document.write(new Date().getFullYear());</script>
+                            <script>
+                                var today = new Date();
+                                var date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
+                                document.write(date);
+
+                            </script>                           
                             <br />
-                            <b>Our company name</b>
-                            <b>Address</b>
+                            <b>Our company name</b><br />
+                            <b>Address</b><br />
                             <b>Contact</b>
                         </span>
                     </div>

@@ -22,7 +22,7 @@ namespace FinalP.JobPortal
         private void GetJDetails()
         {
             DataList1.DataSource = null;
-            DataList1.DataSource = objBll.GetRecApp();
+            DataList1.DataSource = objBll.GetAllVac();
             DataList1.DataBind();                      
         }
 

@@ -81,7 +81,7 @@ namespace FinalP
                 parameter.Value = DDPost.SelectedValue;
                 DataSet ds = new DataSet();
                 ds = objBll.GetJob("spGetVacancyDetails", parameter);
-                LblSkills.Text = Convert.ToString(ds.Tables[0].Rows[0][7]);
+                LblSkills.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
                 LblExperience.Text = Convert.ToString(ds.Tables[0].Rows[0][4]) + " years";
                 LblQual.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
                 LblSalary.Text ="Rs. "+ Convert.ToString(ds.Tables[0].Rows[0][2]);
@@ -95,7 +95,7 @@ namespace FinalP
             {
                 if (DdlJobType.SelectedValue != "-1")
                 {
-                    if (TBEndDate.Text != string.Empty && TBOpenDate.Text != string.Empty && TBNoVacancy.Text != string.Empty && TBJobDesc.Text != string.Empty)
+                    if (TBEndDate.Text != string.Empty && TBOpenDate.Text != string.Empty && TBNoVacancy.Text != string.Empty )
                     {
                         DateTime startDate = Convert.ToDateTime(TBOpenDate.Text.Trim());
                         DateTime endDate = Convert.ToDateTime(TBEndDate.Text.Trim());
@@ -107,7 +107,7 @@ namespace FinalP
                             objBll.Number = Convert.ToInt32(TBNoVacancy.Text);
                             objBll.JobType = DdlJobType.SelectedItem.Text;
                             objBll.AddVacancy();
-                            objBll.JobDescription = TBJobDesc.Text;
+                            
                             objBll.AddJobDetails();
                             MessageBox.Show("Successfully posted");
                             Response.Write("<script>");

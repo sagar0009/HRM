@@ -69,6 +69,7 @@
         <div class="center1">
             <asp:Button ID="BtnApply" runat="server" ForeColor="White" BackColor="Blue" Width  ="30%" Text="Apply Now" OnClick="BtnApply_Click"/>
             <asp:Button ID="BtnBack" runat="server" ForeColor="White" BackColor="Blue" Width  ="30%" Text="Back" OnClick="BtnBack_Click"/>
+            <%--<asp:Button ID="BtnPrint" runat="server" ForeColor="White" BackColor="Blue" Width  ="30%" Text="Download Vacancy" OnClick="BtnPrint_Click"  />--%>
         </div>
     </form>
 </asp:Content>

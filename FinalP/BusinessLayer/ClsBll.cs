@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DataLayer;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataLayer;
 
 namespace BusinessLayer
 {
@@ -13,8 +9,10 @@ namespace BusinessLayer
     {
         public ClsDll objDll = new ClsDll();
         public DateTime OpenDate, CloseDate,ReceivedDate;
-        public int PostId, Number,VacancyId,ApplicantId;
-        public string JobType,JobDescription,ApplicantName,ApplicantEmail;
+        public int PostId,SkillId, Number,VacancyId,ApplicantId,ReceivalId,Salary, ExpReq;
+        public string JobType,JobDescription,ApplicantName,ApplicantEmail,Fname,Lname,SkillType;
+        public string AcaQua, PostName, StatementType;
+        public bool Status;
 
         public DataSet GetJob(string SPName, SqlParameter SPParameter)
         {
@@ -72,18 +70,98 @@ namespace BusinessLayer
             DataTable dt = ClsDll.ExecuteDTByProcedure("spInsertVacancy", pam);
         }
 
+        public void EditPost()
+        {
+            SqlParameter[] pam = new SqlParameter[7];
+            pam[0] = ClsDll.AddParameter("@PostName", PostName, SqlDbType.VarChar, 100);
+            pam[1] = ClsDll.AddParameter("@Salary", Salary, SqlDbType.Int, 100);
+            pam[2] = ClsDll.AddParameter("@SkillId", SkillId, SqlDbType.Int, 100);
+            pam[3] = ClsDll.AddParameter("@AcademicQualification", AcaQua, SqlDbType.VarChar, 100);
+            pam[4] = ClsDll.AddParameter("@ExperienceRequired", ExpReq, SqlDbType.Int, 50);
+            pam[5] = ClsDll.AddParameter("@Status", Status, SqlDbType.Bit, 100);
+            pam[6] = ClsDll.AddParameter("@StatementType", StatementType, SqlDbType.VarChar, 100);
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spEditPost", pam);
+        }       
+
         public void AddJobDetails()
         {
-            SqlParameter[] pam = new SqlParameter[2];
-            pam[0] = ClsDll.AddParameter("@PostId", PostId, SqlDbType.Int, 100);            
-            pam[1] = ClsDll.AddParameter("@JobDescription", JobDescription, SqlDbType.VarChar, 500);
+            SqlParameter[] pam = new SqlParameter[1];
+            pam[0] = ClsDll.AddParameter("@PostId", PostId, SqlDbType.Int, 100);                       
             DataTable dt = ClsDll.ExecuteDTByProcedure("spInsertJobDetails", pam);
+        }
+
+        public void InsertAppRec()
+        {
+            //to insert the gridview data from vacancyReceived into vacRec table
+            SqlParameter[] pam = new SqlParameter[6];
+            pam[0] = ClsDll.AddParameter("@ReceivalId", ReceivalId, SqlDbType.Int, 100);
+            pam[1] = ClsDll.AddParameter("@ApplicantId", ApplicantId, SqlDbType.Int, 100);
+            pam[2] = ClsDll.AddParameter("@Fname", Fname, SqlDbType.VarChar, 100);
+            pam[3] = ClsDll.AddParameter("@Lname", Lname, SqlDbType.VarChar, 100);
+            pam[4] = ClsDll.AddParameter("@PostId", PostId, SqlDbType.Int, 100);
+            pam[5] = ClsDll.AddParameter("@Status", Status, SqlDbType.Bit, 10);
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spInsertVacReceived", pam);
+        }
+
+        public void InsertShortList()
+        {
+            SqlParameter[] pam = new SqlParameter[6];
+            pam[0] = ClsDll.AddParameter("@ReceivalId", ReceivalId, SqlDbType.Int, 100);
+            pam[1] = ClsDll.AddParameter("@ApplicantId", ApplicantId, SqlDbType.Int, 100);
+            pam[2] = ClsDll.AddParameter("@Fname", Fname, SqlDbType.VarChar, 100);
+            pam[3] = ClsDll.AddParameter("@Lname", Lname, SqlDbType.VarChar, 100);
+            pam[4] = ClsDll.AddParameter("@PostId", PostId, SqlDbType.Int, 100);
+            pam[5] = ClsDll.AddParameter("@Status", Status, SqlDbType.Bit, 10);
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spInsertShortListed", pam);
+        }
+
+        public void InsertWritten()
+        {
+            SqlParameter[] pam = new SqlParameter[6];
+            pam[0] = ClsDll.AddParameter("@ReceivalId", ReceivalId, SqlDbType.Int, 100);
+            pam[1] = ClsDll.AddParameter("@ApplicantId", ApplicantId, SqlDbType.Int, 100);
+            pam[2] = ClsDll.AddParameter("@Fname", Fname, SqlDbType.VarChar, 100);
+            pam[3] = ClsDll.AddParameter("@Lname", Lname, SqlDbType.VarChar, 100);
+            pam[4] = ClsDll.AddParameter("@PostId", PostId, SqlDbType.Int, 100);
+            pam[5] = ClsDll.AddParameter("@Status", Status, SqlDbType.Bit, 10);
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spInsertWrittenTest", pam);
+        }
+
+        public void InsertInterview()
+        {
+            SqlParameter[] pam = new SqlParameter[6];
+            pam[0] = ClsDll.AddParameter("@ReceivalId", ReceivalId, SqlDbType.Int, 100);
+            pam[1] = ClsDll.AddParameter("@ApplicantId", ApplicantId, SqlDbType.Int, 100);
+            pam[2] = ClsDll.AddParameter("@Fname", Fname, SqlDbType.VarChar, 100);
+            pam[3] = ClsDll.AddParameter("@Lname", Lname, SqlDbType.VarChar, 100);
+            pam[4] = ClsDll.AddParameter("@PostId", PostId, SqlDbType.Int, 100);
+            pam[5] = ClsDll.AddParameter("@Status", Status, SqlDbType.Bit, 10);
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spInsertInterview", pam);
+        }
+
+        public void InsertStatus()
+        {
+            SqlParameter[] pam = new SqlParameter[6];
+            pam[0] = ClsDll.AddParameter("@ReceivalId", ReceivalId, SqlDbType.Int, 100);
+            pam[1] = ClsDll.AddParameter("@ApplicantId", ApplicantId, SqlDbType.Int, 100);
+            pam[2] = ClsDll.AddParameter("@Fname", Fname, SqlDbType.VarChar, 100);
+            pam[3] = ClsDll.AddParameter("@Lname", Lname, SqlDbType.VarChar, 100);
+            pam[4] = ClsDll.AddParameter("@PostId", PostId, SqlDbType.Int, 100);
+            pam[5] = ClsDll.AddParameter("@Status", Status, SqlDbType.Bit, 10);
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spInsertStatus", pam);
         }
 
         public DataTable GetJobDetails()
         {
             SqlParameter[] parameters = new SqlParameter[0];
             DataTable dt = ClsDll.ExecuteDTByProcedure("spGetAllVacancyDetails", parameters);
+            return dt;
+        }
+
+        public DataTable GetAllVac()
+        {
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetAllVac", parameters);
             return dt;
         }
 
@@ -94,6 +172,52 @@ namespace BusinessLayer
             return dt;
         }
 
+        public DataTable GetRecAppDet()
+        {
+            //populate the vacancyReceived.aspx
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetAllAppRecDet", parameters);
+            return dt;
+        }
+
+        public DataTable GetShortListed()
+        {
+            //populate the ShortList.aspx
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetShortListedApp", parameters);
+            return dt;
+        }
+
+        public DataTable GetAvlPost()
+        {
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetAvlPost", parameters);
+            return dt;
+        }
+
+        public DataTable GetWritten()
+        {
+            //populate writtentest.aspx
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetWrittenTest", parameters);
+            return dt;
+        }
+
+        public DataTable GetInterviewed()
+        {
+            //populate interview
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetInterviewed", parameters);
+            return dt;
+        }
+
+        public DataTable GetStatus()
+        {
+            //populate status
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetStatus", parameters);
+            return dt;
+        }
         public void VacRecDetails()
         {
             SqlParameter[] pam = new SqlParameter[4];

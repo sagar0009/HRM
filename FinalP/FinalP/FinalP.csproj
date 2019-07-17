@@ -46,6 +46,9 @@
     <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <HintPath>..\packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>V:\iTextSharp\itextsharp-all-5.5.10\itextsharp-dll-core\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -70,6 +73,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EditPostDetails.aspx" />
     <Content Include="Images\typ.jpg" />
     <Content Include="JobPortal\About.aspx" />
     <Content Include="JobPortal\Confirmation.aspx" />
@@ -95,6 +99,13 @@
     <Content Include="WrittenTest.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditPostDetails.aspx.cs">
+      <DependentUpon>EditPostDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPostDetails.aspx.designer.cs">
+      <DependentUpon>EditPostDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="JobPortal\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

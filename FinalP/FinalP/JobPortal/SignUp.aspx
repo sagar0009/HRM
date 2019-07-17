@@ -33,9 +33,7 @@
                                     <div class="form-group">
                                         <input type="text" runat="server" name="Lname" class="form-control form-control-lg" id="LName" placeholder="Last Name" />
                                     </div>
-                                    <div class="form-group">
-                                        <input type="email" runat="server" name="Email" class="form-control form-control-lg" id="Email" placeholder="Email" />
-                                    </div>
+                                                                       
                                    
                                     <div class="form-group">
 
@@ -57,12 +55,7 @@
                                             DataValueField="NagarpalikaId" OnSelectedIndexChanged="DdlMunicipality_SelectedIndexChanged" runat="server">
                                         </asp:DropDownList>
                                     </div>
-                                     <div class="form-group">
-                                        <input type="password" runat="server" name="Password" class="form-control form-control-lg" id="Password" placeholder="Password" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" runat="server" name="CPassword" class="form-control form-control-lg" id="CPassword" placeholder="Confirm Password" />
-                                    </div>
+                                    
                                     <div class="form-group">
                                         Gender
                                 <asp:RadioButtonList ID="RadioButtonList1" runat="server">
@@ -75,6 +68,15 @@
                                             <asp:CheckBox ID="ChkBox" OnCheckedChanged="ChkBox_CheckedChanged" AutoPostBack="true" runat="server" />
                                             I agree to all Terms & Conditions                                                            
                                         </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" runat="server" name="Email" class="form-control form-control-lg" id="Email" placeholder="Email" />
+                                    </div> 
+                                     <div class="form-group">
+                                        <input type="password" runat="server" name="Password" class="form-control form-control-lg" id="Password" placeholder="Password" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" runat="server" name="CPassword" class="form-control form-control-lg" id="CPassword" placeholder="Confirm Password" />
                                     </div>
                                     <div class="mt-3">
                                         <asp:Button CssClass="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" ID="BtnSignUp" runat="server" Text="SignUp" OnClick="BtnSignUp_Click" />

@@ -14,14 +14,33 @@
             <asp:Button ID="BtnSearch" width="20%" runat="server" Text="Search" />
         </div>
         <div class="center">
-            <asp:GridView ID="GVAppRec" runat="server" CssClass="center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False">
-                <Columns>
-                    <asp:BoundField HeaderText="ReceivalID" DataField="ReceivalId" />
-                    <asp:BoundField HeaderText="ApplicantID" DataField="ApplicantId" />
-                    <asp:BoundField HeaderText="FirstName" DataField="Fname"/>
-                    <asp:BoundField HeaderText="LastName" DataField="Lname"/>                    
-                    <asp:BoundField HeaderText="PostID" DataField="PostId"/>
-                   
+            <asp:GridView ID="GVAppRec" runat="server" AllowPaging="false" CssClass="center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False">
+                <Columns>                   
+                    <asp:TemplateField HeaderText="ReceivalID">                        
+                        <ItemTemplate >
+                            <asp:Label ID="LblRecId" runat="server" Text='<% # Eval("ReceivalId") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="ApplicantID">                        
+                        <ItemTemplate >
+                            <asp:Label ID="LblApId" runat="server" Text='<% # Eval("ApplicantId") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="FirstName">                        
+                        <ItemTemplate >
+                            <asp:Label ID="LblFname" runat="server" Text='<% # Eval("Fname") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="LastName">                        
+                        <ItemTemplate >
+                            <asp:Label ID="LblLname" runat="server" Text='<% # Eval("Lname") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="PostID">                        
+                        <ItemTemplate >
+                            <asp:Label ID="LblPsId" runat="server" Text='<% # Eval("PostId") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>                   
                     <asp:TemplateField HeaderText="Status">                        
                         <ItemTemplate >
                             <asp:CheckBox ID="CkSts" OnCheckedChanged="CheckBox1_CheckedChanged" runat="server" />
@@ -33,6 +52,8 @@
         <div align="center" >
             <asp:Button ID="BtnDone" width="30%"  runat="server" Text="Done" CssClass="center " OnClick="BtnDone_Click" />
             <asp:Button ID="BtnBack" width="30%"  runat="server" Text="Back" CssClass="center " OnClick="BtnBack_Click" />
+            <asp:Button ID="BtnExport" width="30%"  runat="server" Text="Export to pdf" CssClass="center " OnClick="BtnExport_Click" />
+
         </div>
     </form>
 </asp:Content>
