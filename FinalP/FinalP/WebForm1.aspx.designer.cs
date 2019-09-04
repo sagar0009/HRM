@@ -10,7 +10,7 @@
 namespace FinalP {
     
     
-    public partial class Interview {
+    public partial class WebForm1 {
         
         /// <summary>
         /// form1 control.
@@ -22,13 +22,13 @@ namespace FinalP {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// GVInterview control.
+        /// GVShortList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVInterview;
+        protected global::System.Web.UI.WebControls.GridView GVShortList;
         
         /// <summary>
         /// BtnDone control.

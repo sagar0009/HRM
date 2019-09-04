@@ -29,23 +29,42 @@
                             <asp:Label ID="LblLname" runat="server" Text='<% # Eval("Lname") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="PostID">                        
+                    <asp:TemplateField HeaderText="Post">                        
                         <ItemTemplate >
-                            <asp:Label ID="LblPsId" runat="server" Text='<% # Eval("PostId") %>'></asp:Label>
+                            <asp:Label ID="LblPsId" runat="server" Text='<% # Eval("PostName") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>                   
                     <asp:TemplateField HeaderText="Status">                        
                         <ItemTemplate >
-                            <asp:CheckBox ID="CkSts" OnCheckedChanged="CkSts_CheckedChanged" runat="server" />
+                             <asp:CheckBox ID="CkSts" OnCheckedChanged="CkSts_CheckedChanged" Checked='<%# Eval("IsWrTestPass") == DBNull.Value ? false : Eval("IsWrTestPass") %>'  runat="server" />                            
                         </ItemTemplate>
                     </asp:TemplateField>                                        
                 </Columns>               
             </asp:GridView>  
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+            <script type="text/javascript">
+                $("body").on("click", "#btnExport", function () {
+                    html2canvas($('[id*=GVWTest]')[0], {
+                        onrendered: function (canvas) {
+                            var data = canvas.toDataURL();
+                            var docDefinition = {
+                                content: [{
+                                    image: data,
+                                    width: 400
+                                }]
+                            };
+                            pdfMake.createPdf(docDefinition).download("WrittenTestCalled.pdf");
+                        }
+                    });
+                });
+            </script>
         </div>
         <div align="center" >
-            <asp:Button ID="BtnDone" width="30%"  runat="server" Text="Done" OnClick="BtnDone_Click" CssClass="center"/>
-            <asp:Button ID="BtnBack" width="30%"  runat="server" Text="Back" OnClick="BtnBack_Click1" CssClass="center "/>
-            <asp:Button ID="BtnExport" Width="30%" runat="server" Text="Export to pdf" CssClass="center" OnClick="BtnExport_Click" />
+            <asp:Button ID="BtnDone" width="20%"  runat="server" Text="Done" OnClick="BtnDone_Click" CssClass="center"/>
+            <asp:Button ID="BtnBack" width="20%"  runat="server" Text="Back" OnClick="BtnBack_Click1" CssClass="center "/>
+            <input type="button" style="width: 20%" id="btnExport" class="center" value="Export To Pdf" />
         </div>
     </form>
 </asp:Content>

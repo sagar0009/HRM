@@ -46,7 +46,8 @@
     <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <HintPath>..\packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp">
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>V:\iTextSharp\itextsharp-all-5.5.10\itextsharp-dll-core\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -91,11 +92,15 @@
     <Content Include="JobPortal\User.aspx" />
     <Content Include="JobPortal\PostVacancy.aspx" />
     <Content Include="register.html" />
+    <Content Include="RegistrationTemplate.html" />
     <Content Include="ShortList.aspx" />
     <Content Include="Status.aspx" />
     <Content Include="VacancyDetails.aspx" />
     <Content Include="VacancyReceived.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebForm1.aspx" />
     <Content Include="WrittenTest.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +111,7 @@
     <Compile Include="EditPostDetails.aspx.designer.cs">
       <DependentUpon>EditPostDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EmailEngine.cs" />
     <Compile Include="JobPortal\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,6 +231,13 @@
     </Compile>
     <Compile Include="VacancyReceived.aspx.designer.cs">
       <DependentUpon>VacancyReceived.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="WrittenTest.aspx.cs">
       <DependentUpon>WrittenTest.aspx</DependentUpon>

@@ -40,21 +40,18 @@ namespace FinalP
         {
             foreach (GridViewRow gv in GVStatus.Rows)
             {
-                objBll.ReceivalId = Convert.ToInt32((gv.FindControl("LblRecId") as System.Web.UI.WebControls.Label).Text);
-                objBll.ApplicantId = Convert.ToInt32((gv.FindControl("LblApId") as System.Web.UI.WebControls.Label).Text);
-                objBll.Fname = (gv.FindControl("LblFname") as System.Web.UI.WebControls.Label).Text;
-                objBll.Lname = (gv.FindControl("LblLname") as System.Web.UI.WebControls.Label).Text;
-                objBll.PostId = Convert.ToInt32((gv.FindControl("LblPsId") as System.Web.UI.WebControls.Label).Text);
+                objBll.ReceivalId = Convert.ToInt32((gv.FindControl("LblRecId") as System.Web.UI.WebControls.Label).Text);               
                 System.Web.UI.WebControls.CheckBox cb = gv.FindControl("CkSts") as System.Web.UI.WebControls.CheckBox;
                 if (cb.Checked)
                 {
-                    objBll.Status = true;
+                    objBll.IsEmployee = true;
                 }
                 else
                 {
-                    objBll.Status = false;
+                    objBll.IsEmployee = false;
                 }
                 objBll.InsertStatus();
+                //function to insert into employee table
             }
             MessageBox.Show("A new Employee has been added");
             Response.Redirect("DashBoard.aspx");

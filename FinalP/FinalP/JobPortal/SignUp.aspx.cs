@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Web.UI.WebControls;
 using BusinessLayer;
 using System.Windows.Forms;
+using System.IO;
 
 namespace FinalP.JobPortal
 {
@@ -57,6 +58,7 @@ namespace FinalP.JobPortal
                         string query = "insert into UserSignup(Fname,Lname,Email,Address,Phone,Gender,Password) values('" + Request["Fname"] + "','" + Request["Lname"] + "', '" + Request.Form["Email"] + "','" + address + "','" + Request["Phone"] + "','" + RadioButtonList1.SelectedValue + "','" + Request["Password"] + "')";
                         objBll.AddUser(query);
                         MessageBox.Show("New Registration Successfully Saved - Thanks For Registration" + "\nWelcome " + Request["Fname"]);
+                        SendRegistrationAlert(Request["Fname"], Request.Form["Email"]);
                         Response.Redirect("Login.aspx?id=regidtor");
                     }
                     else
@@ -75,7 +77,25 @@ namespace FinalP.JobPortal
                 MessageBox.Show("please fill out the form properly\nAll field are compulsory");
             }
 
-        }       
+        }
+
+        private void SendRegistrationAlert(string UserName, string Email)
+        {
+            string body = PopulateMailBody(UserName, Email);
+            EmailEngine.SendMail(Email, "Welcome to ABC HRMS.", body);
+        }
+
+        private string PopulateMailBody(string UserName, string Email)
+        {
+            string body = String.Empty;
+            using (StreamReader reader = new StreamReader(Server.MapPath("~/RegistrationTemplate.html")))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("[userName]", UserName);
+            body = body.Replace("[email]", Email);
+            return body;
+        }
 
         public bool Checkusername(String username)
         {

@@ -1,21 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="VacancyReceived.aspx.cs" Inherits="FinalP.VacancyReceived" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="FinalP.WebForm1" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
     <form id="form1" runat="server">
         <div class="header">
-            <h1>Received Applications</h1>
+            <h1>Application ShortList</h1>
         </div>
         <div class="center">
-            <asp:TextBox ID="TBSearch" Width="40%" runat="server"></asp:TextBox>
-            &nbsp;&nbsp;
-            <asp:DropDownList ID="DDSearch" Width="25%" runat="server"></asp:DropDownList>
-            &nbsp;&nbsp;
-            <asp:Button ID="BtnSearch" Width="20%" runat="server" Text="Search" />
-        </div>
-        <div class="center">
-            <asp:GridView ID="GVAppRec" runat="server" AllowPaging="false" CssClass="center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False">
+            <asp:GridView ID="GVShortList" runat="server" CssClass="center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False">
                 <Columns>
                     <asp:TemplateField HeaderText="ReceivalID">
                         <ItemTemplate>
@@ -37,14 +34,14 @@
                             <asp:Label ID="LblLname" runat="server" Text='<% # Eval("Lname") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="PostName">
+                    <asp:TemplateField HeaderText="PostID">
                         <ItemTemplate>
-                            <asp:Label ID="LblPsId" runat="server" Text='<% # Eval("PostName") %>'></asp:Label>
+                            <asp:Label ID="LblPsId" runat="server" Text='<% # Eval("PostId") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Status">
                         <ItemTemplate>
-                            <asp:CheckBox ID="CkSts" OnCheckedChanged="CkSts_CheckedChanged" Checked='<%# Eval("IsShortListed") == DBNull.Value ? false : Eval("IsShortListed") %>' runat="server" />
+                            <asp:CheckBox ID="CkSts" OnCheckedChanged="CkSts_CheckedChanged1" Checked='<%# Eval("Status") == DBNull.Value ? false : Eval("Status") %>' runat="server" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -54,7 +51,7 @@
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
             <script type="text/javascript">
                 $("body").on("click", "#btnExport", function () {
-                    html2canvas($('[id*=GVAppRec]')[0], {
+                    html2canvas($('[id*=GVShortList]')[0], {
                         onrendered: function (canvas) {
                             var data = canvas.toDataURL();
                             var docDefinition = {
@@ -63,17 +60,17 @@
                                     width: 500
                                 }]
                             };
-                            pdfMake.createPdf(docDefinition).download("ReceivedApplications.pdf");
+                            pdfMake.createPdf(docDefinition).download("ShortList.pdf");
                         }
                     });
                 });
             </script>
         </div>
         <div align="center">
-            <asp:Button ID="BtnDone" Width="20%" runat="server" Text="Done" CssClass="center " OnClick="BtnDone_Click" />
-            <asp:Button ID="BtnBack" Width="20%" runat="server" Text="Back" CssClass="center " OnClick="BtnBack_Click" />
-            <input type="button" style="width: 20%" id="btnExport" class="center" value="Export To Pdf" />
-
+            <asp:Button ID="BtnDone" Width="30%" runat="server" Text="Done" CssClass="center" OnClick="BtnDone_Click" />
+            <asp:Button ID="BtnBack" Width="30%" runat="server" Text="Back" CssClass="center " OnClick="BtnBack_Click1" />
+            <input type="button" id="btnExport" value="Export To Pdf" />
         </div>
     </form>
-</asp:Content>
+</body>
+</html>
