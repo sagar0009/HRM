@@ -100,5 +100,30 @@ namespace FinalP
             Response.Flush();
             Response.End();
         }
+
+        protected void BtnSearch_Click(object sender, EventArgs e)
+        {
+            if (TBSearch.Text != string.Empty)
+            {
+                if (DDSearch.SelectedValue != "-1")
+                {
+
+
+                    objBll.Key = TBSearch.Text;
+                    objBll.Index = DDSearch.SelectedItem.Text;
+                    GVStatus.DataSource = null;
+                    GVStatus.DataSource = objBll.SearchResult();
+                    GVStatus.DataBind();
+                }
+                else
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('Please select filter value')", true);
+                }
+            }
+            else
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('Searching parameter is empty')", true);
+            }
+        }
     }
 }

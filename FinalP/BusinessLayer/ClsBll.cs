@@ -10,7 +10,7 @@ namespace BusinessLayer
         public ClsDll objDll = new ClsDll();
         public DateTime OpenDate, CloseDate,ReceivedDate;
         public int PostId,SkillId, Number,VacancyId,ApplicantId,ReceivalId,Salary, ExpReq;
-        public string JobType,JobDescription,ApplicantName,ApplicantEmail,Fname,Lname,SkillType;
+        public string JobType,JobDescription,ApplicantName,ApplicantEmail,Fname,Lname,SkillType,Key,Index;
         public string AcaQua, PostName, StatementType;
         public bool Status, IsShortListed,IsWrTestCall, IsWrTestPass, IsInterviewPss,IsEmployee;
 
@@ -24,7 +24,7 @@ namespace BusinessLayer
         {                        
             objDll.InsertUserDetails(query);
         }
-
+       
         public bool CheckEmail(string query, bool us)
         {
             return objDll.CheckUserEmail(query, us);
@@ -33,6 +33,16 @@ namespace BusinessLayer
         public string ValidatePw(string query,string pw)
         {
             return objDll.ValidatePassword(query, pw);
+        }
+
+        //search the applications
+        public DataTable SearchResult()
+        {
+            SqlParameter[] pam = new SqlParameter[2];
+            pam[0] = ClsDll.AddParameter("@Key", Key, SqlDbType.VarChar, 100);
+            pam[1] = ClsDll.AddParameter("@Index", Index, SqlDbType.VarChar, 100);
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetSearchData", pam);
+            return dt;
         }
 
         public void JobByVId()
@@ -142,7 +152,7 @@ namespace BusinessLayer
             DataTable dt = ClsDll.ExecuteDTByProcedure("spUpdateVacSts", pam);
         }
 
-        //Recruitment model inser event end
+        //Recruitment model insert event end
 
         //Recruitment model load event start
 

@@ -7,8 +7,20 @@
         <div class="header">
             <h1>Application ShortList</h1>
         </div>
+         <div class="center">
+            <asp:TextBox ID="TBSearch" Width="40%" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;
+            <asp:DropDownList ID="DDSearch" Width="25%" runat="server">
+                <asp:ListItem Selected="True" Value="-1">Select</asp:ListItem>
+                <asp:ListItem Value="1">Fname</asp:ListItem>
+                <asp:ListItem Value="2">Post</asp:ListItem>
+                <%--<asp:ListItem Value="3">DateOfVacancy</asp:ListItem>--%>
+            </asp:DropDownList>
+            &nbsp;&nbsp;
+            <asp:Button ID="BtnSearch" Width="20%" OnClick="BtnSearch_Click" runat="server" Text="Search" />
+        </div>
         <div class="center">
-            <asp:GridView ID="GVShortList" runat="server" CssClass="center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False">
+            <asp:GridView ID="GVShortList" runat="server" EmptyDataText="No Records Available" CssClass="center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False">
                 <Columns>
                     <asp:TemplateField HeaderText="ReceivalID">
                         <ItemTemplate>
