@@ -110,9 +110,11 @@ namespace FinalP
                             
                             objBll.AddJobDetails();
                             MessageBox.Show("Successfully posted");
+                            Response.Redirect("VacancyDetails.aspx");
                             Response.Write("<script>");
                             Response.Write("window.open('JobPortal/Home.aspx','_blank')");
                             Response.Write("</script>");
+                            
                         }
                         else
                         {

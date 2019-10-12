@@ -15,7 +15,21 @@ namespace FinalP.JobPortal
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["UserEmail"]!=null)
+            {
+                MessageBox.Show("Already Logged in");
+                MessageBoxButtons mbtn = MessageBoxButtons.YesNo;
+                DialogResult res = MessageBox.Show("Do you want to log out?", "Logout request", mbtn);
+                if (res == DialogResult.Yes)
+                {
+                    Session["UserEmail"] = null;
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Home.aspx");
+                }
+            }
         }
 
         protected void BtnLogin_Click(object sender, EventArgs e)
@@ -33,8 +47,15 @@ namespace FinalP.JobPortal
                     {
                         Session["UserEmail"] = Request["Email"];
                         objBll.ApplicantEmail = Session["UserEmail"].ToString();
-                        Session["UserId"]=Convert.ToInt32(objBll.GetUserByEmail());                                              
-                        Response.Redirect("PostVacancy.aspx");
+                        Session["UserId"]=Convert.ToInt32(objBll.GetUserByEmail()); 
+                        if(Session["VacancyNumber"]!=null)
+                        {
+                            Response.Redirect("PostVacancy.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("Home.aspx");
+                        }
                         //Response.Write("<script>");
                         //Response.Write("window.open('PostVacamcy.aspx','_blank')");
                         //Response.Write("</script>");

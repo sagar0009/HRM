@@ -161,7 +161,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="PayRoll/Main.aspx">
                             <i class="mdi mdi-marker menu-icon"></i>
                             <span class="menu-title">Payroll</span>
                         </a>

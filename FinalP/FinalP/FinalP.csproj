@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EditPostDetails.aspx" />
+    <Content Include="Images\Logo.png" />
     <Content Include="Images\typ.jpg" />
     <Content Include="JobPortal\About.aspx" />
     <Content Include="JobPortal\Confirmation.aspx" />
@@ -91,6 +92,15 @@
     <Content Include="JobPortal\SignUp.aspx" />
     <Content Include="JobPortal\User.aspx" />
     <Content Include="JobPortal\PostVacancy.aspx" />
+    <Content Include="PayRoll\AddClass.aspx" />
+    <Content Include="PayRoll\EmpReport.aspx" />
+    <Content Include="PayRoll\GenerateSalary.aspx" />
+    <Content Include="PayRoll\Main.aspx" />
+    <Content Include="PayRoll\ReportDetails.aspx" />
+    <Content Include="PayRoll\SalaryReport.aspx" />
+    <Content Include="PayRoll\StyleSheet1.css" />
+    <Content Include="PayRoll\ViewSalary.aspx" />
+    <Content Include="PayRoll\YearReport.aspx" />
     <Content Include="register.html" />
     <Content Include="RegistrationTemplate.html" />
     <Content Include="ShortList.aspx" />
@@ -203,6 +213,69 @@
     <Compile Include="JobPortal\PostVacancy.aspx.designer.cs">
       <DependentUpon>PostVacancy.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PayRoll\AddClass.aspx.cs">
+      <DependentUpon>AddClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayRoll\AddClass.aspx.designer.cs">
+      <DependentUpon>AddClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\EmpReport.aspx.cs">
+      <DependentUpon>EmpReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayRoll\EmpReport.aspx.designer.cs">
+      <DependentUpon>EmpReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\GenerateSalary.aspx.cs">
+      <DependentUpon>GenerateSalary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayRoll\GenerateSalary.aspx.designer.cs">
+      <DependentUpon>GenerateSalary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayRoll\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll.Master.cs">
+      <DependentUpon>PayRoll.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll.Master.designer.cs">
+      <DependentUpon>PayRoll.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\ReportDetails.aspx.cs">
+      <DependentUpon>ReportDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayRoll\ReportDetails.aspx.designer.cs">
+      <DependentUpon>ReportDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\SalaryReport.aspx.cs">
+      <DependentUpon>SalaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayRoll\SalaryReport.aspx.designer.cs">
+      <DependentUpon>SalaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\ViewSalary.aspx.cs">
+      <DependentUpon>ViewSalary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayRoll\ViewSalary.aspx.designer.cs">
+      <DependentUpon>ViewSalary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\YearReport.aspx.cs">
+      <DependentUpon>YearReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayRoll\YearReport.aspx.designer.cs">
+      <DependentUpon>YearReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShortList.aspx.cs">
       <DependentUpon>ShortList.aspx</DependentUpon>
@@ -251,6 +324,7 @@
     <Content Include="Master.Master" />
     <Content Include="JobPortal\Portal.Master" />
     <None Include="packages.config" />
+    <Content Include="PayRoll\PayRoll.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

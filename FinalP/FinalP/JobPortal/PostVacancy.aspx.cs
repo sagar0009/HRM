@@ -23,8 +23,7 @@ namespace FinalP
                 ParameterName = "@VacancyId",
                 Value = Convert.ToInt32(Session["VacancyNumber"])
             };
-            DataSet ds = new DataSet();
-            ds = objBll.GetJob("spGetJobByVacancy", parameter);
+            DataSet ds = objBll.GetJob("spGetJobByVacancy", parameter);
             TBPost.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
             TBPostVac.Text = Convert.ToString(ds.Tables[0].Rows[0][14]);
             TBExpReq.Text = Convert.ToString(ds.Tables[0].Rows[0][4]) + " Years";
@@ -51,9 +50,7 @@ namespace FinalP
                         ParameterName = "@VacancyId",
                         Value = Convert.ToInt32(Session["VacancyNumber"])
                     };
-                    DataSet ds = new DataSet();
-
-                    ds = objBll.GetJob("spGetJobByVacancy", parameter);
+                    DataSet ds = objBll.GetJob("spGetJobByVacancy", parameter);
                     objBll.PostId = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
                     objBll.ApplicantId = Convert.ToInt32( Session["UserId"]);
                     objBll.VacancyId = Convert.ToInt32(ds.Tables[0].Rows[0][9]);            

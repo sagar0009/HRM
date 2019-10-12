@@ -11,7 +11,7 @@ namespace FinalP.JobPortal
 {
     public partial class Home : System.Web.UI.Page
     {
-        ClsBll objBll = new ClsBll();
+        public ClsBll objBll = new ClsBll();
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -32,8 +32,7 @@ namespace FinalP.JobPortal
         {
             int vId = Convert.ToInt32(((Button)sender).CommandArgument);
             Session["VacancyNumber"] = vId;
-            DataTable dt = new DataTable();        
-            dt=objBll.GetAllVac(vId);
+            DataTable dt = objBll.GetAllVac(vId);           
             Session["sts"] = Convert.ToString(dt.Rows[0][11]);        
             Response.Redirect("PostVacancy.aspx");
         }
