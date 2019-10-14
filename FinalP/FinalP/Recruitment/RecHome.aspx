@@ -1,13 +1,19 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="DashBoard.aspx.cs" Inherits="FinalP.DashBoard1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="RecMaster.Master" AutoEventWireup="true" CodeBehind="RecHome.aspx.cs" Inherits="FinalP.DashBoard" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style1 {
+            width: 100%;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <table class="tbl">
+    <table class="tbl">
         <tr>
-            <td class="tblhead">Welcome to ABC HRM system</td>
+            <td class="tblhead">Welcome to ABC Recruitment system</td>
         </tr>
         <tr>
-            <td>&nbsp;ADD Graphs Bars etc here</td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
             <td>
@@ -43,46 +49,6 @@
                         <tr>
                             <td class="acc1">
                                 <asp:Label ID="LblDeactEmp" runat="server" Text="0"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
-           <tr>
-            <td>
-                <div id="acc">
-                    <table class="style1">
-                        <tr>
-                            <td class="acc">Total Salary</td>
-                        </tr>
-                        <tr>
-                            <td class="acc1">
-                                <asp:Label ID="LblTotSal" runat="server" Text="0"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div id="acc">
-                    <table class="style1">
-                        <tr>
-                            <td class="acc">Total Deductions</td>
-                        </tr>
-                        <tr>
-                            <td class="acc1">
-                                <asp:Label ID="LblTotDed" runat="server" Text="0"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div id="acc">
-                    <table class="style1">
-                        <tr>
-                            <td class="acc">Net Salary</td>
-                        </tr>
-                        <tr>
-                            <td class="acc1">
-                                <asp:Label ID="LblNetSal" runat="server" Text="0"></asp:Label>
                             </td>
                         </tr>
                     </table>
@@ -129,48 +95,6 @@
                 </div>
             </td>
         </tr>
-         <tr>
-            <td>
-                <div id="acc">
-                    <table class="style1">
-                        <tr>
-                            <td class="acc">New Leave</td>
-                        </tr>
-                        <tr>
-                            <td class="acc1">
-                                <asp:Label ID="LblNewLeave" runat="server" Text="0"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div id="acc">
-                    <table class="style1">
-                        <tr>
-                            <td class="acc">Approved</td>
-                        </tr>
-                        <tr>
-                            <td class="acc1">
-                                <asp:Label ID="LblAppLeave" runat="server" Text="0"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div id="acc">
-                    <table class="style1">
-                        <tr>
-                            <td class="acc">Rejected</td>
-                        </tr>
-                        <tr>
-                            <td class="acc1">
-                                <asp:Label ID="LblRejLeave" runat="server" Text="0"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
-
-
         <tr>
             <td>&nbsp;</td>
         </tr>

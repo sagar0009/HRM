@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace FinalP
 {
-    public partial class DashBoard1 : System.Web.UI.Page
+    public partial class DashBoard : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

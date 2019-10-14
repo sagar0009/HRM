@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace FinalP
+namespace FinalP.Recruitment
 {
-    public partial class DashBoard1 : System.Web.UI.Page
+    public partial class RecMaster : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

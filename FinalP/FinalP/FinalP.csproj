@@ -74,20 +74,27 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Attendance\Attendance.aspx" />
+    <Content Include="Attendance\AttendanceReport.aspx" />
+    <Content Include="Attendance\AttHome.aspx" />
+    <Content Include="Attendance\Complain.aspx" />
+    <Content Include="Attendance\Leave.aspx" />
+    <Content Include="Attendance\StyleSheet1.css" />
+    <Content Include="DashBoard.aspx" />
     <Content Include="EditPostDetails.aspx" />
-    <Content Include="Images\Logo.png" />
+    <Content Include="Images\Company.png" />
     <Content Include="Images\typ.jpg" />
     <Content Include="JobPortal\About.aspx" />
     <Content Include="JobPortal\Confirmation.aspx" />
-    <Content Include="Contract.aspx" />
+    <Content Include="Recruitment\Contract.aspx" />
     <Content Include="css1\css\QMXWPE.css" />
     <Content Include="css1\scss\QMXWPE_2.css" />
-    <Content Include="DashBoard.aspx" />
+    <Content Include="Recruitment\RecHome.aspx" />
     <Content Include="Images\bg.jpg" />
     <Content Include="Images\Cal.png" />
-    <Content Include="Interview.aspx" />
+    <Content Include="Recruitment\Interview.aspx" />
     <Content Include="JobPortal\Contact.aspx" />
-    <Content Include="JobPortal\Home.aspx" />
+    <Content Include="JobPortal\JPHome.aspx" />
     <Content Include="JobPortal\Login.aspx" />
     <Content Include="JobPortal\SignUp.aspx" />
     <Content Include="JobPortal\User.aspx" />
@@ -95,25 +102,75 @@
     <Content Include="PayRoll\AddClass.aspx" />
     <Content Include="PayRoll\EmpReport.aspx" />
     <Content Include="PayRoll\GenerateSalary.aspx" />
-    <Content Include="PayRoll\Main.aspx" />
+    <Content Include="PayRoll\PRHome.aspx" />
     <Content Include="PayRoll\ReportDetails.aspx" />
     <Content Include="PayRoll\SalaryReport.aspx" />
     <Content Include="PayRoll\StyleSheet1.css" />
     <Content Include="PayRoll\ViewSalary.aspx" />
     <Content Include="PayRoll\YearReport.aspx" />
+    <Content Include="Recruitment\StyleSheet1.css" />
     <Content Include="register.html" />
     <Content Include="RegistrationTemplate.html" />
-    <Content Include="ShortList.aspx" />
-    <Content Include="Status.aspx" />
-    <Content Include="VacancyDetails.aspx" />
-    <Content Include="VacancyReceived.aspx" />
+    <Content Include="Recruitment\ShortList.aspx" />
+    <Content Include="Recruitment\Status.aspx" />
+    <Content Include="Recruitment\VacancyDetails.aspx" />
+    <Content Include="Recruitment\VacancyReceived.aspx" />
+    <Content Include="StyleSheet1.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="WebForm1.aspx" />
-    <Content Include="WrittenTest.aspx" />
+    <Content Include="Recruitment\WrittenTest.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attendance\Attendance.aspx.cs">
+      <DependentUpon>Attendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attendance\Attendance.aspx.designer.cs">
+      <DependentUpon>Attendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance\Attendance.Master.cs">
+      <DependentUpon>Attendance.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attendance\Attendance.Master.designer.cs">
+      <DependentUpon>Attendance.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance\AttendanceReport.aspx.cs">
+      <DependentUpon>AttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attendance\AttendanceReport.aspx.designer.cs">
+      <DependentUpon>AttendanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance\AttHome.aspx.cs">
+      <DependentUpon>AttHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attendance\AttHome.aspx.designer.cs">
+      <DependentUpon>AttHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance\Complain.aspx.cs">
+      <DependentUpon>Complain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attendance\Complain.aspx.designer.cs">
+      <DependentUpon>Complain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance\Leave.aspx.cs">
+      <DependentUpon>Leave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attendance\Leave.aspx.designer.cs">
+      <DependentUpon>Leave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard.aspx.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashBoard.aspx.designer.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditPostDetails.aspx.cs">
       <DependentUpon>EditPostDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,25 +193,32 @@
     <Compile Include="JobPortal\Confirmation.aspx.designer.cs">
       <DependentUpon>Confirmation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Contract.aspx.cs">
+    <Compile Include="Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\Contract.aspx.cs">
       <DependentUpon>Contract.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contract.aspx.designer.cs">
+    <Compile Include="Recruitment\Contract.aspx.designer.cs">
       <DependentUpon>Contract.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DashBoard.aspx.cs">
-      <DependentUpon>DashBoard.aspx</DependentUpon>
+    <Compile Include="Recruitment\RecHome.aspx.cs">
+      <DependentUpon>RecHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DashBoard.aspx.designer.cs">
-      <DependentUpon>DashBoard.aspx</DependentUpon>
+    <Compile Include="Recruitment\RecHome.aspx.designer.cs">
+      <DependentUpon>RecHome.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Interview.aspx.cs">
+    <Compile Include="Recruitment\Interview.aspx.cs">
       <DependentUpon>Interview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interview.aspx.designer.cs">
+    <Compile Include="Recruitment\Interview.aspx.designer.cs">
       <DependentUpon>Interview.aspx</DependentUpon>
     </Compile>
     <Compile Include="JobPortal\Contact.aspx.cs">
@@ -164,12 +228,12 @@
     <Compile Include="JobPortal\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="JobPortal\Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="JobPortal\JPHome.aspx.cs">
+      <DependentUpon>JPHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="JobPortal\Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="JobPortal\JPHome.aspx.designer.cs">
+      <DependentUpon>JPHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="JobPortal\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -199,13 +263,6 @@
     <Compile Include="JobPortal\User.aspx.designer.cs">
       <DependentUpon>User.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Master.Master.cs">
-      <DependentUpon>Master.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Master.Master.designer.cs">
-      <DependentUpon>Master.Master</DependentUpon>
-    </Compile>
     <Compile Include="JobPortal\PostVacancy.aspx.cs">
       <DependentUpon>PostVacancy.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -234,12 +291,12 @@
     <Compile Include="PayRoll\GenerateSalary.aspx.designer.cs">
       <DependentUpon>GenerateSalary.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PayRoll\Main.aspx.cs">
-      <DependentUpon>Main.aspx</DependentUpon>
+    <Compile Include="PayRoll\PRHome.aspx.cs">
+      <DependentUpon>PRHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PayRoll\Main.aspx.designer.cs">
-      <DependentUpon>Main.aspx</DependentUpon>
+    <Compile Include="PayRoll\PRHome.aspx.designer.cs">
+      <DependentUpon>PRHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="PayRoll\PayRoll.Master.cs">
       <DependentUpon>PayRoll.Master</DependentUpon>
@@ -277,54 +334,56 @@
       <DependentUpon>YearReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShortList.aspx.cs">
+    <Compile Include="Recruitment\RecMaster.Master.cs">
+      <DependentUpon>RecMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\RecMaster.Master.designer.cs">
+      <DependentUpon>RecMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\ShortList.aspx.cs">
       <DependentUpon>ShortList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ShortList.aspx.designer.cs">
+    <Compile Include="Recruitment\ShortList.aspx.designer.cs">
       <DependentUpon>ShortList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Status.aspx.cs">
+    <Compile Include="Recruitment\Status.aspx.cs">
       <DependentUpon>Status.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Status.aspx.designer.cs">
+    <Compile Include="Recruitment\Status.aspx.designer.cs">
       <DependentUpon>Status.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VacancyDetails.aspx.cs">
+    <Compile Include="Recruitment\VacancyDetails.aspx.cs">
       <DependentUpon>VacancyDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VacancyDetails.aspx.designer.cs">
+    <Compile Include="Recruitment\VacancyDetails.aspx.designer.cs">
       <DependentUpon>VacancyDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VacancyReceived.aspx.cs">
+    <Compile Include="Recruitment\VacancyReceived.aspx.cs">
       <DependentUpon>VacancyReceived.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VacancyReceived.aspx.designer.cs">
+    <Compile Include="Recruitment\VacancyReceived.aspx.designer.cs">
       <DependentUpon>VacancyReceived.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WrittenTest.aspx.cs">
+    <Compile Include="Recruitment\WrittenTest.aspx.cs">
       <DependentUpon>WrittenTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WrittenTest.aspx.designer.cs">
+    <Compile Include="Recruitment\WrittenTest.aspx.designer.cs">
       <DependentUpon>WrittenTest.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Master.Master" />
     <Content Include="JobPortal\Portal.Master" />
+    <Content Include="Attendance\Attendance.Master" />
     <None Include="packages.config" />
     <Content Include="PayRoll\PayRoll.Master" />
+    <Content Include="Master.Master" />
+    <Content Include="Recruitment\RecMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

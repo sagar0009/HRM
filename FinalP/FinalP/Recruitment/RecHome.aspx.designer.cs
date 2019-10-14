@@ -11,7 +11,7 @@ namespace FinalP
 {
 
 
-    public partial class DashBoard1
+    public partial class DashBoard
     {
 
         /// <summary>
@@ -42,33 +42,6 @@ namespace FinalP
         protected global::System.Web.UI.WebControls.Label LblDeactEmp;
 
         /// <summary>
-        /// LblTotSal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotSal;
-
-        /// <summary>
-        /// LblTotDed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotDed;
-
-        /// <summary>
-        /// LblNetSal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNetSal;
-
-        /// <summary>
         /// LblTotVac control.
         /// </summary>
         /// <remarks>
@@ -94,32 +67,5 @@ namespace FinalP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LblSelCan;
-
-        /// <summary>
-        /// LblNewLeave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNewLeave;
-
-        /// <summary>
-        /// LblAppLeave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblAppLeave;
-
-        /// <summary>
-        /// LblRejLeave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblRejLeave;
     }
 }

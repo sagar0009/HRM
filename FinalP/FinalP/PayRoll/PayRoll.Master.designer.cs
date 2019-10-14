@@ -42,6 +42,24 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
+        /// ImgUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImgUser;
+
+        /// <summary>
+        /// LblUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblUserName;
+
+        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>
