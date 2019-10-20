@@ -11,7 +11,7 @@ namespace FinalP.Attendance
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            MultiView1.ActiveViewIndex = 0;
         }
 
         protected void GVComplain_RowCommand(object sender, GridViewCommandEventArgs e)

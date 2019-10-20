@@ -23,9 +23,9 @@ namespace FinalP
                 ParameterName = "@VacancyId",
                 Value = Convert.ToInt32(Session["VacancyNumber"].ToString())
             };
-            DataSet ds = new DataSet();
-            ds = objBll.GetJob("spGetJobByVacancy", parameter);
-            Label1.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
+            DataSet ds = objBll.GetJob("spGetJobByVacancy", parameter);
+
+            Label1.Text = Convert.ToString(ds.Tables[0].Rows[0]["PostName"]);
            
         }
     }

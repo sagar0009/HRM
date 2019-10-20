@@ -10,7 +10,10 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <asp:Panel ID="Panel1" runat="server">
-                    <asp:DataList ID="DataList1" RepeatColumns="5" runat="server">
+                    <asp:DataList ID="DataList1" RepeatColumns="5" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" GridLines="Both">
+                        <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                        <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                        <ItemStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
                         <ItemTemplate>
                             <asp:Table ID="Table1" runat="server" Style="width: 33%;">
                                 <asp:TableRow>
@@ -38,6 +41,7 @@
                                 </asp:TableRow>
                             </asp:Table>
                         </ItemTemplate>
+                        <SelectedItemStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
                     </asp:DataList>
                 </asp:Panel>
             </ContentTemplate>

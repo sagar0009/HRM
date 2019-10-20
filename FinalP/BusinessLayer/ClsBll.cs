@@ -13,13 +13,17 @@ namespace BusinessLayer
         public string JobType,JobDescription,ApplicantName,ApplicantEmail,Fname,Lname,SkillType,Key,Index;
         public string AcaQua, PostName, StatementType;
         public bool Status, IsShortListed,IsWrTestCall, IsWrTestPass, IsInterviewPss,IsEmployee;
-
+        public DateTime selectDate;        
         public DataSet GetJob(string SPName, SqlParameter SPParameter)
         {
             return objDll.GetDataFromSP(SPName,SPParameter);
 
         }
 
+        public void AddAttEmp(string query)
+        {
+            objDll.ConnectDb(query);
+        }
         public void AddUser(string query)
         {                        
             objDll.InsertUserDetails(query);
@@ -49,7 +53,7 @@ namespace BusinessLayer
         {
             SqlParameter[] pam = new SqlParameter[1];
             pam[0] = ClsDll.AddParameter("@VacancyId", VacancyId, SqlDbType.Int, 100);
-            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetJobByVacancy", pam);
+            ClsDll.ExecuteDTByProcedure("spGetJobByVacancy", pam);
         }
 
         public DataTable JobDet()
@@ -59,6 +63,8 @@ namespace BusinessLayer
             DataTable dt = ClsDll.ExecuteDTByProcedure("spGetJobByVacancy", pam);
             return dt;
         }
+
+
 
         public int GetUserByEmail()
         {
@@ -188,6 +194,14 @@ namespace BusinessLayer
             return dt;
         }
 
+        public DataTable GetAllEmp()
+        {
+            //populate interview
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetAllEmployee", parameters);
+            return dt;
+        }
+
         public DataTable GetStatus()
         {
             //populate status
@@ -236,6 +250,24 @@ namespace BusinessLayer
             //pam[2] = ClsDll.AddParameter("@ApplicantEmail", ApplicantEmail, SqlDbType.VarChar, 100);
             pam[3] = ClsDll.AddParameter("@ReceivedDate", ReceivedDate, SqlDbType.Date, 100);           
             DataTable dt = ClsDll.ExecuteDTByProcedure("spInsertReceivedAppDetails", pam);
+        }
+
+        //Attendance model database
+        public DataTable GetEmpAttPart()
+        {
+            //get Eid and date from Attendance 
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetAttPart", parameters);
+            return dt;
+        }
+
+        public DataTable GetAttendance()
+        {
+            //populate interview
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = ClsDll.AddParameter("@Date", selectDate, SqlDbType.Date, 100);
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetAttendance", parameters);
+            return dt;
         }
     }
 }

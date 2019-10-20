@@ -13,9 +13,18 @@ namespace DataLayer
     {
         public static string Conn = ConfigurationManager.ConnectionStrings["hrms"].ToString();
 
+        public static string Conn2 = ConfigurationManager.ConnectionStrings["tsts"].ToString();
         public void ConnectDb(string query)
         {
             SqlConnection con = new SqlConnection(Conn);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void ConnectDb2(string query)
+        {
+            SqlConnection con = new SqlConnection(Conn2);
             con.Open();
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
@@ -74,8 +83,7 @@ namespace DataLayer
         }
 
         public void InsertUserDetails(string query)
-        {
-            DataSet ds = new DataSet();
+        {            
             ConnectDb(query);
         }
 

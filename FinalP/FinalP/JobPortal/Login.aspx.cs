@@ -27,7 +27,7 @@ namespace FinalP.JobPortal
                 }
                 else
                 {
-                    Response.Redirect("Home.aspx");
+                    Response.Redirect("JPHome.aspx");
                 }
             }
         }
@@ -54,7 +54,7 @@ namespace FinalP.JobPortal
                         }
                         else
                         {
-                            Response.Redirect("Home.aspx");
+                            Response.Redirect("JPHome.aspx");
                         }
                         //Response.Write("<script>");
                         //Response.Write("window.open('PostVacamcy.aspx','_blank')");

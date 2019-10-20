@@ -10,7 +10,7 @@
     <link href="Resources/vendors/mdi/css/materialdesignicons.min.css" rel="stylesheet" />
     <link href="Resources/vendors/base/vendor.bundle.base.css" rel="stylesheet" />
     <link href="Resources/css/style.css" rel="stylesheet" />
-    <link href="StyleSheet1.css" rel="stylesheet" />
+    <link href="StyleSheet.css" rel="stylesheet" />
     <style>
         .header {
             margin: auto;
@@ -35,6 +35,7 @@
             padding: 10px;
             font: bold 12px;
         }
+
         .right {
             margin: auto;
             width: 60%;
@@ -58,43 +59,6 @@
                     </button>
                 </div>
             </div>
-            <%--<div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-                <ul class="navbar-nav mr-lg-4 w-100">
-                    <li class="nav-item nav-search d-none d-lg-block w-100">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="search">
-                                    <i class="mdi mdi-magnify"></i>
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search" />
-                        </div>
-                    </li>
-                </ul>
-<%--                <ul class="navbar-nav navbar-nav-right">
-
-
-                    <li class="nav-item nav-profile dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-
-                            <span class="nav-profile-name">Option</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item">
-                                <i class="mdi mdi-settings text-primary"></i>
-                                Settings
-                            </a>
-                            <a class="dropdown-item" href="Login.html">
-                                <i class="mdi mdi-logout text-primary"></i>
-                                Logout
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-                    <span class="mdi mdi-menu"></span>
-                </button>--%>
-            </div>--%>
         </nav>
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
@@ -127,7 +91,7 @@
                                         <span class="menu-title">Applications Received</span>
                                     </a>
                                 </li>
-                                
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="Recruitment/ShortList.aspx">
                                         <i class="mdi mdi-minus-circle menu-icon"></i>
@@ -162,12 +126,12 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
                             <span class="menu-title">Attendance</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div class="collapse" id="ui-basic">
+                        <div class="collapse" id="auth">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="Attendance/AttHome.aspx">
@@ -186,7 +150,7 @@
                                         <i class="mdi mdi-file-import menu-icon"></i>
                                         <span class="menu-title">Attendance Report</span>
                                     </a>
-                                </li>                                                               
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="Attendance/Leave.aspx">
                                         <i class="mdi mdi-pen menu-icon"></i>
@@ -198,17 +162,17 @@
                                         <i class="mdi mdi-phone-in-talk menu-icon"></i>
                                         <span class="menu-title">Complain</span>
                                     </a>
-                                </li>                                
+                                </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basi" aria-expanded="false" aria-controls="ui-basi">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
                             <span class="menu-title">Payroll</span>
                             <i class="menu-arrow"></i>
-                        </a>                        
-                        <div class="collapse" id="ui-basic">
+                        </a>
+                        <div class="collapse" id="ui-basi">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="PayRoll/PRHome.aspx">
@@ -227,7 +191,7 @@
                                         <i class="mdi mdi-file-import menu-icon"></i>
                                         <span class="menu-title">Employee Report</span>
                                     </a>
-                                </li>                                                               
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="PayRoll/GenerateSalary.aspx">
                                         <i class="mdi mdi-pen menu-icon"></i>
@@ -239,13 +203,13 @@
                                         <i class="mdi mdi-phone-in-talk menu-icon"></i>
                                         <span class="menu-title">Salary Report</span>
                                     </a>
-                                </li>  
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="PayRoll/YearReport.aspx">
                                         <i class="mdi mdi-phone-in-talk menu-icon"></i>
                                         <span class="menu-title">Year-wise Report</span>
                                     </a>
-                                </li>     
+                                </li>
                             </ul>
                         </div>
                     </li>
@@ -255,7 +219,7 @@
                             <span class="menu-title">Training</span>
                         </a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="EditPostDetails.aspx">
                             <i class="mdi mdi-marker menu-icon"></i>
                             <span class="menu-title">EditPost</span>
@@ -277,12 +241,12 @@
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
 
                         <span class="center1">
-                           <script>
+                            <script>
                                 var today = new Date();
                                 var date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
                                 document.write(date);
 
-                            </script>  
+                            </script>
                             <br />
                             <b>ABC HRM System</b><br />
                             <b>Address</b><br />

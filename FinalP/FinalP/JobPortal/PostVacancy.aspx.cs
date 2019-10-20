@@ -24,12 +24,12 @@ namespace FinalP
                 Value = Convert.ToInt32(Session["VacancyNumber"])
             };
             DataSet ds = objBll.GetJob("spGetJobByVacancy", parameter);
-            TBPost.Text = Convert.ToString(ds.Tables[0].Rows[0][1]);
-            TBPostVac.Text = Convert.ToString(ds.Tables[0].Rows[0][14]);
-            TBExpReq.Text = Convert.ToString(ds.Tables[0].Rows[0][4]) + " Years";
-            TBQuali.Text = Convert.ToString(ds.Tables[0].Rows[0][5]);
-            TBSkill.Text = Convert.ToString(ds.Tables[0].Rows[0][8]);
-            TbJobType.Text = Convert.ToString(ds.Tables[0].Rows[0][13]);
+            TBPost.Text = Convert.ToString(ds.Tables[0].Rows[0]["PostName"]);
+            TBPostVac.Text = Convert.ToString(ds.Tables[0].Rows[0]["Number"]);
+            TBExpReq.Text = Convert.ToString(ds.Tables[0].Rows[0]["ExperienceRequired"]) + " Years";
+            TBQuali.Text = Convert.ToString(ds.Tables[0].Rows[0]["AcademicQualification"]);
+            TBSkill.Text = Convert.ToString(ds.Tables[0].Rows[0]["SkillType"]);
+            TbJobType.Text = Convert.ToString(ds.Tables[0].Rows[0]["JobType"]);
             if(Session["sts"].ToString()=="Expired")
             {
                 BtnApply.Visible = false;
@@ -51,9 +51,9 @@ namespace FinalP
                         Value = Convert.ToInt32(Session["VacancyNumber"])
                     };
                     DataSet ds = objBll.GetJob("spGetJobByVacancy", parameter);
-                    objBll.PostId = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
+                    objBll.PostId = Convert.ToInt32(ds.Tables[0].Rows[0]["PostId"]);
                     objBll.ApplicantId = Convert.ToInt32( Session["UserId"]);
-                    objBll.VacancyId = Convert.ToInt32(ds.Tables[0].Rows[0][9]);            
+                    objBll.VacancyId = Convert.ToInt32(ds.Tables[0].Rows[0]["VacancyId"]);            
                     objBll.ReceivedDate=DateTime.Today;
                     objBll.VacRecDetails();
                     Response.Write("<script>");

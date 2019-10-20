@@ -16,7 +16,9 @@
                         <td class="style7">Select Department :
                         </td>
                         <td class="style6">
-                            <asp:DropDownList ID="DdlDept" runat="server" CssClass="txt">
+                            <asp:DropDownList ID="DdlDept" runat="server" CssClass="txt"
+                                 AutoPostBack="True" OnSelectedIndexChanged="DdlDept_SelectedIndexChanged"
+                                DataTextField="DepartmentName" DataValueField="DeptId">
                             </asp:DropDownList>
                         </td>
                         <td class="style5">&nbsp;</td>
@@ -28,7 +30,7 @@
                             <asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC"
                                 BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest"
                                 Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px"
-                                ShowGridLines="True" Width="220px">
+                                ShowGridLines="True" Width="220px" OnSelectionChanged="Calendar1_SelectionChanged">
                                 <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
                                 <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
                                 <OtherMonthDayStyle ForeColor="#CC9966" />
@@ -52,15 +54,15 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GVAttDetails" runat="server" AutoGenerateColumns="False"
+                <asp:GridView ID="GVAttDetails" runat="server"  EmptyDataText="No Records Found"  AutoGenerateColumns="False"
                     CellPadding="4" ForeColor="#333333" GridLines="None" Width="659px">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="rollno" HeaderText="EId" />
-                        <asp:BoundField DataField="name" HeaderText="Employee Name" />
-                        <asp:BoundField DataField="status" HeaderText="Check In" />
-                        <asp:BoundField DataField="staffname" HeaderText="Check Out" />
-                        <asp:BoundField DataField="date" HeaderText="Status" />
+                        <asp:BoundField DataField="EmpId" HeaderText="EmployeeId" />
+                        <asp:BoundField DataField="FirstName" HeaderText="Employee Name" />
+                        <asp:BoundField DataField="CheckIn" HeaderText="Check In" />
+                        <asp:BoundField DataField="CheckOut" HeaderText="Check Out" />
+                        <asp:BoundField DataField="Status" HeaderText="Status" />
                     </Columns>
                     <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
