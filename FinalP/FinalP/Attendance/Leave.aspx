@@ -18,7 +18,7 @@
             <asp:Button ID="BtnAppLeave" runat="server" CssClass="btn" Text="Approve Leave"
                 Width="160px" OnClick="BtnAppLeave_Click" />
                 &nbsp;
-            <asp:Button ID="BtnCncLeave" runat="server" CssClass="btn" Text="Cancle Leave"
+            <asp:Button ID="BtnCncLeave" runat="server" CssClass="btn" Text="Cancel Leave"
                 Width="160px" OnClick="BtnCncLeave_Click" />
             </td>
         </tr>
@@ -34,12 +34,23 @@
                                 <td class="tblhead">New Leave Report</td>
                             </tr>
                             <tr>
+                                <td>Select Department :
+                                    <asp:DropDownList ID="DdlDept" AutoPostBack="true" OnSelectedIndexChanged="DdlDept_SelectedIndexChanged" runat="server" CssClass="txt"  DataTextField="DepartmentName" DataValueField="DeptId" >
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>Select Employee :
-                                <asp:DropDownList ID="DdlEmp" runat="server" CssClass="txt">
+                                <asp:DropDownList ID="DdlEmp" runat="server" CssClass="txt" DataTextField="FirstName" DataValueField="EmpId">
                                 </asp:DropDownList>
                                     <asp:Button ID="BtnSelect" runat="server" CssClass="btn"
                                         OnClick="BtnSelect_Click" Text="Select" />
-                                    &nbsp;<asp:Label ID="LblMsg" runat="server"></asp:Label>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total New Leave =
+                                    <asp:Label ID="LblNew" runat="server"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -47,21 +58,21 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="GVNewLeave" runat="server" AutoGenerateColumns="False"
+                                    <asp:GridView ID="GVNewLeave" runat="server" AutoGenerateColumns="False" EmptyDataText="no records found"
                                         BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px"
                                         CellPadding="4" GridLines="Vertical" Width="761px"
                                         OnRowCommand="GVNewLeave_RowCommand" ForeColor="Black">
                                         <AlternatingRowStyle BackColor="White" />
                                         <Columns>
-                                            <asp:BoundField DataField="Fromdate" DataFormatString="{0:dd MMM yyyy}"
+                                            <asp:BoundField DataField="StartDate" DataFormatString="{0:dd MMM yyyy}"
                                                 HeaderText="From Date">
                                                 <ItemStyle Width="120px" />
                                             </asp:BoundField>
-                                            <asp:BoundField DataField="Todate" DataFormatString="{0:dd MMM yyyy}"
+                                            <asp:BoundField DataField="EndDate" DataFormatString="{0:dd MMM yyyy}"
                                                 HeaderText="To Date">
                                                 <ItemStyle Width="120px" />
                                             </asp:BoundField>
-                                            <asp:BoundField DataField="Days" HeaderText="Days">
+                                            <asp:BoundField DataField="NoDays" HeaderText="Days">
                                                 <HeaderStyle HorizontalAlign="Left" />
                                                 <ItemStyle Width="50px" />
                                             </asp:BoundField>
@@ -70,12 +81,12 @@
                                             </asp:BoundField>
                                             <asp:TemplateField HeaderText="Approve">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton runat="server" Text="Approve" ID="LnkApp" ForeColor="Green" CommandName="app" CommandArgument='<%#Eval("LID") %>'></asp:LinkButton>
+                                                    <asp:LinkButton runat="server" Text="Approve" ID="LnkApp" ForeColor="Green" CommandName="app" CommandArgument='<%#Eval("LeaveId") %>'></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Cancel">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton runat="server" Text="Cancel" ID="LnkRej" ForeColor="Red" CommandName="rej" CommandArgument='<%#Eval("LID") %>'></asp:LinkButton>
+                                                    <asp:LinkButton runat="server" Text="Cancel" ID="LnkRej" ForeColor="Red" CommandName="rej" CommandArgument='<%#Eval("LeaveId") %>'></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
@@ -102,12 +113,23 @@
                                 <td class="tblhead">Approve Leave Report</td>
                             </tr>
                             <tr>
+                                <td>Select Department :
+                                <asp:DropDownList ID="DdlDept0" OnSelectedIndexChanged="DdlDept_SelectedIndexChanged" AutoPostBack="true" runat="server" CssClass="txt" DataTextField="DepartmentName" DataValueField="DeptId">
+                                </asp:DropDownList>                                    
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>Select Employee :
-                                <asp:DropDownList ID="DdlEmp0" runat="server" CssClass="txt">
+                                <asp:DropDownList ID="DdlEmp0" runat="server" CssClass="txt" DataTextField="FirstName" DataValueField="EmpId">
                                 </asp:DropDownList>
                                     <asp:Button ID="BtnSelect0" runat="server" CssClass="btn"
                                         OnClick="BtnSelect0_Click" Text="Select" />
-                                    &nbsp;<asp:Label ID="LblMsg0" runat="server"></asp:Label>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total Apporved Leave =
+                                    <asp:Label ID="LblApp" runat="server"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -115,7 +137,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="GVAppLeave" runat="server" AutoGenerateColumns="False"
+                                    <asp:GridView ID="GVAppLeave" runat="server" AutoGenerateColumns="False"  EmptyDataText="no records found"
                                         BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px"
                                         CellPadding="4" GridLines="Vertical" OnRowCommand="GVAppLeave_RowCommand"
                                         Width="761px" ForeColor="Black">
@@ -168,12 +190,23 @@
                                 <td class="tblhead">Cancel Leave Report</td>
                             </tr>
                             <tr>
+                                <td>Select Department :
+                                <asp:DropDownList ID="DdlDept1" AutoPostBack="true" OnSelectedIndexChanged="DdlDept_SelectedIndexChanged" runat="server" CssClass="txt" DataTextField="DepartmentName" DataValueField="DeptId" >
+                                </asp:DropDownList>                                    
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>Select Employee :
-                                <asp:DropDownList ID="DdlEmp1" runat="server" CssClass="txt">
+                                <asp:DropDownList ID="DdlEmp1" runat="server" CssClass="txt" DataTextField="FirstName" DataValueField="EmpId">
                                 </asp:DropDownList>
                                     <asp:Button ID="BtnSelect1" runat="server" CssClass="btn"
                                         OnClick="BtnSelect1_Click" Text="Select" />
-                                    &nbsp;<asp:Label ID="LblMsg1" runat="server"></asp:Label>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total Rejected Leave =
+                                    <asp:Label ID="LblRej" runat="server"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -181,7 +214,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="GVRejLeave" runat="server" AutoGenerateColumns="False"
+                                    <asp:GridView ID="GVRejLeave" runat="server" AutoGenerateColumns="False"  EmptyDataText="no records found"
                                         BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px"
                                         CellPadding="4" GridLines="Vertical" OnRowCommand="GVRejLeave_RowCommand"
                                         Width="761px" ForeColor="Black">

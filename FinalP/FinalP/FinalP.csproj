@@ -95,6 +95,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Attendance\AssignHoliday.aspx" />
     <Content Include="Attendance\Attendance.aspx" />
     <Content Include="Attendance\AttendanceReport.aspx" />
     <Content Include="Attendance\AttHome.aspx" />
@@ -121,7 +122,7 @@
     <Content Include="JobPortal\User.aspx" />
     <Content Include="JobPortal\PostVacancy.aspx" />
     <Content Include="PayRoll\AddClass.aspx" />
-    <Content Include="PayRoll\EmpReport.aspx" />
+    <Content Include="PayRoll\EmpDetails.aspx" />
     <Content Include="PayRoll\GenerateSalary.aspx" />
     <Content Include="PayRoll\PRHome.aspx" />
     <Content Include="PayRoll\ReportDetails.aspx" />
@@ -143,6 +144,13 @@
     <Content Include="Recruitment\WrittenTest.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attendance\AssignHoliday.aspx.cs">
+      <DependentUpon>AssignHoliday.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attendance\AssignHoliday.aspx.designer.cs">
+      <DependentUpon>AssignHoliday.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Attendance\Attendance.aspx.cs">
       <DependentUpon>Attendance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -298,12 +306,12 @@
     <Compile Include="PayRoll\AddClass.aspx.designer.cs">
       <DependentUpon>AddClass.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PayRoll\EmpReport.aspx.cs">
-      <DependentUpon>EmpReport.aspx</DependentUpon>
+    <Compile Include="PayRoll\EmpDetails.aspx.cs">
+      <DependentUpon>EmpDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PayRoll\EmpReport.aspx.designer.cs">
-      <DependentUpon>EmpReport.aspx</DependentUpon>
+    <Compile Include="PayRoll\EmpDetails.aspx.designer.cs">
+      <DependentUpon>EmpDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="PayRoll\GenerateSalary.aspx.cs">
       <DependentUpon>GenerateSalary.aspx</DependentUpon>

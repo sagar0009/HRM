@@ -47,8 +47,8 @@
             </tr>--%>
                     <tr>
                         <td>
-                            <asp:Button ID="Button2" runat="server" CssClass="mnu" Text="Employee Report"
-                                CausesValidation="False" PostBackUrl="EmpReport.aspx" />
+                            <asp:Button ID="Button2" runat="server" CssClass="mnu" Text="Employee Details"
+                                CausesValidation="False" PostBackUrl="EmpDetails.aspx" />
                         </td>
                     </tr>
                     <%--<tr>

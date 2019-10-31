@@ -27,8 +27,10 @@ namespace FinalP.Attendance
             DdlDept.DataSource = objBll.GetJob("spGetDept", null);
             DdlDept.DataBind();
 
-            ListItem liPost = new ListItem("Select Department", "-1");
-            DdlDept.Items.Insert(0, liPost);
+            ListItem liPost1 = new ListItem("Select Department", "-1");
+            DdlDept.Items.Insert(0, liPost1);
+            ListItem liPost2 = new ListItem("All", "0");
+            DdlDept.Items.Insert(1, liPost2);
         }
         protected void BtnSelect_Click(object sender, EventArgs e)
         {
@@ -36,7 +38,7 @@ namespace FinalP.Attendance
             {
                 if(DdlDept.SelectedValue!="-1")
                 {
-                    objBll.selectDate = sDate;
+                    objBll.selectDate = Convert.ToDateTime(Calendar1.SelectedDate.ToShortDateString().Trim());
                     PopulateAttendance();
                     LblCnt.Text = "Result = " + GVAttDetails.Rows.Count.ToString();
                 }
@@ -55,19 +57,13 @@ namespace FinalP.Attendance
         private void PopulateAttendance()
         {
             GVAttDetails.DataSource = null;
-            GVAttDetails.DataSource = objBll.GetAttendance();        
+            GVAttDetails.DataSource = objBll.GetAttendance(Convert.ToInt32(DdlDept.SelectedValue));        
             GVAttDetails.DataBind();
 
         }
 
-        protected void DdlDept_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
-        {
-            sDate = Convert.ToDateTime(Calendar1.SelectedDate.ToShortDateString().Trim());
-        }
+       
     }
 }

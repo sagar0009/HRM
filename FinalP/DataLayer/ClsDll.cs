@@ -65,6 +65,7 @@ namespace DataLayer
             con.Open();
             DataTable dt = new DataTable();
             da.Fill(dt);
+            con.Close();
             return dt;
         }
 

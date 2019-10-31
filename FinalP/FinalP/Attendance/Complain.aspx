@@ -30,17 +30,17 @@
                                     <asp:GridView ID="GVComplain" runat="server" AutoGenerateColumns="False"
                                         CellPadding="4" ForeColor="#333333" GridLines="None"
                                         OnRowCommand="GVComplain_RowCommand" Style="text-align: center"
-                                        Width="659px" OnSelectedIndexChanged="GVComplain_SelectedIndexChanged">
+                                        Width="659px" EmptyDataText="No Complain found" OnSelectedIndexChanged="GVComplain_SelectedIndexChanged">
                                         <AlternatingRowStyle BackColor="White" />
                                         <Columns>
-                                            <asp:BoundField DataField="rollno" HeaderText="EId" />
-                                            <asp:BoundField DataField="name" HeaderText="Employee Name" />
-                                            <asp:BoundField DataField="subject" HeaderText="Subject" />
-                                            <asp:BoundField DataField="message" HeaderText="Complain" />
-                                            <asp:BoundField DataField="reply" HeaderText="Reply" />
+                                            <asp:BoundField DataField="EmpId" HeaderText="EId" />
+                                            <asp:BoundField DataField="Date" HeaderText="Complain Date" />
+                                            <asp:BoundField DataField="Subject" HeaderText="Subject" />
+                                            <asp:BoundField DataField="Message" HeaderText="Complain" />
+                                            <asp:BoundField DataField="Reply" HeaderText="Reply" />
                                             <asp:TemplateField>
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="LnkReply" runat="server" ForeColor="Red" Text="Reply" CommandArgument='<%#Eval("CID") %>'></asp:LinkButton>
+                                                    <asp:LinkButton ID="LnkReply" runat="server" ForeColor="Red" Text="Reply" CommandArgument='<%#Eval("CmpId") %>'></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
@@ -74,12 +74,7 @@
                                 <td>EId No :
                                 <asp:Label ID="LblEid" runat="server"></asp:Label>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>Name :
-                                <asp:Label ID="LblName" runat="server"></asp:Label>
-                                </td>
-                            </tr>
+                            </tr>                          
                             <tr>
                                 <td>Subject :
                                 <asp:Label ID="LblSub" runat="server"></asp:Label>

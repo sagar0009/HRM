@@ -15,6 +15,24 @@ namespace FinalP.PayRoll
     {
 
         /// <summary>
+        /// DdlYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlYear;
+
+        /// <summary>
+        /// RequiredFieldValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+
+        /// <summary>
         /// DdlMonth control.
         /// </summary>
         /// <remarks>
@@ -33,31 +51,31 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// TBYear control.
+        /// DdlDept control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBYear;
+        protected global::System.Web.UI.WebControls.DropDownList DdlDept;
 
         /// <summary>
-        /// RequiredFieldValidator5 control.
+        /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
-        /// DdlEmployee control.
+        /// DdlEmp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlEmployee;
+        protected global::System.Web.UI.WebControls.DropDownList DdlEmp;
 
         /// <summary>
         /// RequiredFieldValidator4 control.
@@ -114,13 +132,31 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Label LblName;
 
         /// <summary>
-        /// LblAcNo control.
+        /// LblAccNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblAcNo;
+        protected global::System.Web.UI.WebControls.Label LblAccNo;
+
+        /// <summary>
+        /// LblDept control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblDept;
+
+        /// <summary>
+        /// LblTravAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTravAll;
 
         /// <summary>
         /// LblBasicPay control.
@@ -132,6 +168,15 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Label LblBasicPay;
 
         /// <summary>
+        /// LblLunAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblLunAll;
+
+        /// <summary>
         /// LblSalary control.
         /// </summary>
         /// <remarks>
@@ -141,13 +186,31 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Label LblSalary;
 
         /// <summary>
-        /// TBTravAll control.
+        /// LblMedAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBTravAll;
+        protected global::System.Web.UI.WebControls.Label LblMedAll;
+
+        /// <summary>
+        /// LblTotWD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTotWD;
+
+        /// <summary>
+        /// LblTotSal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTotSal;
 
         /// <summary>
         /// LblLeave control.
@@ -159,24 +222,6 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Label LblLeave;
 
         /// <summary>
-        /// TBMedAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBMedAll;
-
-        /// <summary>
-        /// LblLeaveApproval control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblLeaveApproval;
-
-        /// <summary>
         /// LblLeaveDeduce control.
         /// </summary>
         /// <remarks>
@@ -186,12 +231,21 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Label LblLeaveDeduce;
 
         /// <summary>
-        /// TBLunchAll control.
+        /// LblNetSal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBLunchAll;
+        protected global::System.Web.UI.WebControls.Label LblNetSal;
+
+        /// <summary>
+        /// BtnGenerate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnGenerate;
     }
 }

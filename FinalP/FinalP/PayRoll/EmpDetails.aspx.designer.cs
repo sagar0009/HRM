@@ -11,17 +11,17 @@ namespace FinalP.PayRoll
 {
 
 
-    public partial class EmpReport
+    public partial class EmpDetails
     {
 
         /// <summary>
-        /// DdlDepartment control.
+        /// DdlDept control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlDepartment;
+        protected global::System.Web.UI.WebControls.DropDownList DdlDept;
 
         /// <summary>
         /// DdlEmp control.
@@ -78,13 +78,13 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Label LblName;
 
         /// <summary>
-        /// LblClass control.
+        /// LblSalary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblClass;
+        protected global::System.Web.UI.WebControls.Label LblSalary;
 
         /// <summary>
         /// LblAdd control.
@@ -105,22 +105,13 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Label LblBasicPay;
 
         /// <summary>
-        /// LblCity control.
+        /// LblEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblCity;
-
-        /// <summary>
-        /// LblSalary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblSalary;
+        protected global::System.Web.UI.WebControls.Label LblEmail;
 
         /// <summary>
         /// LblAccNo control.
@@ -141,13 +132,13 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Label LblMobile;
 
         /// <summary>
-        /// LblEmail control.
+        /// LblTravAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblEmail;
+        protected global::System.Web.UI.WebControls.Label LblTravAll;
 
         /// <summary>
         /// LblDegree control.
@@ -159,13 +150,31 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Label LblDegree;
 
         /// <summary>
-        /// LblPassword control.
+        /// LblMedAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblPassword;
+        protected global::System.Web.UI.WebControls.Label LblMedAll;
+
+        /// <summary>
+        /// LblDpt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblDpt;
+
+        /// <summary>
+        /// LblLunAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblLunAll;
 
         /// <summary>
         /// LblDesig control.
@@ -186,15 +195,6 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Label LblStatus;
 
         /// <summary>
-        /// LblDpt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDpt;
-
-        /// <summary>
         /// BtnActive control.
         /// </summary>
         /// <remarks>
@@ -202,6 +202,15 @@ namespace FinalP.PayRoll
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnActive;
+
+        /// <summary>
+        /// BtnSusp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnSusp;
 
         /// <summary>
         /// BtnDel control.

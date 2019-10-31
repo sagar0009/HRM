@@ -17,7 +17,7 @@
                         </td>
                         <td class="style6">
                             <asp:DropDownList ID="DdlDept" runat="server" CssClass="txt"
-                                 AutoPostBack="True" OnSelectedIndexChanged="DdlDept_SelectedIndexChanged"
+                                 AutoPostBack="True" 
                                 DataTextField="DepartmentName" DataValueField="DeptId">
                             </asp:DropDownList>
                         </td>
@@ -30,7 +30,7 @@
                             <asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC"
                                 BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest"
                                 Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px"
-                                ShowGridLines="True" Width="220px" OnSelectionChanged="Calendar1_SelectionChanged">
+                                ShowGridLines="True" Width="220px" >
                                 <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
                                 <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
                                 <OtherMonthDayStyle ForeColor="#CC9966" />

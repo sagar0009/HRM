@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PayRoll/PayRoll.Master" AutoEventWireup="true" CodeBehind="EmpReport.aspx.cs" Inherits="FinalP.PayRoll.EmpReport" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PayRoll/PayRoll.Master" AutoEventWireup="true" CodeBehind="EmpDetails.aspx.cs" Inherits="FinalP.PayRoll.EmpDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css">
@@ -33,16 +33,9 @@
                         <td class="lbl">Select Department :
                         </td>
                         <td>
-                            <asp:DropDownList ID="DdlDepartment" runat="server" CssClass="txt"
-                                OnSelectedIndexChanged="DdlDepartment_SelectedIndexChanged"
+                            <asp:DropDownList ID="DdlDept" runat="server" CssClass="txt" DataTextField="DepartmentName"
+                                OnSelectedIndexChanged="DdlDept_SelectedIndexChanged" DataValueField="DeptId"
                                 AutoPostBack="True">
-                                <asp:ListItem>SELECT</asp:ListItem>
-                                <asp:ListItem>IT</asp:ListItem>
-                                <asp:ListItem>COMPUTER</asp:ListItem>
-                                <asp:ListItem>CIVIL</asp:ListItem>
-                                <asp:ListItem>EC</asp:ListItem>
-                                <asp:ListItem>ELECTRICAL</asp:ListItem>
-                                <asp:ListItem>MECHANICAL</asp:ListItem>
                             </asp:DropDownList>
                         </td>
                         <td>&nbsp;</td>
@@ -51,7 +44,7 @@
                         <td class="lbl">Select Employee :
                         </td>
                         <td>
-                            <asp:DropDownList ID="DdlEmp" runat="server" CssClass="txt">
+                            <asp:DropDownList ID="DdlEmp" runat="server" DataTextField="FirstName" DataValueField="EmpId" CssClass="txt">
                             </asp:DropDownList>
                         </td>
                         <td>&nbsp;</td>
@@ -88,10 +81,10 @@
                                             <td>
                                                 <asp:Label ID="LblName" runat="server" CssClass="lbl"></asp:Label>
                                             </td>
-                                            <td class="lbl">Class :
+                                            <td class="lbl">Salary :
                                             </td>
                                             <td>
-                                                <asp:Label ID="LblClass" runat="server" CssClass="lbl"></asp:Label>
+                                                <asp:Label ID="LblSalary" runat="server" CssClass="lbl"></asp:Label>
                                             </td>
                                         </tr>
                                         <tr>
@@ -108,27 +101,12 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="lbl">City :
+                                            <td class="lbl">Email :
                                             </td>
                                             <td>&nbsp;</td>
                                             <td>
-                                                <asp:Label ID="LblCity" runat="server" CssClass="lbl"></asp:Label>
+                                                <asp:Label ID="LblEmail" runat="server" CssClass="lbl"></asp:Label>
                                             </td>
-                                            <td class="lbl">Salary :
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="LblSalary" runat="server" CssClass="lbl"></asp:Label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <%-- <td class="lbl">Pincode :
-                                            </td>--%>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <%--<td>
-                                                <asp:Label ID="lblpincode" runat="server" CssClass="lbl"></asp:Label>
-                                            </td>--%>
-                                            <td>&nbsp;</td>
                                             <td class="lbl">Account No.:
                                             </td>
                                             <td>
@@ -142,10 +120,10 @@
                                             <td>
                                                 <asp:Label ID="LblMobile" runat="server" CssClass="lbl"></asp:Label>
                                             </td>
-                                            <td class="lbl">Email :
+                                            <td class="lbl">Travelling Allowance :
                                             </td>
                                             <td>
-                                                <asp:Label ID="LblEmail" runat="server" CssClass="lbl"></asp:Label>
+                                                <asp:Label ID="LblTravAll" runat="server" CssClass="lbl"></asp:Label>
                                             </td>
                                         </tr>
                                         <tr>
@@ -155,10 +133,24 @@
                                             <td>
                                                 <asp:Label ID="LblDegree" runat="server" CssClass="lbl"></asp:Label>
                                             </td>
-                                            <td class="lbl">Password :
+                                            <td class="lbl">Medical Allowance : </td>
+                                            <td>
+                                                <asp:Label ID="LblMedAll" runat="server" CssClass="lbl"></asp:Label>
+                                            </td>
+                                            </>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td class="lbl">Department :
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                <asp:Label ID="LblDpt" runat="server" CssClass="lbl"></asp:Label>
+                                            </td>
+                                            <td class="lbl">Lunch Allowance:
                                             </td>
                                             <td>
-                                                <asp:Label ID="LblPassword" runat="server" CssClass="lbl"></asp:Label>
+                                                <asp:Label ID="LblLunAll" runat="server" CssClass="lbl"></asp:Label>
                                             </td>
                                         </tr>
                                         <tr>
@@ -175,26 +167,20 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="lbl">Department :
-                                            </td>
-                                            <td>&nbsp;</td>
-                                            <td>
-                                                <asp:Label ID="LblDpt" runat="server" CssClass="lbl"></asp:Label>
-                                            </td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                        <tr>
                                             <td>&nbsp;</td>
                                             <td>&nbsp;</td>
                                             <td>&nbsp;</td>
                                             <td>
                                                 <asp:Button ID="BtnActive" runat="server" CssClass="btn"
-                                                    OnClick="BtnActive_Click" Text="ACTIVE" Width="120px" />
+                                                    OnClick="BtnActive_Click" Text="Activate" Width="120px" />
+                                            </td>
+                                            <td>
+                                                <asp:Button ID="BtnSusp" runat="server" CssClass="btn"
+                                                    OnClick="BtnSusp_Click" Text="Suspend" Width="120px" />
                                             </td>
                                             <td>
                                                 <asp:Button ID="BtnDel" runat="server" CssClass="btn"
-                                                    OnClick="BtnDel_Click" Text="DELETE" Width="120px" />
+                                                    OnClick="BtnDel_Click" Text="Delete" Width="120px" />
                                             </td>
                                         </tr>
                                     </table>

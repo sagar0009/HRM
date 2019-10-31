@@ -44,6 +44,12 @@
                                 CausesValidation="False" PostBackUrl="~/Attendance/AttendanceReport.aspx" />
                         </td>
                     </tr>
+                     <tr>
+                        <td>
+                            <asp:Button ID="Button1" runat="server" CssClass="mnu" Text="Add holiday"
+                                CausesValidation="False" PostBackUrl="AssignHoliday.aspx" />
+                        </td>
+                    </tr>
                     <tr>
                         <td>
                             <asp:Button ID="Button9" runat="server" CssClass="mnu" Text="Leave"

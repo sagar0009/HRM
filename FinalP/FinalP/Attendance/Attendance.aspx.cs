@@ -154,21 +154,25 @@ namespace FinalP.Attendance
 
         }
 
-        private int CheckUnique()
+        private bool CheckUnique()
         {
-            int flag=0;
+            bool flag=false;
             DataTable dt1 = objBll.GetEmpAttPart();
             DataTable dt2 = pdt;
             foreach(DataRow r1 in dt1.Rows)
             {
-                foreach(DataRow r2 in dt2.Rows)
+                if (!flag)
                 {
-                    if (r1["EmpId"] == r2["EmpId"]&&r1["Date"]==r2["Date"])
+                    foreach (DataRow r2 in dt2.Rows)
                     {
-                        flag = 1;
-                        break;
-                    }
+                        if (r1["EmpId"].ToString() == r2["EmpId"].ToString() && r1["Date"].ToString() == r2["Date"].ToString())
+                        {
+                            flag = true;
+                            break;
+                        }
+                    }                    
                 }
+                break;
             }
             return flag; 
         }
@@ -179,8 +183,8 @@ namespace FinalP.Attendance
             {
                 try
                 {
-                    int flag = CheckUnique();
-                    if (flag == 0)
+                    bool flag = CheckUnique();
+                    if (flag)
                     {
                         MessageBox.Show("Duplicate date detected\ncheck data to be inserted");
                     }

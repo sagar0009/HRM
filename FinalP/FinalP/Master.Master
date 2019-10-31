@@ -187,9 +187,9 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="PayRoll/EmpReport.aspx">
+                                    <a class="nav-link" href="PayRoll/EmpDetails.aspx">
                                         <i class="mdi mdi-file-import menu-icon"></i>
-                                        <span class="menu-title">Employee Report</span>
+                                        <span class="menu-title">Employee Details</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">

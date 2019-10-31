@@ -60,6 +60,15 @@ namespace FinalP.Attendance
         protected global::System.Web.UI.WebControls.View View1;
 
         /// <summary>
+        /// DdlDept control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlDept;
+
+        /// <summary>
         /// DdlEmp control.
         /// </summary>
         /// <remarks>
@@ -78,13 +87,13 @@ namespace FinalP.Attendance
         protected global::System.Web.UI.WebControls.Button BtnSelect;
 
         /// <summary>
-        /// LblMsg control.
+        /// LblNew control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMsg;
+        protected global::System.Web.UI.WebControls.Label LblNew;
 
         /// <summary>
         /// GVNewLeave control.
@@ -105,6 +114,15 @@ namespace FinalP.Attendance
         protected global::System.Web.UI.WebControls.View View2;
 
         /// <summary>
+        /// DdlDept0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlDept0;
+
+        /// <summary>
         /// DdlEmp0 control.
         /// </summary>
         /// <remarks>
@@ -123,13 +141,13 @@ namespace FinalP.Attendance
         protected global::System.Web.UI.WebControls.Button BtnSelect0;
 
         /// <summary>
-        /// LblMsg0 control.
+        /// LblApp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMsg0;
+        protected global::System.Web.UI.WebControls.Label LblApp;
 
         /// <summary>
         /// GVAppLeave control.
@@ -150,6 +168,15 @@ namespace FinalP.Attendance
         protected global::System.Web.UI.WebControls.View View3;
 
         /// <summary>
+        /// DdlDept1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlDept1;
+
+        /// <summary>
         /// DdlEmp1 control.
         /// </summary>
         /// <remarks>
@@ -168,13 +195,13 @@ namespace FinalP.Attendance
         protected global::System.Web.UI.WebControls.Button BtnSelect1;
 
         /// <summary>
-        /// LblMsg1 control.
+        /// LblRej control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMsg1;
+        protected global::System.Web.UI.WebControls.Label LblRej;
 
         /// <summary>
         /// GVRejLeave control.
