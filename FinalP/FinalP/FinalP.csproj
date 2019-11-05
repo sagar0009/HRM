@@ -95,6 +95,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActivationTemplate.html" />
     <Content Include="Attendance\AssignHoliday.aspx" />
     <Content Include="Attendance\Attendance.aspx" />
     <Content Include="Attendance\AttendanceReport.aspx" />
@@ -138,6 +139,15 @@
     <Content Include="Recruitment\VacancyDetails.aspx" />
     <Content Include="Recruitment\VacancyReceived.aspx" />
     <Content Include="StyleSheet.css" />
+    <Content Include="UserPage\Activate.aspx" />
+    <Content Include="UserPage\Complain.aspx" />
+    <Content Include="UserPage\MyProfile.aspx" />
+    <Content Include="UserPage\Leave.aspx" />
+    <Content Include="UserPage\MyStatus.aspx" />
+    <Content Include="UserPage\SalaryDetails.aspx" />
+    <Content Include="UserPage\StyleSheet1.css" />
+    <Content Include="UserPage\UPHome.aspx" />
+    <Content Include="UserPage\ViewAttendance.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -405,6 +415,69 @@
     <Compile Include="Recruitment\WrittenTest.aspx.designer.cs">
       <DependentUpon>WrittenTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserPage\Activate.aspx.cs">
+      <DependentUpon>Activate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Activate.aspx.designer.cs">
+      <DependentUpon>Activate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Complain.aspx.cs">
+      <DependentUpon>Complain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Complain.aspx.designer.cs">
+      <DependentUpon>Complain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\MyProfile.aspx.designer.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Leave.aspx.cs">
+      <DependentUpon>Leave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Leave.aspx.designer.cs">
+      <DependentUpon>Leave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\MyStatus.aspx.cs">
+      <DependentUpon>MyStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\MyStatus.aspx.designer.cs">
+      <DependentUpon>MyStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\SalaryDetails.aspx.cs">
+      <DependentUpon>SalaryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\SalaryDetails.aspx.designer.cs">
+      <DependentUpon>SalaryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\UPHome.aspx.cs">
+      <DependentUpon>UPHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\UPHome.aspx.designer.cs">
+      <DependentUpon>UPHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\UPMaster.Master.cs">
+      <DependentUpon>UPMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\UPMaster.Master.designer.cs">
+      <DependentUpon>UPMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\ViewAttendance.aspx.cs">
+      <DependentUpon>ViewAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\ViewAttendance.aspx.designer.cs">
+      <DependentUpon>ViewAttendance.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="JobPortal\Portal.Master" />
@@ -413,6 +486,7 @@
     <Content Include="PayRoll\PayRoll.Master" />
     <Content Include="Master.Master" />
     <Content Include="Recruitment\RecMaster.Master" />
+    <Content Include="UserPage\UPMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

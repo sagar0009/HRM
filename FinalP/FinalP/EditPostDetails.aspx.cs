@@ -34,8 +34,7 @@ namespace FinalP
 
         public void GetDet()
         {
-            objBll.PostName = TBPostName.Text;
-            objBll.Salary = Convert.ToInt32(TBSalary.Text);
+            objBll.PostName = TBPostName.Text;         
             objBll.AcaQua = TBQuali.Text;
             objBll.ExpReq = Convert.ToInt32(TBExpReq.Text);
             if (DdlStatus.SelectedValue != "-1")
@@ -63,7 +62,7 @@ namespace FinalP
             {
                 if (DdlStatus.SelectedValue != "-1")
                 {
-                    if (TBPostName.Text != string.Empty && TBSalary.Text != string.Empty && TBQuali.Text != string.Empty && TBExpReq.Text != string.Empty)
+                    if (TBPostName.Text != string.Empty  && TBQuali.Text != string.Empty && TBExpReq.Text != string.Empty)
                     {
                         GetDet();
                         objBll.StatementType = "Insert";
@@ -94,7 +93,7 @@ namespace FinalP
             {
                 if (DdlStatus.SelectedValue != "-1")
                 {
-                    if (TBPostName.Text != string.Empty && TBSalary.Text != string.Empty && TBQuali.Text != string.Empty && TBExpReq.Text != string.Empty)
+                    if (TBPostName.Text != string.Empty && TBQuali.Text != string.Empty && TBExpReq.Text != string.Empty)
                     {
                         GetDet();
                         objBll.StatementType = "Update";
@@ -125,7 +124,7 @@ namespace FinalP
             {
                 if (DdlStatus.SelectedValue != "-1")
                 {
-                    if (TBPostName.Text != string.Empty && TBSalary.Text != string.Empty && TBQuali.Text != string.Empty && TBExpReq.Text != string.Empty)
+                    if (TBPostName.Text != string.Empty && TBQuali.Text != string.Empty && TBExpReq.Text != string.Empty)
                     {
                         GetDet();
                         objBll.StatementType = "Delete";
@@ -156,7 +155,7 @@ namespace FinalP
             {
                 if (DdlStatus.SelectedValue != "-1")
                 {
-                    if (TBPostName.Text != string.Empty && TBSalary.Text != string.Empty && TBQuali.Text != string.Empty && TBExpReq.Text != string.Empty)
+                    if (TBPostName.Text != string.Empty && TBQuali.Text != string.Empty && TBExpReq.Text != string.Empty)
                     {
                         GetDet();
                         objBll.StatementType = "Reactivate";

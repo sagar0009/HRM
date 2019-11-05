@@ -9,6 +9,8 @@ using BusinessLayer;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.html.simpleparser;
+using System.Data;
+using System.IO;
 
 namespace FinalP
 {
@@ -35,11 +37,25 @@ namespace FinalP
         {
             foreach (GridViewRow gv in GVStatus.Rows)
             {
-                objBll.ReceivalId = Convert.ToInt32((gv.FindControl("LblRecId") as System.Web.UI.WebControls.Label).Text);               
+                objBll.ReceivalId = Convert.ToInt32((gv.FindControl("LblRecId") as System.Web.UI.WebControls.Label).Text);
                 System.Web.UI.WebControls.CheckBox cb = gv.FindControl("CkSts") as System.Web.UI.WebControls.CheckBox;
                 if (cb.Checked)
                 {
-                    objBll.IsEmployee = true;
+                    try
+                    {
+                        objBll.IsEmployee = true;
+                        int aid = Convert.ToInt32((gv.FindControl("LblApId") as System.Web.UI.WebControls.Label).Text);
+                        DataTable dy = objBll.AppUserDet(aid);
+                        objBll.InsertEmp(dy.Rows[0]["FName"].ToString(), dy.Rows[0]["LName"].ToString(), dy.Rows[0]["Address"].ToString(), dy.Rows[0]["Email"].ToString(), dy.Rows[0]["Gender"].ToString(), dy.Rows[0]["Phone"].ToString(), dy.Rows[0]["Password"].ToString(), Convert.ToInt32(dy.Rows[0]["DeptId"]), Convert.ToInt32(dy.Rows[0]["PostId"]), Convert.ToInt32(dy.Rows[0]["ClsId"]));
+                        Random gen = new Random();
+                        int code = gen.Next(000000, 999999);
+                        SendRegistrationAlert(dy.Rows[0]["Fname"].ToString(), dy.Rows[0]["PostName"].ToString(), Convert.ToDateTime(dy.Rows[0]["ReceivedDate"]).ToShortDateString(), dy.Rows[0]["Email"].ToString(), code);
+                        objBll.InsertActivation(aid, code,Convert.ToInt32(dy.Rows[0]["VacancyId"]));
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("Employee Already Added" );
+                    }
                 }
                 else
                 {
@@ -47,9 +63,31 @@ namespace FinalP
                 }
                 objBll.InsertStatus();
                 //function to insert into employee table
+
             }
-            MessageBox.Show("A new Employee has been added");
+            MessageBox.Show(" new Employee added");
             Response.Redirect("~/DashBoard.aspx");
+        }
+
+        private void SendRegistrationAlert(string UserName, string PostName,string RecDate,string Email,int code)
+        {
+            string body = PopulateMailBody(UserName, PostName,RecDate,code);
+            EmailEngine.SendMail(Email, "Welcome to ABC HRMS.", body);
+        }
+
+        private string PopulateMailBody(string UserName, string PostName,string RecDate,int code)
+        {
+            string body = String.Empty;
+
+            using (StreamReader reader = new StreamReader(Server.MapPath("~/ActivationTemplate.html")))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("[userName]", UserName);
+            body = body.Replace("[post]", PostName);
+            body = body.Replace("[ReceivalDate]", RecDate);
+            body = body.Replace("[Code]", code.ToString());            
+            return body;
         }
 
         protected void CkSts_CheckedChanged(object sender, EventArgs e)

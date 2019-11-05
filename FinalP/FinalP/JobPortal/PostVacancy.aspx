@@ -44,6 +44,13 @@
                         <asp:TextBox ID="TbJobType" ReadOnly="true" runat="server"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
+                <asp:TableRow runat="server">
+                    <asp:TableCell runat="server" HorizontalAlign="Right">Job Descriptions</asp:TableCell>
+                    <asp:TableCell runat="server" HorizontalAlign="Left">
+                        <asp:TextBox ID="TBJobDesc" TextMode="MultiLine" Rows="5" Width="400" Height="200" runat="server" ReadOnly="True"></asp:TextBox>
+                    </asp:TableCell>
+                </asp:TableRow>
+
             </asp:Table>
         </div>
         <div class="center">                       

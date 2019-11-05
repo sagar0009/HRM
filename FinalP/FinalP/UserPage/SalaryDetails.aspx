@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PayRoll/PayRoll.Master" AutoEventWireup="true" CodeBehind="GenerateSalary.aspx.cs" Inherits="FinalP.PayRoll.GenerateSalary" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPage/UPMaster.Master" AutoEventWireup="true" CodeBehind="SalaryDetails.aspx.cs" Inherits="FinalP.UserPage.SalaryDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css">
@@ -34,7 +34,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <table class="tbl">
+     <table class="tbl">
         <tr>
             <td class="tblhead">Generate Salary</td>
         </tr>
@@ -86,44 +86,19 @@
                                 ControlToValidate="DdlMonth" ErrorMessage="Select month" ForeColor="Red"
                                 InitialValue="SELECT" SetFocusOnError="True"></asp:RequiredFieldValidator>
                         </td>
-                    </tr>
-                    <tr>
-                        <td class="lbl">Department :</td>
-                        <td>
-                            <asp:DropDownList ID="DdlDept" runat="server" CssClass="txt" DataTextField="DepartmentName"
-                                OnSelectedIndexChanged="DdlDept_SelectedIndexChanged" DataValueField="DeptId"
-                                AutoPostBack="True">
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
-                                ControlToValidate="DdlDept" ErrorMessage="Select Department" ForeColor="Red"
-                                InitialValue="SELECT" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="lbl">Employee :
-                        </td>
-                        <td>
-                            <asp:DropDownList ID="DdlEmp" runat="server" DataTextField="FirstName" DataValueField="EmpId" CssClass="txt">
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
-                                ControlToValidate="DdlEmp" ErrorMessage="Select Employee" ForeColor="Red"
-                                InitialValue="SELECT" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                        </td>
-                        <td>
-                            <asp:Button ID="BtnSelect" runat="server" CssClass="btn" Text="SELECT"
-                                OnClick="BtnSelect_Click" Width="104px" />
-                        </td>
-                    </tr>
+                    </tr>                  
                 </table>
             </td>
         </tr>
         <tr>
             <td>
-                <asp:Label ID="lbl" runat="server" ForeColor="#006600"></asp:Label>
-            </td>
+                <asp:Button ID="BtnSelect" runat="server" CssClass="btn" Text="SELECT"
+                                OnClick="BtnSelect_Click" Width="104px" /></td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td>
+                <asp:Label ID="lbl" runat="server" ForeColor="#006600"></asp:Label>
+            </td>
         </tr>
         <tr>
             <td>
@@ -133,11 +108,7 @@
                             <tr>
                                 <td bgcolor="#FFFFCC">
                                     <table class="style3">
-                                        <tr>
-                                            <td class="style6">Employee Name :</td>
-                                            <td class="style9">
-                                                <asp:Label ID="LblName" runat="server"></asp:Label>
-                                            </td>
+                                        <tr>                                            
                                             <td class="style6">Account Number :</td>
                                             <td class="style9">
                                                 <asp:Label ID="LblAccNo" runat="server"></asp:Label>
@@ -208,9 +179,6 @@
                                             <td>&nbsp;</td>
                                             <td>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td class="btn">
-                                                <asp:Button ID="BtnGenerate" runat="server" Text="Generate" CssClass="btn" OnClick="BtnGenerate_Click" />
-                                            </td>
                                         </tr>
 
                                     </table>

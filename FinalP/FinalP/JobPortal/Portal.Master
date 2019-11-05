@@ -117,7 +117,7 @@
                     </li>
                     <li class="nav-item"><a href="Contact.aspx" class="nav-link" style="color: black">Contact</a></li>
                     <li class="nav-item cta mr-md-2"><a href="Login.aspx" style="color: black" class="nav-link">Job-Seeker</a></li>
-                    <li class ="nav-item"> <a href="User.aspx" class="nav-link" style="color: black">User Profile</a> </li>
+                    <li class ="nav-item"> <a href="../UserPage/UPHome.aspx" class="nav-link" style="color: black">User Profile</a> </li>
                 </ul>
 
             </div>

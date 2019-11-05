@@ -152,6 +152,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="Attendance/AssignHoliday.aspx">
+                                        <i class="mdi mdi-file-import menu-icon"></i>
+                                        <span class="menu-title">Add Holiday</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="Attendance/Leave.aspx">
                                         <i class="mdi mdi-pen menu-icon"></i>
                                         <span class="menu-title">Leave</span>

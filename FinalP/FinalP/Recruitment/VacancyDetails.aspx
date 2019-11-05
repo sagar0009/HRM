@@ -32,8 +32,12 @@
                             <asp:DropDownList ID="DDPost" runat="server" CssClass="txt"
                                 AutoPostBack="True" OnSelectedIndexChanged="DDPost_SelectedIndexChanged"
                                 DataTextField="PostName" DataValueField="PostId">
-                            </asp:DropDownList>                            
+                            </asp:DropDownList>
                         </td>
+                    </tr>
+                    <tr>
+                        <td class="lbl">Department :</td>
+                        <td> <asp:Label ID="LblDept" BorderWidth="1px" runat="server"></asp:Label></td>
                     </tr>
                     <tr>
                         <td class="lbl">Skills Required :</td>
@@ -89,7 +93,8 @@
                     </tr>
                     <tr>
                         <td class="lbl">Job Description</td>
-                        <td><asp:TextBox ID="TBJobDesc" TextMode="MultiLine" Rows="5" Width="400" Height="200" runat="server"></asp:TextBox>
+                        <td>
+                            <asp:TextBox ID="TBJobDesc" TextMode="MultiLine" ReadOnly="true" Rows="5" Width="400" Height="200" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -113,5 +118,5 @@
             <td>&nbsp;</td>
         </tr>
     </table>
-   
+
 </asp:Content>

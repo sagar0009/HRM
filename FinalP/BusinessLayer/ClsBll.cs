@@ -79,15 +79,32 @@ namespace BusinessLayer
         {
             SqlParameter[] pam = new SqlParameter[1];
             pam[0] = ClsDll.AddParameter("@VacancyId", VacancyId, SqlDbType.Int, 100);
-            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetJobByVacancy", pam);
-            return dt;
+            return ClsDll.ExecuteDTByProcedure("spGetJobByVacancy", pam);
+
         }
+
+        public DataTable AppUserDet(int aid)
+        {
+            SqlParameter[] pam = new SqlParameter[1];
+            pam[0] = ClsDll.AddParameter("@AppId", aid, SqlDbType.Int, 100);
+            return ClsDll.ExecuteDTByProcedure("spGetUserDetails", pam);
+        }
+
 
         public int GetUserByEmail()
         {
             SqlParameter[] pam = new SqlParameter[1];
             pam[0] = ClsDll.AddParameter("@ApplicantEmail", ApplicantEmail, SqlDbType.VarChar, 100);
             DataTable dt = ClsDll.ExecuteDTByProcedure("spGetUserByEmail", pam);
+            int str = Convert.ToInt32(dt.Rows[0][0]);
+            return str;
+        }
+
+        public int GetEmpByEmail(string em)
+        {
+            SqlParameter[] pam = new SqlParameter[1];
+            pam[0] = ClsDll.AddParameter("@em", em, SqlDbType.VarChar, 100);
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetEmpByEmail", pam);
             int str = Convert.ToInt32(dt.Rows[0][0]);
             return str;
         }
@@ -116,10 +133,11 @@ namespace BusinessLayer
             ClsDll.ExecuteDTByProcedure("spEditPost", pam);
         }
 
-        public void AddJobDetails()
+        public void AddJobDetails(string jd)
         {
-            SqlParameter[] pam = new SqlParameter[1];
+            SqlParameter[] pam = new SqlParameter[2];
             pam[0] = ClsDll.AddParameter("@PostId", PostId, SqlDbType.Int, 100);
+            pam[1] = ClsDll.AddParameter("@JobDesc", jd, SqlDbType.NVarChar, 500);
             ClsDll.ExecuteDTByProcedure("spInsertJobDetails", pam);
         }
 
@@ -165,6 +183,33 @@ namespace BusinessLayer
             pam[0] = ClsDll.AddParameter("@ReceivalId", ReceivalId, SqlDbType.Int, 100);
             pam[1] = ClsDll.AddParameter("@IsEmployee", IsEmployee, SqlDbType.Bit, 10);
             ClsDll.ExecuteDTByProcedure("spUpdateVacSts", pam);
+        }
+
+
+        public void InsertEmp(string fn, string ln, string ad, string em, string gn, string ph, string pw, int di, int pi, int ci)
+        {
+            SqlParameter[] pam = new SqlParameter[10];
+            pam[0] = ClsDll.AddParameter("@fn", fn, SqlDbType.NVarChar, 50);
+            pam[1] = ClsDll.AddParameter("@ln", ln, SqlDbType.NVarChar, 50);
+            pam[2] = ClsDll.AddParameter("@ad", ad, SqlDbType.NVarChar, 500);
+            pam[3] = ClsDll.AddParameter("@em", em, SqlDbType.NVarChar, 50);
+            pam[4] = ClsDll.AddParameter("@ph", ph, SqlDbType.NVarChar, 50);
+            pam[5] = ClsDll.AddParameter("@did", di, SqlDbType.Int, 10);
+            pam[6] = ClsDll.AddParameter("@pid", pi, SqlDbType.Int, 10);
+            pam[7] = ClsDll.AddParameter("@pw", pw, SqlDbType.NVarChar, 50);
+            pam[8] = ClsDll.AddParameter("@cid", ci, SqlDbType.Int, 10);
+            pam[9] = ClsDll.AddParameter("@gn", gn, SqlDbType.Char, 10);
+            ClsDll.ExecuteDTByProcedure("spInsertEmp", pam);
+        }
+
+        public void InsertActivation(int aid, int code,int vid)
+        {
+            SqlParameter[] pam = new SqlParameter[3];
+            pam[0] = ClsDll.AddParameter("@AppId", aid, SqlDbType.Int, 10);
+            pam[1] = ClsDll.AddParameter("@Code", code, SqlDbType.Int, 50);
+            pam[2] = ClsDll.AddParameter("@vid", vid, SqlDbType.Int, 10);
+            ClsDll.ExecuteDTByProcedure("spActivateCode", pam);
+
         }
 
         //Recruitment model insert event end
@@ -272,7 +317,17 @@ namespace BusinessLayer
             return dt;
         }
 
-        public DataTable GetHoliday(int yr,int mn,int d)
+        public DataTable GetAttByEid(int eid)
+        {
+            //populate attendance
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = ClsDll.AddParameter("@Date", selectDate, SqlDbType.Date, 100);
+            parameters[1] = ClsDll.AddParameter("@DeptId", eid, SqlDbType.Int, 10);
+            DataTable dt = ClsDll.ExecuteDTByProcedure("spGetAttByEid", parameters);
+            return dt;
+        }
+
+        public DataTable GetHoliday(int yr, int mn, int d)
         {
             SqlParameter[] parameters = new SqlParameter[3];
             parameters[0] = ClsDll.AddParameter("@Year", yr, SqlDbType.Int, 100);
@@ -282,7 +337,7 @@ namespace BusinessLayer
             return dt;
         }
 
-        public void AddHoliday(int yr,int mn,int dy,string det)
+        public void AddHoliday(int yr, int mn, int dy, string det)
         {
             SqlParameter[] parameters = new SqlParameter[4];
             parameters[0] = ClsDll.AddParameter("@yr", yr, SqlDbType.Int, 100);
@@ -293,12 +348,23 @@ namespace BusinessLayer
         }
 
         //complain  sp
-        public DataTable GetComplain()
+        public DataTable GetComplain(int eid)
         {
             //populate complain
-            SqlParameter[] parameters = new SqlParameter[0];
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = ClsDll.AddParameter("@eid", eid, SqlDbType.Int, 10);
             DataTable dt = ClsDll.ExecuteDTByProcedure("spGetComplain", parameters);
             return dt;
+        }
+
+        public  void InsertComplain(int eid,string sub,string msg,DateTime dt)
+        {
+            SqlParameter[] parameters = new SqlParameter[4];
+            parameters[0] = ClsDll.AddParameter("@eid", eid, SqlDbType.Int, 100);
+            parameters[1] = ClsDll.AddParameter("@sub", sub, SqlDbType.NVarChar, 10);
+            parameters[2] = ClsDll.AddParameter("@date", dt, SqlDbType.Date, 10);
+            parameters[3] = ClsDll.AddParameter("@msg", msg, SqlDbType.NVarChar, 500);
+            ClsDll.ExecuteDTByProcedure("spInsertComplain", parameters);
         }
 
         public DataTable GetCmpById()
@@ -314,7 +380,7 @@ namespace BusinessLayer
             SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = ClsDll.AddParameter("@CmpId", CmpId, SqlDbType.Int, 20);
             parameters[1] = ClsDll.AddParameter("@Reply", Reply, SqlDbType.NVarChar, 500);
-            ClsDll.ExecuteDTByProcedure("spUpdateCmpRply", parameters);            
+            ClsDll.ExecuteDTByProcedure("spUpdateCmpRply", parameters);
         }
 
         //leave sp
@@ -342,12 +408,12 @@ namespace BusinessLayer
             parameters[0] = ClsDll.AddParameter("@LeaveId", lid, SqlDbType.Int, 20);
             parameters[1] = ClsDll.AddParameter("@LveStatus", 0, SqlDbType.Bit, 20);
             ClsDll.ExecuteDTByProcedure("spUpdateLeaveStatus", parameters);
-            
+
         }
 
 
         //PayPortal sp 
-        public void InsertClass(string cn,int bp,int sal,int ta,int ma,int la)
+        public void InsertClass(string cn, int bp, int sal, int ta, int ma, int la)
         {
             SqlParameter[] parameters = new SqlParameter[6];
             parameters[0] = ClsDll.AddParameter("@ClsName", cn, SqlDbType.NVarChar, 50);
@@ -359,7 +425,7 @@ namespace BusinessLayer
             ClsDll.ExecuteDTByProcedure("spInsertClass", parameters);
         }
 
-        public void UpdateEmpSts(string sts,int eid)
+        public void UpdateEmpSts(string sts, int eid)
         {
             SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = ClsDll.AddParameter("@EmpId", eid, SqlDbType.Int, 10);
@@ -375,16 +441,16 @@ namespace BusinessLayer
             ClsDll.ExecuteDTByProcedure("spUpdateEmpResDate", parameters);
         }
 
-        public DataTable TotWD(int yr,int mn )
+        public DataTable TotWD(int yr, int mn)
         {
             SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = ClsDll.AddParameter("@FullYear", yr, SqlDbType.Int, 10);
             parameters[1] = ClsDll.AddParameter("@mn", mn, SqlDbType.Int, 10);
             return ClsDll.ExecuteDTByProcedure("spGetTotWorkDays", parameters);
-            
+
         }
 
-        public DataTable AbsDays(DateTime dt,int eid)
+        public DataTable AbsDays(DateTime dt, int eid)
         {
             SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = ClsDll.AddParameter("@Fd", dt, SqlDbType.Date, 10);
@@ -392,7 +458,16 @@ namespace BusinessLayer
             return ClsDll.ExecuteDTByProcedure("spGetAbsDays", parameters);
         }
 
-        public void InsertSalDet(int eid,int wd,int lv,int ts,int td,int ns,int yr,int mn)
+        public DataTable SalDet(int eid,int yr,int mn)
+        {
+            SqlParameter[] parameters = new SqlParameter[3];
+            parameters[0] = ClsDll.AddParameter("@eid", eid, SqlDbType.Int, 10);
+            parameters[1] = ClsDll.AddParameter("@yr", yr, SqlDbType.Int, 10);
+            parameters[2] = ClsDll.AddParameter("@mn", mn, SqlDbType.Int, 10);
+            return ClsDll.ExecuteDTByProcedure("spGetSalaryDet", parameters);
+        }
+
+        public void InsertSalDet(int eid, int wd, int lv, int ts, int td, int ns, int yr, int mn)
         {
             SqlParameter[] parameters = new SqlParameter[8];
             parameters[0] = ClsDll.AddParameter("@eid", eid, SqlDbType.Int, 10);
@@ -405,6 +480,42 @@ namespace BusinessLayer
             parameters[7] = ClsDll.AddParameter("@mn", mn, SqlDbType.Int, 10);
             ClsDll.ExecuteDTByProcedure("spInsertSalDet", parameters);
         }
+
+        //user module
+        public DataTable UserDet(int uid)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = ClsDll.AddParameter("@uid", uid, SqlDbType.Int, 10);
+            return ClsDll.ExecuteDTByProcedure("SpGetUser", parameters);
+        }
+
+        public DataTable UserEmp(string em)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = ClsDll.AddParameter("@em", em, SqlDbType.NVarChar, 100);
+            return ClsDll.ExecuteDTByProcedure("SpGetUserEmp", parameters);
+        }
+
+        public DataTable ApplicantDet(int code,string em)
+        {
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = ClsDll.AddParameter("@em", em, SqlDbType.NVarChar, 100);
+            parameters[1] = ClsDll.AddParameter("@code", code, SqlDbType.Int, 10);
+            return ClsDll.ExecuteDTByProcedure("spActEmp", parameters);
+        }
+
+        public void InsertLeave(int eid,string rsn,int dy,DateTime dt,DateTime sd,DateTime ed)
+        {
+            SqlParameter[] parameters = new SqlParameter[7];
+            parameters[0] = ClsDll.AddParameter("@rsn", rsn, SqlDbType.NVarChar, 100);
+            parameters[2] = ClsDll.AddParameter("@eid", eid, SqlDbType.Int, 10);
+            parameters[3] = ClsDll.AddParameter("@date", dt, SqlDbType.Date, 100);
+            parameters[4] = ClsDll.AddParameter("@days", dy, SqlDbType.Int, 10);
+            parameters[5] = ClsDll.AddParameter("@sdate", sd, SqlDbType.Date, 100);
+            parameters[1] = ClsDll.AddParameter("@edate", ed, SqlDbType.Date, 10);
+            parameters[6] = ClsDll.AddParameter("@DeptId", DeptId, SqlDbType.Int, 20);
+            ClsDll.ExecuteDTByProcedure("spInsertLeave", parameters);
+        }
     }
-       
+
 }

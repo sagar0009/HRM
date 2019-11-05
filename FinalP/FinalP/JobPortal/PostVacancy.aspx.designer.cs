@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinalP {
-    
-    
-    public partial class PostVacancy {
-        
+namespace FinalP
+{
+
+
+    public partial class PostVacancy
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Table1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table Table1;
-        
+
         /// <summary>
         /// TBPost control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TBPost;
-        
+
         /// <summary>
         /// TBPostVac control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TBPostVac;
-        
+
         /// <summary>
         /// TBExpReq control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TBExpReq;
-        
+
         /// <summary>
         /// TBQuali control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TBQuali;
-        
+
         /// <summary>
         /// TBSkill control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TBSkill;
-        
+
         /// <summary>
         /// TbJobType control.
         /// </summary>
@@ -83,7 +85,16 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TbJobType;
-        
+
+        /// <summary>
+        /// TBJobDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBJobDesc;
+
         /// <summary>
         /// BtnApply control.
         /// </summary>
@@ -92,7 +103,7 @@ namespace FinalP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnApply;
-        
+
         /// <summary>
         /// BtnBack control.
         /// </summary>

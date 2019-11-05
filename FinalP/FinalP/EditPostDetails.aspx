@@ -29,12 +29,7 @@
                         <ItemTemplate >
                             <asp:Label ID="LblPostName" runat="server" Text='<% # Eval("PostName") %>'></asp:Label>
                         </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Salary">                        
-                        <ItemTemplate >
-                            <asp:Label ID="LblSalary" runat="server" Text='<% # Eval("Salary") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    </asp:TemplateField>                    
                     <asp:TemplateField HeaderText="SkillId">                        
                         <ItemTemplate >
                             <asp:Label ID="LblSkillId" runat="server" Text='<% # Eval("SkillId") %>'></asp:Label>
@@ -67,15 +62,7 @@
                     <asp:TableCell>
                         <asp:TextBox ID="TBPostName" runat="server"></asp:TextBox>
                     </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell HorizontalAlign="Right">
-                        Salary                      
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="TBSalary" runat="server"></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
+                </asp:TableRow>                
                 <asp:TableRow>
                     <asp:TableCell HorizontalAlign="Right">
                         SkillType

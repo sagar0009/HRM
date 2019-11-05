@@ -85,7 +85,9 @@ namespace FinalP
                 LblSkills.Text = Convert.ToString(ds.Tables[0].Rows[0]["SkillType"]);
                 LblExperience.Text = Convert.ToString(ds.Tables[0].Rows[0]["ExperienceRequired"]) + " years";
                 LblQual.Text = Convert.ToString(ds.Tables[0].Rows[0]["AcademicQualification"]);
-                LblSalary.Text ="Rs. "+ Convert.ToString(ds.Tables[0].Rows[0]["Salary"]);
+                LblSalary.Text ="Negotiable ";
+                LblDept.Text = ds.Tables[0].Rows[0]["Departmentname"].ToString();
+                TBJobDesc.Text = ds.Tables[0].Rows[0]["JobDescription"].ToString();
             }
 
         }
@@ -108,12 +110,10 @@ namespace FinalP
                             objBll.Number = Convert.ToInt32(TBNoVacancy.Text);
                             objBll.JobType = DdlJobType.SelectedItem.Text;
                             objBll.AddVacancy();
-                            
-                            objBll.AddJobDetails();
-                            MessageBox.Show("Successfully posted");
-                            Response.Redirect("VacancyDetails.aspx");
+                                                        
+                            MessageBox.Show("Successfully posted");                            
                             Response.Write("<script>");
-                            Response.Write("window.open('JobPortal/Home.aspx','_blank')");
+                            Response.Write("window.open('~/JobPortal/JPHome.aspx','_blank')");
                             Response.Write("</script>");
                             
                         }

@@ -33,7 +33,7 @@ namespace FinalP.JobPortal
             int vId = Convert.ToInt32(((Button)sender).CommandArgument);
             Session["VacancyNumber"] = vId;
             DataTable dt = objBll.GetAllVac(vId);           
-            Session["sts"] = Convert.ToString(dt.Rows[0][11]);        
+            Session["sts"] = Convert.ToString(dt.Rows[0]["statuss"]);        
             Response.Redirect("PostVacancy.aspx");
         }
     }

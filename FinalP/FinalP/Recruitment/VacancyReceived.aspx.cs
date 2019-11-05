@@ -121,8 +121,6 @@ namespace FinalP
             {
                 if(DDSearch.SelectedValue!="-1")
                 {  
-                   
-
                     objBll.Key = TBSearch.Text;
                     objBll.Index = DDSearch.SelectedItem.Text;
                     GVAppRec.DataSource = null;

@@ -211,6 +211,8 @@ namespace FinalP.Attendance
                 {
                     MessageBox.Show(ex.ToString());
                 }
+                GridView1.DataSource = null;
+                GridView1.DataBind();
             }
                
         }

@@ -17,7 +17,7 @@ namespace FinalP.Attendance
             MultiView1.ActiveViewIndex = 0;
             if (!IsPostBack)
             {
-                GVComplain.DataSource = objBll.GetComplain();
+                GVComplain.DataSource = objBll.GetComplain(0);
                 GVComplain.DataBind();
                 LblComplain.Text = GVComplain.Rows.Count.ToString();
             }
@@ -52,7 +52,7 @@ namespace FinalP.Attendance
             objBll.UpdateCmpReply();
             TBAns.Text = "";
             MultiView1.ActiveViewIndex = 0;
-            GVComplain.DataSource = objBll.GetComplain();
+            GVComplain.DataSource = objBll.GetComplain(0);
             GVComplain.DataBind();
             LblComplain.Text = GVComplain.Rows.Count.ToString();            
         }
