@@ -11,7 +11,11 @@ namespace FinalP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                LblYr.Text = DateTime.Now.Year.ToString();
+                LblMn.Text = DateTime.Now.Month.ToString();
+            }
         }
     }
 }

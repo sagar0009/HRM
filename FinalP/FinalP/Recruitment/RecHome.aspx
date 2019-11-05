@@ -13,7 +13,11 @@
             <td class="tblhead">Welcome to ABC Recruitment system</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td class="lbl">Records of&nbsp; 
+                <asp:Label ID="LblYr" runat="server"></asp:Label>
+                &nbsp;
+                <asp:Label ID="LblMn" runat="server"></asp:Label>
+            </td>
         </tr>
         <tr>
             <td>
@@ -44,7 +48,7 @@
                 <div id="acc">
                     <table class="style1">
                         <tr>
-                            <td class="acc">Deactive</td>
+                            <td class="acc">Resigned</td>
                         </tr>
                         <tr>
                             <td class="acc1">

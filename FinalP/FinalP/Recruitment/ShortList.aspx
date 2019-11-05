@@ -82,7 +82,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Status">
                             <ItemTemplate>
-                                <asp:CheckBox ID="CkSts" OnCheckedChanged="CkSts_CheckedChanged" Checked='<%# Eval("IsShortListed") == DBNull.Value ? false : Eval("IsShortListed") %>' runat="server" />
+                                <asp:CheckBox ID="CkSts" OnCheckedChanged="CkSts_CheckedChanged" Checked='<%# Eval("IsWrTestCall") == DBNull.Value ? false : Eval("IsWrTestCall") %>' runat="server" />
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

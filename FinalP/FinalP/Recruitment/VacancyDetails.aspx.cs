@@ -98,7 +98,7 @@ namespace FinalP
             {
                 if (DdlJobType.SelectedValue != "-1")
                 {
-                    if (TBEndDate.Text != string.Empty && TBOpenDate.Text != string.Empty && TBNoVacancy.Text != string.Empty )
+                    if (TBEndDate.Text != string.Empty && TBOpenDate.Text != string.Empty && TBNoVacancy.Text != string.Empty)
                     {
                         DateTime startDate = Convert.ToDateTime(TBOpenDate.Text.Trim());
                         DateTime endDate = Convert.ToDateTime(TBEndDate.Text.Trim());
@@ -110,12 +110,12 @@ namespace FinalP
                             objBll.Number = Convert.ToInt32(TBNoVacancy.Text);
                             objBll.JobType = DdlJobType.SelectedItem.Text;
                             objBll.AddVacancy();
-                                                        
-                            MessageBox.Show("Successfully posted");                            
+
+                            MessageBox.Show("Successfully posted");
                             Response.Write("<script>");
-                            Response.Write("window.open('~/JobPortal/JPHome.aspx','_blank')");
+                            Response.Write("window.open('../JobPortal/JPHome.aspx','_blank')");
                             Response.Write("</script>");
-                            
+
                         }
                         else
                         {
@@ -135,8 +135,8 @@ namespace FinalP
             }
             else
             {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('Please select the post')", true);                
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('Please select the post')", true);
             }
-        }         
+        }
     }
 }

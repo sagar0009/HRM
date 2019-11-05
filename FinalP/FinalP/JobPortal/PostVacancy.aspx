@@ -8,6 +8,27 @@
         </div>
         <div  class="center" >
             <asp:Table ID="Table1" runat="server" CssClass="center1">
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="Label1" runat="server" visible="false"></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow runat="server"> 
+                    <asp:TableCell HorizontalAlign="Right">Upload CV</asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Left">
+                        <asp:FileUpload ID="FileUpload1" runat="server" />
+                    </asp:TableCell>
+                    <%--<asp:TableCell runat="server">
+                        <asp:Button ID="BtnUpload" runat="server" Text="Upload CV" OnClick="BtnUpload_Click" />
+                    </asp:TableCell>--%>
+                    <%-- <asp:TableCell runat="server">
+                        <asp:Button ID="BtnView" runat="server" Text="View CV" OnClick="BtnView_Click" />
+                    </asp:TableCell>--%>
+                    <asp:TableCell runat="server">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="FileUpload1" 
+                            ForeColor="Red" ErrorMessage="Upload CV"></asp:RequiredFieldValidator>
+                    </asp:TableCell>
+                </asp:TableRow>                    
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server" HorizontalAlign="Right">Post</asp:TableCell>
                     <asp:TableCell runat="server" HorizontalAlign="Left">

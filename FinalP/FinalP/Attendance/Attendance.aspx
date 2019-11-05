@@ -24,7 +24,7 @@
 
     <asp:Button ID="BtnUpload" runat="server" CssClass="btn " Text="Upload" OnClick="BtnUpload_Click" />
 
-    <asp:GridView ID="GridView1" runat="server">
+    <asp:GridView ID="GridView1" AllowPaging="true" runat="server" PageSize="15">
     </asp:GridView>
 
      <asp:Button ID="BtnSave" runat="server" CssClass="btn " Text="Save" OnClick="BtnSave_Click" />

@@ -137,5 +137,12 @@ namespace FinalP
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('Searching parameter is empty')", true);
             }
         }
+
+        protected void GVAppRec_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+           DataTable dt= objBll.GetCvUrl(Convert.ToInt32(e.CommandArgument.ToString())) ;
+            Response.Write("<script>window.open('"+ dt.Rows[0]["Path"].ToString() + "');</script>");
+            //Response.Redirect(dt.Rows[0]["Path"].ToString());
+        }
     }
 }

@@ -53,7 +53,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:GridView ID="GVAppRec" runat="server" EmptyDataText="No Records Found" AllowPaging="false" CssClass="center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False">
+                <asp:GridView ID="GVAppRec" OnRowCommand="GVAppRec_RowCommand" runat="server" EmptyDataText="No Records Found" AllowPaging="false" CssClass="center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False">
                     <Columns>
                         <asp:TemplateField HeaderText="ReceivalID">
                             <ItemTemplate>
@@ -78,6 +78,11 @@
                         <asp:TemplateField HeaderText="PostName">
                             <ItemTemplate>
                                 <asp:Label ID="LblPsId" runat="server" Text='<% # Eval("PostName") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="View CV">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LnkViewCv" runat="server" ForeColor="Red" Text="CV" CommandArgument='<%#Eval("ApplicantId") %>'></asp:LinkButton>                                
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Status">

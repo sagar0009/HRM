@@ -27,8 +27,9 @@ namespace FinalP.UserPage
                     DataTable dt = objBll.ApplicantDet(Convert.ToInt32(TBCode.Text), TBEmail.Text);
                     if (dt.Rows.Count > 0)
                     {
-                        MessageBox.Show("Successfully Activated ");
+                        
                         objBll.UpdateEmpSts("Active", objBll.GetEmpByEmail(TBEmail.Text));
+                        MessageBox.Show("Successfully Activated ");
                         Response.Redirect("UPHome.aspx");
                     }
                     else
