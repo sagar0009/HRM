@@ -42,6 +42,7 @@ namespace FinalP
             
             if(Session["UserEmail"]!=null)
             {
+                RequiredFieldValidator1.Enabled = true;
                 MessageBoxButtons mbtn = MessageBoxButtons.YesNo;
                 DialogResult res = MessageBox.Show("Do you want to submit the form?", "Submit form", mbtn);
                 if (res == DialogResult.Yes)
@@ -119,9 +120,9 @@ namespace FinalP
                     if (type != String.Empty)
 
                     {
-                        string Path = Server.MapPath("../Resumes/" + FileUpload1.FileName.ToString());
+                        string Path = Server.MapPath("../Resumes/" + FileUpload1.FileName);
                         FileUpload1.SaveAs(Path);
-                        objBll.Path = Path;
+                        objBll.Path = ("~/Resumes/" + FileUpload1.FileName);
                         objBll.EmpId = Convert.ToInt32(Session["UserId"]);
                         objBll.InsertCV();
                         Label1.ForeColor = System.Drawing.Color.Green;

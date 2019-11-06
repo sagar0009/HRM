@@ -7,137 +7,101 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinalP
+namespace FinalP.Master
 {
 
 
-    public partial class DashBoard1
+    public partial class EditPost
     {
 
         /// <summary>
-        /// LblDt control.
+        /// GvAvlPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDt;
+        protected global::System.Web.UI.WebControls.GridView GvAvlPost;
 
         /// <summary>
-        /// LblEmp control.
+        /// TBPName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblEmp;
+        protected global::System.Web.UI.WebControls.TextBox TBPName;
 
         /// <summary>
-        /// LblActiveEmp control.
+        /// DdlSkill control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblActiveEmp;
+        protected global::System.Web.UI.WebControls.DropDownList DdlSkill;
 
         /// <summary>
-        /// LblDeactEmp control.
+        /// TBExpReq control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDeactEmp;
+        protected global::System.Web.UI.WebControls.TextBox TBExpReq;
 
         /// <summary>
-        /// LblTotVac control.
+        /// TBQuali control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotVac;
+        protected global::System.Web.UI.WebControls.TextBox TBQuali;
 
         /// <summary>
-        /// LblTotApp control.
+        /// DdlStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotApp;
+        protected global::System.Web.UI.WebControls.DropDownList DdlStatus;
 
         /// <summary>
-        /// LblSelCan control.
+        /// BtnInsert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblSelCan;
+        protected global::System.Web.UI.WebControls.Button BtnInsert;
 
         /// <summary>
-        /// LblNewLeave control.
+        /// BtnUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNewLeave;
+        protected global::System.Web.UI.WebControls.Button BtnUpdate;
 
         /// <summary>
-        /// LblAppLeave control.
+        /// BtnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblAppLeave;
+        protected global::System.Web.UI.WebControls.Button BtnDelete;
 
         /// <summary>
-        /// LblRejLeave control.
+        /// BtnReact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblRejLeave;
-
-        /// <summary>
-        /// LblDt2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDt2;
-
-        /// <summary>
-        /// LblTotSal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotSal;
-
-        /// <summary>
-        /// LblTotDed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotDed;
-
-        /// <summary>
-        /// LblNetSal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNetSal;
+        protected global::System.Web.UI.WebControls.Button BtnReact;
     }
 }

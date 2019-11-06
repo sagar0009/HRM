@@ -8,14 +8,14 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using BusinessLayer;
 
-namespace FinalP.PayRoll
+namespace FinalP.MasterUser
 {
-    public partial class PayRoll : System.Web.UI.MasterPage
+    public partial class MUMaster : System.Web.UI.MasterPage
     {
         public ClsBll objBll = new ClsBll();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 if (Session["EmpEmail"] == null)
                 {
@@ -24,7 +24,7 @@ namespace FinalP.PayRoll
                     DialogResult res = MessageBox.Show("Do you want to log in?", "Login request", mbtn);
                     if (res == DialogResult.Yes)
                     {
-                        Session["Pay"] = "1";
+                        Session["Mas"] = "1";
                         Response.Redirect("~/LogIn.aspx");
                     }
                     else
@@ -39,7 +39,7 @@ namespace FinalP.PayRoll
 
                     if (dt.Rows.Count > 0)
                     {
-                        if (dt.Rows[0]["RoleId"].ToString() == "3" || dt.Rows[0]["RoleId"].ToString() == "1")
+                        if (dt.Rows[0]["RoleId"].ToString() == "1")
                         {
                             ImgUser.ImageUrl = dt.Rows[0]["ImageUrl"].ToString();
                             LblUserName.Text = dt.Rows[0]["FirstName"].ToString() + "  " + dt.Rows[0]["LastName"].ToString();
@@ -47,7 +47,7 @@ namespace FinalP.PayRoll
                         else
                         {
                             MessageBox.Show("Employee with input credentials are not allowed to access this module");
-                            Session["Pay"] = null;
+                            Session["Mas"] = null;
                             Session["EmpEmail"] = null;
                             Response.Redirect("~/DashBoard.aspx");
                         }
@@ -55,7 +55,7 @@ namespace FinalP.PayRoll
                     else
                     {
                         MessageBox.Show("Employee Doesnot Exist");
-                        Session["Pay"] = null;
+                        Session["Mas"] = null;
                         Session["EmpEmail"] = null;
                         Response.Redirect("~/DashBoard.aspx");
                     }
@@ -65,11 +65,9 @@ namespace FinalP.PayRoll
 
         protected void Button6_Click(object sender, EventArgs e)
         {
-            Session["Pay"] = null;
+            Session["Mas"] = null;
             Session["EmpEmail"] = null;
             Response.Redirect("~/DashBoard.aspx");
         }
-
-        
     }
 }

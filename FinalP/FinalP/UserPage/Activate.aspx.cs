@@ -24,17 +24,25 @@ namespace FinalP.UserPage
             {
                 if (TBCode.Text != string.Empty)
                 {
-                    DataTable dt = objBll.ApplicantDet(Convert.ToInt32(TBCode.Text), TBEmail.Text);
-                    if (dt.Rows.Count > 0)
+                    if (FileUpload1.HasFile)
                     {
-                        
-                        objBll.UpdateEmpSts("Active", objBll.GetEmpByEmail(TBEmail.Text));
-                        MessageBox.Show("Successfully Activated ");
-                        Response.Redirect("UPHome.aspx");
+                        objBll.Path = "~/EmpImage/" + FileUpload1.FileName;
+                        FileUpload1.SaveAs(Server.MapPath("~/EmpImage/" + FileUpload1.FileName));
+                        DataTable dt = objBll.ApplicantDet(Convert.ToInt32(TBCode.Text), TBEmail.Text);
+                        if (dt.Rows.Count > 0)
+                        {
+                            objBll.UpdateEmpSts("Active", objBll.GetEmpByEmail(TBEmail.Text));
+                            MessageBox.Show("Successfully Activated ");
+                            Response.Redirect("UPHome.aspx");
+                        }
+                        else
+                        {
+                            MessageBox.Show("UserEmail or activation code do not match");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("UserEmail or activation code do not match");
+                        MessageBox.Show("Select Profile picture");
                     }
                 }
                 else

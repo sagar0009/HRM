@@ -7,27 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinalP {
-    
-    
-    public partial class Master {
-        
+namespace FinalP
+{
+
+
+    public partial class LogIn
+    {
+
         /// <summary>
-        /// head control.
+        /// Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Email;
+
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password;
+
+        /// <summary>
+        /// BtnLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnLogin;
     }
 }

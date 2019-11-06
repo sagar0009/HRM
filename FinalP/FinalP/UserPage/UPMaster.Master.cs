@@ -21,6 +21,8 @@ namespace FinalP.UserPage
                 DataTable dt1 = objBll.UserEmp(dt.Rows[0]["Email"].ToString());
                 if (dt1.Rows.Count > 0)
                 {
+                    ImgUser.ImageUrl = dt1.Rows[0]["ImageUrl"].ToString();
+
                     BtnActivte.Enabled = false;
                     BtnSts.Enabled = false;
                 }

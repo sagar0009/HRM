@@ -9,4 +9,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     u r on home of user page of abc system
+    <br />
+    welcome to the abc hrm system<br />
+    as a user you can Activate your account if you have applied for the job and is selected<br />
+    if so click activate button and enter the code you received in the mail<br />
+    if U are an employee u can enjoy the full features of the user page module of our ABC HRMsystem
+
 </asp:Content>

@@ -1,11 +1,11 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RecMaster.master.cs" Inherits="FinalP.Recruitment.RecMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MUMaster.master.cs" Inherits="FinalP.MasterUser.MUMaster" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
     <title></title>
-    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+     <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -20,7 +20,7 @@
             <div id="left">
                 <table class="tbl">
                     <tr>
-                        <td class="tblhead">Welcome to Recruitment DashBoard</td>
+                        <td class="tblhead">Welcome to Master DashBoard</td>
                     </tr>
                     <tr>
                         <td style="text-align: center">
@@ -34,26 +34,26 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="Button1" runat="server" CssClass="mnu" Text="Vacancy"
-                                PostBackUrl="VacancyDetails.aspx" CausesValidation="False" />
+                            <asp:Button ID="Button1" runat="server" CssClass="mnu" Text="Edit Post"
+                                PostBackUrl="EditPost.aspx" CausesValidation="False" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="Button2" runat="server" CssClass="mnu" Text="App Received"
-                                CausesValidation="False" PostBackUrl="VacancyReceived.aspx" />
+                            <asp:Button ID="Button2" runat="server" CssClass="mnu" Text="Edit Department"
+                                CausesValidation="False" PostBackUrl="EditDept.aspx" />
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <asp:Button ID="Button3" runat="server" CssClass="mnu" Text="ShortList"
-                                CausesValidation="False" PostBackUrl="ShortList.aspx" />
+                            <asp:Button ID="Button3" runat="server" CssClass="mnu" Text="Edit Employee"
+                                CausesValidation="False" PostBackUrl="EditEmp.aspx" />
                         </td>
                     </tr>
-                    <tr>
+                   <%-- <tr>
                         <td>
-                            <asp:Button ID="Button4" runat="server" CssClass="mnu" Text="WrittenTest Calls"
+                            <asp:Button ID="Button4" runat="server" CssClass="mnu" Text="Complain"
                                 CausesValidation="False" PostBackUrl="WrittenTest.aspx" />
                         </td>
                     </tr>
@@ -67,11 +67,11 @@
                         <td>
                             <asp:Button ID="Button8" runat="server" CssClass="mnu" Text="Status"
                                 CausesValidation="False" PostBackUrl="Status.aspx" />
-                        </td>
+                        </td>--%>
                         <tr>
                             <td>
                                 <asp:Button ID="Button6" runat="server" CssClass="mnu" Text="Home"
-                                    OnClick="Button6_Click" CausesValidation="false" />
+                                     OnClick="Button6_Click" CausesValidation="false" />
                             </td>
                         </tr>
                    <%-- <tr>

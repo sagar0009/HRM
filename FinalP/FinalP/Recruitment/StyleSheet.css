@@ -6,7 +6,7 @@
 #headd {
     width: 1000px;
     height: 100px;
-    border: solid 1px indigo;
+    border: solid 1px red;
     margin: 0 auto;
     text-align: center;
 }
@@ -14,7 +14,7 @@
 #headdd {
     width: 1000px;
     height: 70px;
-    border: solid 1px indigo;
+    border: solid 1px red;
     margin: 0 auto;
     text-align: center;
 }
@@ -22,14 +22,14 @@
 #main {
     width: 1000px;
     height: 525px;
-    border: solid 1px indigo;
+    border: solid 1px red;
     margin: 0 auto;
 }
 
 #mainn {
     width: 1000px;
     height: 525px;
-    border: solid 1px indigo;
+    border: solid 1px red;
     margin: 0 auto;
 }
 
@@ -47,10 +47,10 @@
 
 #foot {
     width: 1000px;
-    height: 100px;
-    border: solid 1px indigo;
+    height: 30px;
+    border: solid 1px red;
     margin: 0 auto;
-    background: indigo;
+    background: red;
     color: #fff;
     text-align: center;
     vertical-align: middle;
@@ -59,7 +59,7 @@
 #login {
     width: 300px;
     height: 200px;
-    border: solid 0px indigo;
+    border: solid 0px red;
     margin: 0 auto;
     margin-top: 120px;
 }
@@ -68,10 +68,10 @@
 #acc {
     width: 190px;
     height: 120px;
-    border: solid 1px indigo;
+    border: solid 1px red;
     float: left;
     margin: 20px;
-    background: linear-gradient(indigo 80%, #ffff66);
+    background: linear-gradient(red 80%, #ffff66);
 }
 
 .acc {
@@ -95,7 +95,7 @@
 
 .tbllogin {
     width: 100%;
-    border: solid 1px indigo;
+    border: solid 1px red;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     box-shadow: 0px 5px 6px 2px #ccc;
@@ -107,24 +107,24 @@
     font-weight: bold;
     text-align: center;
     color: #fff;
-    background: indigo;
+    background: red;
 }
 
 .lbl {
-    text-align: right;    
-    color: indigo;
+    text-align: right;
+    color: red;
 }
 
 .txt {
-    border: solid 1px indigo;
+    border: solid 1px red;
+    width: 120px;
     padding-left: 3px;
     background: #e6ffee;
-    margin-right: 54px;
 }
 
 .btn {
-    background: indigo;
-    border: solid 2px indigo;
+    background: red;
+    border: solid 2px red;
     color: #fff;
     font-weight: bold;
     border-radius: 2px;
@@ -135,14 +135,14 @@
 
     .btn:hover {
         background: #f4f4f4;
-        border: solid 2px indigo;
-        color: indigo;
+        border: solid 2px red;
+        color: red;
         font-weight: bold;
     }
 
 .tbl {
     width: 100%;
-    border: solid 1px indigo;
+    border: solid 1px red;
 }
 
 .tblhead {
@@ -151,12 +151,12 @@
     font-weight: bold;
     text-align: center;
     color: #fff;
-    background: indigo;
+    background: red;
 }
 
 .mnu {
-    border: solid 2px indigo;
-    color: indigo;
+    border: solid 2px red;
+    color: red;
     text-align: center;
     font-size: medium;
     font-weight: bold;
@@ -174,5 +174,5 @@
         font-size: medium;
         font-weight: bold;
         height: 45px;
-        background: indigo;
+        background: red;
     }

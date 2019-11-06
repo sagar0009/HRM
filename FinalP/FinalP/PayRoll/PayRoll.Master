@@ -90,13 +90,13 @@
                     <tr>
                         <td>
                             <asp:Button ID="Button6" runat="server" CssClass="mnu" Text="Home"
-                                PostBackUrl="~/DashBoard.aspx" CausesValidation="false" />
+                                 OnClick="Button6_Click" CausesValidation="false" />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <asp:Button ID="Button7" runat="server" CssClass="mnu"
-                                PostBackUrl="#" Text="LogOut" CausesValidation="False" />
+                                 OnClick="Button6_Click" Text="LogOut" CausesValidation="False" />
                         </td>
                     </tr>
                 </table>

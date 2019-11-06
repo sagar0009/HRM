@@ -41,7 +41,7 @@
                             </tr>
                             <tr>
                                 <td>Select Employee :
-                                <asp:DropDownList ID="DdlEmp" runat="server" CssClass="txt" DataTextField="FirstName" DataValueField="EmpId">
+                                <asp:DropDownList ID="DdlEmp" runat="server" CssClass="txt" AutoPostBack="true" DataTextField="FirstName" DataValueField="EmpId">
                                 </asp:DropDownList>
                                     <asp:Button ID="BtnSelect" runat="server" CssClass="btn"
                                         OnClick="BtnSelect_Click" Text="Select" />

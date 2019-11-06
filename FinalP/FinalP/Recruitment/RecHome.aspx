@@ -13,10 +13,8 @@
             <td class="tblhead">Welcome to ABC Recruitment system</td>
         </tr>
         <tr>
-            <td class="lbl">Records of&nbsp; 
-                <asp:Label ID="LblYr" runat="server"></asp:Label>
-                &nbsp;
-                <asp:Label ID="LblMn" runat="server"></asp:Label>
+            <td  class="tblhead"> 
+                <asp:Label ID="LblDt" runat="server"></asp:Label>               
             </td>
         </tr>
         <tr>

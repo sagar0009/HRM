@@ -21,14 +21,14 @@
 
 #main {
     width: 1000px;
-    height: 700px;
+    height: 525px;
     border: solid 1px Red;
     margin: 0 auto;
 }
 
 #mainn {
     width: 1000px;
-    height: 700px;
+    height: 500px;
     border: solid 1px Red;
     margin: 0 auto;
 }
@@ -36,13 +36,13 @@
 #left {
     float: left;
     width: 200px;
-    height: 700px;
+    height: 500px;
 }
 
 #right {
     float: right;
-    width:85%;
-    height: 700px;
+    width: 800px;
+    height: 500px;
 }
 
 #foot {
@@ -111,7 +111,7 @@
 }
 
 .lbl {
-    text-align: right;    
+    text-align: right;
     color: Red;
 }
 

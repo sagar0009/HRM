@@ -64,14 +64,14 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="Button11" runat="server" CssClass="mnu" Text="Home"
-                                PostBackUrl="~/DashBoard.aspx" CausesValidation="false" />
+                            <asp:Button ID="BtnHome" runat="server" CssClass="mnu" Text="Home"
+                              OnClick="BtnHome_Click" CausesValidation="false" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="Button12" runat="server" CssClass="mnu"
-                                PostBackUrl="#" Text="LogOut" CausesValidation="False" />
+                            <asp:Button ID="BtnLogOut" runat="server" CssClass="mnu"
+                              OnClick="BtnHome_Click" Text="LogOut" CausesValidation="False" />
                         </td>
                     </tr>
                 </table>

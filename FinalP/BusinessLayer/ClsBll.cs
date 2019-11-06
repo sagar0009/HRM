@@ -23,6 +23,33 @@ namespace BusinessLayer
 
         }
 
+        public DataTable GetDept()
+        {
+            SqlParameter[] parameters = new SqlParameter[0];
+            return ClsDll.ExecuteDTByProcedure("spGetDept", parameters);
+        }
+
+        public void UpdateDeptSts( int did)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = ClsDll.AddParameter("@did", did, SqlDbType.Int, 20);
+            ClsDll.ExecuteDTByProcedure("spUpdateDeptSts", parameters);
+        }
+
+        public void InsertDept(string nm)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = ClsDll.AddParameter("@dn", nm, SqlDbType.NVarChar, 20);
+            ClsDll.ExecuteDTByProcedure("spInsertDept", parameters);
+        }
+        public void UpdateDept(string dn,int did)
+        {
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = ClsDll.AddParameter("@dn", dn, SqlDbType.NVarChar, 50);
+            parameters[1] = ClsDll.AddParameter("@did", did, SqlDbType.Int, 20);
+            ClsDll.ExecuteDTByProcedure("spUpdateDept", parameters);
+        }
+
         public void UpdateEmp()
         {
             SqlParameter[] pam = new SqlParameter[8];
@@ -217,9 +244,10 @@ namespace BusinessLayer
         }
 
 
-        public void InsertEmp(string fn, string ln, string ad, string em, string gn, string ph, string pw, int di, int pi, int ci)
+        public void InsertEmp(int aid,string fn, string ln, string ad, string em, string gn, string ph, string pw, int di, int pi, int ci)
         {
-            SqlParameter[] pam = new SqlParameter[10];
+            SqlParameter[] pam = new SqlParameter[11];
+            pam[10] = ClsDll.AddParameter("@aid", aid, SqlDbType.Int, 20);
             pam[0] = ClsDll.AddParameter("@fn", fn, SqlDbType.NVarChar, 50);
             pam[1] = ClsDll.AddParameter("@ln", ln, SqlDbType.NVarChar, 50);
             pam[2] = ClsDll.AddParameter("@ad", ad, SqlDbType.NVarChar, 500);
@@ -466,9 +494,10 @@ namespace BusinessLayer
 
         public void UpdateEmpSts(string sts, int eid)
         {
-            SqlParameter[] parameters = new SqlParameter[2];
+            SqlParameter[] parameters = new SqlParameter[3];
             parameters[0] = ClsDll.AddParameter("@EmpId", eid, SqlDbType.Int, 10);
             parameters[1] = ClsDll.AddParameter("@EmpSts", sts, SqlDbType.NVarChar, 20);
+            parameters[2] = ClsDll.AddParameter("@Path", Path, SqlDbType.NVarChar, 200);
             ClsDll.ExecuteDTByProcedure("spUpdateEmpSts", parameters);
         }
 
@@ -541,6 +570,11 @@ namespace BusinessLayer
             parameters[0] = ClsDll.AddParameter("@em", em, SqlDbType.NVarChar, 100);
             parameters[1] = ClsDll.AddParameter("@code", code, SqlDbType.Int, 10);
             return ClsDll.ExecuteDTByProcedure("spActEmp", parameters);
+        }
+
+        public DataSet GetAllCount()
+        {
+            return objDll.GetDataFromSP("spCount", null);
         }
 
         public void InsertLeave(int eid, string rsn, int dy, DateTime dt, DateTime sd, DateTime ed)

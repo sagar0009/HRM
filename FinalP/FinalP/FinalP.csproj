@@ -105,10 +105,17 @@
     <Content Include="Attendance\StyleSheet1.css" />
     <Content Include="DashBoard.aspx" />
     <Content Include="EditPostDetails.aspx" />
+    <Content Include="EmpImage\typ.jpg" />
     <Content Include="Images\Company.png" />
     <Content Include="Images\typ.jpg" />
     <Content Include="JobPortal\About.aspx" />
     <Content Include="JobPortal\Confirmation.aspx" />
+    <Content Include="LogIn.aspx" />
+    <Content Include="MasterUser\EditDept.aspx" />
+    <Content Include="MasterUser\EditEmp.aspx" />
+    <Content Include="MasterUser\EditPost.aspx" />
+    <Content Include="MasterUser\MasterHome.aspx" />
+    <Content Include="MasterUser\StyleSheet1.css" />
     <Content Include="Recruitment\Contract.aspx" />
     <Content Include="css1\css\QMXWPE.css" />
     <Content Include="css1\scss\QMXWPE_2.css" />
@@ -131,7 +138,7 @@
     <Content Include="PayRoll\StyleSheet1.css" />
     <Content Include="PayRoll\ViewSalary.aspx" />
     <Content Include="PayRoll\YearReport.aspx" />
-    <Content Include="Recruitment\StyleSheet1.css" />
+    <Content Include="Recruitment\StyleSheet.css" />
     <Content Include="register.html" />
     <Content Include="RegistrationTemplate.html" />
     <Content Include="Recruitment\ShortList.aspx" />
@@ -232,12 +239,47 @@
     <Compile Include="JobPortal\Confirmation.aspx.designer.cs">
       <DependentUpon>Confirmation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Master.Master.cs">
-      <DependentUpon>Master.Master</DependentUpon>
+    <Compile Include="LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Master.Master.designer.cs">
-      <DependentUpon>Master.Master</DependentUpon>
+    <Compile Include="LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterUser\EditDept.aspx.cs">
+      <DependentUpon>EditDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterUser\EditDept.aspx.designer.cs">
+      <DependentUpon>EditDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterUser\EditEmp.aspx.cs">
+      <DependentUpon>EditEmp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterUser\EditEmp.aspx.designer.cs">
+      <DependentUpon>EditEmp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterUser\MUMaster.Master.cs">
+      <DependentUpon>MUMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterUser\MUMaster.Master.designer.cs">
+      <DependentUpon>MUMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterUser\EditPost.aspx.cs">
+      <DependentUpon>EditPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterUser\EditPost.aspx.designer.cs">
+      <DependentUpon>EditPost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterUser\MasterHome.aspx.cs">
+      <DependentUpon>MasterHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterUser\MasterHome.aspx.designer.cs">
+      <DependentUpon>MasterHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Recruitment\Contract.aspx.cs">
       <DependentUpon>Contract.aspx</DependentUpon>
@@ -415,6 +457,13 @@
     <Compile Include="Recruitment\WrittenTest.aspx.designer.cs">
       <DependentUpon>WrittenTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\Activate.aspx.cs">
       <DependentUpon>Activate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -482,11 +531,12 @@
   <ItemGroup>
     <Content Include="JobPortal\Portal.Master" />
     <Content Include="Attendance\Attendance.Master" />
+    <Content Include="MasterUser\MUMaster.Master" />
     <None Include="packages.config" />
     <Content Include="PayRoll\PayRoll.Master" />
-    <Content Include="Master.Master" />
     <Content Include="Recruitment\RecMaster.Master" />
     <Content Include="UserPage\UPMaster.Master" />
+    <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -13,6 +13,11 @@
             <td class="tblhead">Welcome to ABC Attendance system</td>
         </tr>
         <tr>
+            <td class="tblhead">
+                <asp:Label ID="LblDt" runat="server"></asp:Label>
+            </td>
+        </tr>
+        <tr>
             <td>&nbsp;</td>
         </tr>
         <tr>

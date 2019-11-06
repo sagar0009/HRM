@@ -80,11 +80,11 @@
                                 <asp:Label ID="LblPsId" runat="server" Text='<% # Eval("PostName") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="View CV">
+                        <%--<asp:TemplateField HeaderText="Download CV">
                             <ItemTemplate>
-                                <asp:LinkButton ID="LnkViewCv" runat="server" ForeColor="Red" Text="CV" CommandArgument='<%#Eval("ApplicantId") %>'></asp:LinkButton>                                
+                                <asp:LinkButton ID="LnkDwnCv" OnClick="LnkDwnCv_Click" runat="server" ForeColor="Red" Text="CV" CommandArgument='<%#Eval("ApplicantId") %>'></asp:LinkButton>                                
                             </ItemTemplate>
-                        </asp:TemplateField>
+                        </asp:TemplateField>--%>
                         <asp:TemplateField HeaderText="Status">
                             <ItemTemplate>
                                 <asp:CheckBox ID="CkSts" OnCheckedChanged="CkSts_CheckedChanged" Checked='<%# Eval("IsShortListed") == DBNull.Value ? false : Eval("IsShortListed") %>' runat="server" />

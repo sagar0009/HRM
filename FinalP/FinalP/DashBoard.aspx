@@ -1,14 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="DashBoard.aspx.cs" Inherits="FinalP.DashBoard1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="DashBoard.aspx.cs" Inherits="FinalP.DashBoard1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <table class="tbl">
+    <table class="tbl">
         <tr>
             <td class="tblhead">Welcome to ABC HRM system</td>
         </tr>
         <tr>
-            <td>&nbsp;ADD Graphs Bars etc here</td>
+            <td class="tblhead">
+                <asp:Label ID="LblDt" runat="server"></asp:Label>
+            </td>
         </tr>
+        <%--<tr>
+            <td>&nbsp;ADD Graphs Bars etc here</td>
+        </tr>--%>
         <tr>
             <td>
                 <div id="acc">
@@ -48,47 +54,7 @@
                     </table>
                 </div>
             </td>
-        </tr>
-           <tr>
-            <td>
-                <div id="acc">
-                    <table class="style1">
-                        <tr>
-                            <td class="acc">Total Salary</td>
-                        </tr>
-                        <tr>
-                            <td class="acc1">
-                                <asp:Label ID="LblTotSal" runat="server" Text="0"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div id="acc">
-                    <table class="style1">
-                        <tr>
-                            <td class="acc">Total Deductions</td>
-                        </tr>
-                        <tr>
-                            <td class="acc1">
-                                <asp:Label ID="LblTotDed" runat="server" Text="0"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div id="acc">
-                    <table class="style1">
-                        <tr>
-                            <td class="acc">Net Salary</td>
-                        </tr>
-                        <tr>
-                            <td class="acc1">
-                                <asp:Label ID="LblNetSal" runat="server" Text="0"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
+        </tr>        
         <tr>
             <td>
                 <div id="acc">
@@ -129,7 +95,7 @@
                 </div>
             </td>
         </tr>
-         <tr>
+        <tr>
             <td>
                 <div id="acc">
                     <table class="style1">
@@ -169,7 +135,51 @@
                 </div>
             </td>
         </tr>
-
+        <tr>
+            <td class="tblhead">
+                <asp:Label ID="LblDt2" runat="server"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="acc">
+                    <table class="style1">
+                        <tr>
+                            <td class="acc">Total Salary</td>
+                        </tr>
+                        <tr>
+                            <td class="acc1">
+                                <asp:Label ID="LblTotSal" runat="server" Text="0"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="acc">
+                    <table class="style1">
+                        <tr>
+                            <td class="acc">Total Deductions</td>
+                        </tr>
+                        <tr>
+                            <td class="acc1">
+                                <asp:Label ID="LblTotDed" runat="server" Text="0"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="acc">
+                    <table class="style1">
+                        <tr>
+                            <td class="acc">Net Salary</td>
+                        </tr>
+                        <tr>
+                            <td class="acc1">
+                                <asp:Label ID="LblNetSal" runat="server" Text="0"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
 
         <tr>
             <td>&nbsp;</td>

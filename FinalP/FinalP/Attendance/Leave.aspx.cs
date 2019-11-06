@@ -125,7 +125,7 @@ namespace FinalP.Attendance
 
         protected void GVNewLeave_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "Approve")
+            if (e.CommandName == "app")
             {
                 objBll.UpdateLeave(Convert.ToInt32(e.CommandArgument.ToString()), "Approved");
             }

@@ -12,6 +12,11 @@
         <tr>
             <td class="tblhead">Welcome to ABC payroll system</td>
         </tr>
+         <tr>
+            <td  class="tblhead"> 
+                <asp:Label ID="LblDt" runat="server"></asp:Label>               
+            </td>
+        </tr>
         <tr>
             <td>&nbsp;</td>
         </tr>
@@ -64,7 +69,7 @@
                         </tr>
                         <tr>
                             <td class="acc1">
-                                <asp:Label ID="LblTotSal" runat="server" Text="0"></asp:Label>
+                                <asp:Label ID="LblTotSal" Font-Size="25px" runat="server" Text="0"></asp:Label>
                             </td>
                         </tr>
                     </table>
@@ -76,7 +81,7 @@
                         </tr>
                         <tr>
                             <td class="acc1">
-                                <asp:Label ID="LblTotDed" runat="server" Text="0"></asp:Label>
+                                <asp:Label ID="LblTotDed" Font-Size="25px" runat="server" Text="0"></asp:Label>
                             </td>
                         </tr>
                     </table>
@@ -88,7 +93,7 @@
                         </tr>
                         <tr>
                             <td class="acc1">
-                                <asp:Label ID="LblNetSal" runat="server" Text="0"></asp:Label>
+                                <asp:Label ID="LblNetSal" Font-Size="25px" runat="server" Text="0"></asp:Label>
                             </td>
                         </tr>
                     </table>

@@ -22,7 +22,7 @@ namespace FinalP.UserPage
                 DialogResult res = MessageBox.Show("Do you want to log in?", "Login request", mbtn);
                 if (res == DialogResult.Yes)
                 {
-                    Session["UserVal"] = "1";
+                    Session["UserPage"] = "1";
                     Response.Redirect("~/JobPortal/Login.aspx");
                 }
                 else

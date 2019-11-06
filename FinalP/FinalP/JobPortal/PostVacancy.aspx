@@ -26,7 +26,7 @@
                     </asp:TableCell>--%>
                     <asp:TableCell runat="server">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="FileUpload1" 
-                            ForeColor="Red" ErrorMessage="Upload CV"></asp:RequiredFieldValidator>
+                            ForeColor="Red" Enabled="false" ErrorMessage="Upload CV"></asp:RequiredFieldValidator>
                     </asp:TableCell>
                 </asp:TableRow>                    
                 <asp:TableRow runat="server">

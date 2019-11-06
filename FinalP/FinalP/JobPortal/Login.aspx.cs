@@ -52,7 +52,7 @@ namespace FinalP.JobPortal
                         {
                             Response.Redirect("PostVacancy.aspx");
                         }
-                        else if (Session["UserVal"].ToString() != null)
+                        else if (Session["UserPage"].ToString() != null)
                         {
                             Response.Redirect("~/UserPage/UPHome.aspx");
                         }

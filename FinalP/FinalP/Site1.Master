@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.Master.cs" Inherits="FinalP.Master" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="FinalP.Site1" %>
 
 <!DOCTYPE html>
 
@@ -220,6 +220,43 @@
                         </div>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-bas" aria-expanded="false" aria-controls="ui-bas">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">MasterUser</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-bas">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="MasterUser/MasterHome.aspx">
+                                        <i class="mdi mdi-account-group menu-icon"></i>
+                                        <span class="menu-title">Home</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="MasterUser/EditEmp.aspx">
+                                        <i class="mdi mdi-account-group menu-icon"></i>
+                                        <span class="menu-title">Edit Employee</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="MasterUser/EditDept.aspx">
+                                        <i class="mdi mdi-file-import menu-icon"></i>
+                                        <span class="menu-title">Edit Department</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="MasterUser/EditPost.aspx">
+                                        <i class="mdi mdi-pen menu-icon"></i>
+                                        <span class="menu-title">Edit Post</span>
+                                    </a>
+                                </li>                                                               
+                            </ul>
+                        </div>
+                       
+                    </li>
+
+                    <%--<li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="mdi mdi-marker menu-icon"></i>
                             <span class="menu-title">Training</span>
@@ -230,7 +267,7 @@
                             <i class="mdi mdi-marker menu-icon"></i>
                             <span class="menu-title">EditPost</span>
                         </a>
-                    </li>
+                    </li>--%>
                 </ul>
             </nav>
             <!-- partial -->
@@ -278,6 +315,5 @@
     <script src="Resources/js/data-table.js"></script>
     <script src="Resources/js/jquery.dataTables.js"></script>
     <script src="Resources/js/dataTables.bootstrap4.js"></script>
-    <!-- End custom js for this page-->
 </body>
 </html>
