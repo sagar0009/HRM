@@ -138,6 +138,20 @@
                                                 <asp:TextBox ID="TbAccNo" runat="server"></asp:TextBox>
                                             </td>
                                         </tr>
+                                         <tr>
+                                            <td class="style6">&nbsp; </td>
+                                            <td class="style6">Role
+                                                
+                                            </td>
+                                            <td class="style9">
+                                                <asp:TextBox ID="TBRole" runat="server"></asp:TextBox>
+                                            </td>
+                                            <td class="style9">
+                                                <asp:DropDownList ID="DdlRole" DataTextField="Role" DataValueField="RoleId" Visible="false" runat="server">
+                                                    
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>&nbsp;</td>
                                             <td class="style9">

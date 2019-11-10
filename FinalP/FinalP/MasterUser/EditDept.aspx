@@ -11,6 +11,16 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
+            <td class="btn">
+                <asp:Button ID="BtnEdit" runat="server" CssClass="btn" OnClick="BtnEdit_Click"
+                    Text="Edit Department" Width="160px" />
+                &nbsp;
+            <asp:Button ID="BtnView" runat="server" CssClass="btn" Text="View Department"
+                Width="160px" OnClick="BtnView_Click" />
+                &nbsp;   
+            </td>
+        </tr>
+        <tr>
             <td>
                 <table>
                     <tr>
@@ -24,14 +34,14 @@
                                                     <asp:Label ID="LblDept" runat="server" Text='<% # Eval("DepartmentName") %>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Edit">
+                                            <%--<asp:TemplateField HeaderText="Edit">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="LnkEdit" OnClick="LnkEdit_Click" runat="server" ForeColor="Green" Text="Edit" CommandName="edit" CommandArgument='<%#Eval("DeptId") %>'></asp:LinkButton>
+                                                    <asp:LinkButton ID="LnkEdit" runat="server" ForeColor="Green" Text="Edit" CommandName="edit" CommandArgument='<%#Eval("DeptId") %>'></asp:LinkButton>
                                                 </ItemTemplate>
-                                            </asp:TemplateField>
+                                            </asp:TemplateField>--%>
                                             <asp:TemplateField HeaderText="Remove">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="LnkRemove" CommandName="Remove" runat="server" ForeColor="Red" Text="Remove" CommandArgument='<%#Eval("DeptId") %>'></asp:LinkButton>
+                                                    <asp:LinkButton ID="LnkRemove" CommandName="remove" runat="server" ForeColor="Red" Text="Remove" CommandArgument='<%#Eval("DeptId") %>'></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>

@@ -186,6 +186,24 @@ namespace FinalP.MasterUser
         protected global::System.Web.UI.WebControls.TextBox TbAccNo;
 
         /// <summary>
+        /// TBRole control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBRole;
+
+        /// <summary>
+        /// DdlRole control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlRole;
+
+        /// <summary>
         /// BtnSave control.
         /// </summary>
         /// <remarks>

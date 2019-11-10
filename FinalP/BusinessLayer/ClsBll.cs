@@ -64,6 +64,16 @@ namespace BusinessLayer
             ClsDll.ExecuteDTByProcedure("spUpdateEmp", pam);
         }
 
+        public void UpdateEmp2()
+        {
+            SqlParameter[] pam = new SqlParameter[5];
+            pam[0] = ClsDll.AddParameter("@pf", Address, SqlDbType.VarChar, 100);
+            pam[1] = ClsDll.AddParameter("@citp", BankAcN, SqlDbType.VarChar, 100);
+            pam[2] = ClsDll.AddParameter("@cit", BankName, SqlDbType.VarChar, 100);
+            pam[3] = ClsDll.AddParameter("@eid", EmpId, SqlDbType.Int, 20);
+            pam[4]=ClsDll.AddParameter("@rl",Degree,SqlDbType.VarChar,100);
+            ClsDll.ExecuteDTByProcedure("spUpdateEmp2", pam);
+        }
         public DataTable GetEmp()
         {
             SqlParameter[] parameters = new SqlParameter[1];
@@ -180,14 +190,13 @@ namespace BusinessLayer
 
         public void EditPost()
         {
-            SqlParameter[] pam = new SqlParameter[7];
-            pam[0] = ClsDll.AddParameter("@PostName", PostName, SqlDbType.VarChar, 100);
-            pam[1] = ClsDll.AddParameter("@Salary", Salary, SqlDbType.Int, 100);
+            SqlParameter[] pam = new SqlParameter[6];
+            pam[0] = ClsDll.AddParameter("@PostName", PostName, SqlDbType.VarChar, 100);          
             pam[2] = ClsDll.AddParameter("@SkillId", SkillId, SqlDbType.Int, 100);
             pam[3] = ClsDll.AddParameter("@AcademicQualification", AcaQua, SqlDbType.VarChar, 100);
             pam[4] = ClsDll.AddParameter("@ExperienceRequired", ExpReq, SqlDbType.Int, 50);
             pam[5] = ClsDll.AddParameter("@Status", Status, SqlDbType.Bit, 100);
-            pam[6] = ClsDll.AddParameter("@StatementType", StatementType, SqlDbType.VarChar, 100);
+            pam[11] = ClsDll.AddParameter("@StatementType", StatementType, SqlDbType.VarChar, 100);
             ClsDll.ExecuteDTByProcedure("spEditPost", pam);
         }
 
@@ -197,6 +206,14 @@ namespace BusinessLayer
             pam[0] = ClsDll.AddParameter("@PostId", PostId, SqlDbType.Int, 100);
             pam[1] = ClsDll.AddParameter("@JobDesc", jd, SqlDbType.NVarChar, 500);
             ClsDll.ExecuteDTByProcedure("spInsertJobDetails", pam);
+        }
+
+        public DataTable GetEmp(int did,int eid)
+        {
+            SqlParameter[] pam = new SqlParameter[2];
+            pam[0] = ClsDll.AddParameter("@did", did, SqlDbType.Int, 100);
+            pam[1] = ClsDll.AddParameter("@eid", eid, SqlDbType.Int, 500);
+            return ClsDll.ExecuteDTByProcedure("GetEmp", pam);
         }
 
         //Recruitment model insert event start
@@ -389,7 +406,7 @@ namespace BusinessLayer
             //populate attendance
             SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = ClsDll.AddParameter("@Date", selectDate, SqlDbType.Date, 100);
-            parameters[1] = ClsDll.AddParameter("@DeptId", eid, SqlDbType.Int, 10);
+            parameters[1] = ClsDll.AddParameter("@eid", eid, SqlDbType.Int, 10);
             DataTable dt = ClsDll.ExecuteDTByProcedure("spGetAttByEid", parameters);
             return dt;
         }
@@ -562,6 +579,13 @@ namespace BusinessLayer
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = ClsDll.AddParameter("@em", em, SqlDbType.NVarChar, 100);
             return ClsDll.ExecuteDTByProcedure("SpGetUserEmp", parameters);
+        }
+
+        public DataTable UserEmp2(string em)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = ClsDll.AddParameter("@em", em, SqlDbType.NVarChar, 100);
+            return ClsDll.ExecuteDTByProcedure("SpGetUserEmp2", parameters);
         }
 
         public DataTable ApplicantDet(int code, string em)

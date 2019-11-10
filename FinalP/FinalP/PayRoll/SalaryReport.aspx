@@ -117,7 +117,7 @@
                         <%-- <asp:BoundField HeaderText="DA" DataField="da" />
                     <asp:BoundField HeaderText="HR" DataField="hr" />
                     <asp:BoundField HeaderText="Leave" DataField="leavededucation" />--%>
-                        <asp:BoundField HeaderText="Deducaton" DataField="Deducation" />
+                        <asp:BoundField HeaderText="Deduction" DataField="Deduction" />
                         <asp:BoundField HeaderText="Allowance" DataField="Allowance" />
                         <asp:BoundField HeaderText="NetPay" DataField="NetPAy" />
                         <asp:TemplateField HeaderText="Salary Receipt">

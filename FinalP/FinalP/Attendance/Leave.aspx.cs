@@ -141,12 +141,12 @@ namespace FinalP.Attendance
 
         protected void BtnSelect0_Click(object sender, EventArgs e)
         {
-            if (DdlDept.SelectedValue != "-1")
+            if (DdlDept0.SelectedValue != "-1")
             {
-                if (DdlEmp.SelectedValue != "-1")
+                if (DdlEmp0.SelectedValue != "-1")
                 {
-                    objBll.DeptId = Convert.ToInt32(DdlDept.SelectedValue);
-                    objBll.EmpId = Convert.ToInt32(DdlEmp.SelectedValue);
+                    objBll.DeptId = Convert.ToInt32(DdlDept0.SelectedValue);
+                    objBll.EmpId = Convert.ToInt32(DdlEmp0.SelectedValue);
 
                     GVAppLeave.DataSource = objBll.GetLeave("Approved");
                     GVAppLeave.DataBind();
@@ -174,12 +174,12 @@ namespace FinalP.Attendance
 
         protected void BtnSelect1_Click(object sender, EventArgs e)
         {
-            if (DdlDept.SelectedValue != "-1")
+            if (DdlDept1.SelectedValue != "-1")
             {
-                if (DdlEmp.SelectedValue != "-1")
+                if (DdlEmp1.SelectedValue != "-1")
                 {
-                    objBll.DeptId = Convert.ToInt32(DdlDept.SelectedValue);
-                    objBll.EmpId = Convert.ToInt32(DdlEmp.SelectedValue);
+                    objBll.DeptId = Convert.ToInt32(DdlDept1.SelectedValue);
+                    objBll.EmpId = Convert.ToInt32(DdlEmp1.SelectedValue);
 
                     GVRejLeave.DataSource = objBll.GetLeave("Rejected");
                     GVRejLeave.DataBind();

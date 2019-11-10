@@ -46,15 +46,19 @@ namespace FinalP
                         objBll.IsEmployee = true;
                         int aid = Convert.ToInt32((gv.FindControl("LblApId") as System.Web.UI.WebControls.Label).Text);
                         DataTable dy = objBll.AppUserDet(aid);
-                        objBll.InsertEmp(aid,dy.Rows[0]["FName"].ToString(), dy.Rows[0]["LName"].ToString(), dy.Rows[0]["Address"].ToString(), dy.Rows[0]["Email"].ToString(), dy.Rows[0]["Gender"].ToString(), dy.Rows[0]["Phone"].ToString(), dy.Rows[0]["Password"].ToString(), Convert.ToInt32(dy.Rows[0]["DeptId"]), Convert.ToInt32(dy.Rows[0]["PostId"]), Convert.ToInt32(dy.Rows[0]["ClsId"]));
+                        objBll.InsertEmp(aid, dy.Rows[0]["FName"].ToString(), dy.Rows[0]["LName"].ToString(), dy.Rows[0]["Address"].ToString(), dy.Rows[0]["Email"].ToString(), dy.Rows[0]["Gender"].ToString(), dy.Rows[0]["Phone"].ToString(), dy.Rows[0]["Password"].ToString(), Convert.ToInt32(dy.Rows[0]["DeptId"]), Convert.ToInt32(dy.Rows[0]["PostId"]), Convert.ToInt32(dy.Rows[0]["ClsId"]));
                         Random gen = new Random();
                         int code = gen.Next(000000, 999999);
                         SendRegistrationAlert(dy.Rows[0]["Fname"].ToString(), dy.Rows[0]["PostName"].ToString(), Convert.ToDateTime(dy.Rows[0]["ReceivedDate"]).ToShortDateString(), dy.Rows[0]["Email"].ToString(), code);
-                        objBll.InsertActivation(aid, code,Convert.ToInt32(dy.Rows[0]["VacancyId"]));
+                        objBll.InsertActivation(aid, code, Convert.ToInt32(dy.Rows[0]["VacancyId"]));
+                        MessageBox.Show(" new Employee added");
+                        Response.Write("<script>");
+                        Response.Write("window.open('../JobPortal/JPHome.aspx','_blank')");
+                        Response.Write("</script>");
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Employee Already Added" );
+                        MessageBox.Show("Employee Already Added"+ex.ToString() );
                     }
                 }
                 else
@@ -65,8 +69,8 @@ namespace FinalP
                 //function to insert into employee table
 
             }
-            MessageBox.Show(" new Employee added");
-            Response.Redirect("~/DashBoard.aspx");
+           
+            
         }
 
         private void SendRegistrationAlert(string UserName, string PostName,string RecDate,string Email,int code)

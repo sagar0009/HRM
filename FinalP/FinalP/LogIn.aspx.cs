@@ -43,6 +43,10 @@ namespace FinalP
                         {
                             Response.Redirect("~/MasterUser/MasterHome.aspx");
                         }
+                        else if(Session["Rec"]!=null)
+                        {
+                            Response.Redirect("~/Recruitment/RecHome.aspx");
+                        }
                     }
                     else
                     {

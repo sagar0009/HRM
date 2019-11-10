@@ -94,7 +94,7 @@
                     <tr>
                         <td class="lbl">Job Description</td>
                         <td>
-                            <asp:TextBox ID="TBJobDesc" TextMode="MultiLine" ReadOnly="true" Rows="3" Width="300" Height="200" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="TBJobDesc" TextMode="MultiLine" ReadOnly="true" Rows="3" Width="300" Height="100" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>

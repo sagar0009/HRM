@@ -143,15 +143,15 @@
                                         Width="761px" ForeColor="Black">
                                         <AlternatingRowStyle BackColor="White" />
                                         <Columns>
-                                            <asp:BoundField DataField="Fromdate" DataFormatString="{0:dd MMM yyyy}"
+                                            <asp:BoundField DataField="Startdate" DataFormatString="{0:dd MMM yyyy}"
                                                 HeaderText="From Date">
                                                 <ItemStyle Width="120px" />
                                             </asp:BoundField>
-                                            <asp:BoundField DataField="Todate" DataFormatString="{0:dd MMM yyyy}"
+                                            <asp:BoundField DataField="Enddate" DataFormatString="{0:dd MMM yyyy}"
                                                 HeaderText="To Date">
                                                 <ItemStyle Width="120px" />
                                             </asp:BoundField>
-                                            <asp:BoundField DataField="Days" HeaderText="Days">
+                                            <asp:BoundField DataField="NoDays" HeaderText="Days">
                                                 <HeaderStyle HorizontalAlign="Left" />
                                                 <ItemStyle Width="50px" />
                                             </asp:BoundField>
@@ -162,7 +162,7 @@
                                             <asp:TemplateField HeaderText="Delete">
                                                 <ItemStyle Width="30px" />
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="LnkDel" runat="server" CommandArgument='<%#Eval("LID") %>'
+                                                    <asp:LinkButton ID="LnkDel" runat="server" CommandArgument='<%#Eval("LeaveId") %>'
                                                         CommandName="rej" ForeColor="Red" Text="Delete"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
@@ -220,15 +220,15 @@
                                         Width="761px" ForeColor="Black">
                                         <AlternatingRowStyle BackColor="White" />
                                         <Columns>
-                                            <asp:BoundField DataField="Fromdate" DataFormatString="{0:dd MMM yyyy}"
+                                            <asp:BoundField DataField="startdate" DataFormatString="{0:dd MMM yyyy}"
                                                 HeaderText="From Date">
                                                 <ItemStyle Width="120px" />
                                             </asp:BoundField>
-                                            <asp:BoundField DataField="Todate" DataFormatString="{0:dd MMM yyyy}"
+                                            <asp:BoundField DataField="Enddate" DataFormatString="{0:dd MMM yyyy}"
                                                 HeaderText="To Date">
                                                 <ItemStyle Width="120px" />
                                             </asp:BoundField>
-                                            <asp:BoundField DataField="Days" HeaderText="Days">
+                                            <asp:BoundField DataField="NoDays" HeaderText="Days">
                                                 <HeaderStyle HorizontalAlign="Left" />
                                                 <ItemStyle Width="50px" />
                                             </asp:BoundField>
@@ -238,7 +238,7 @@
                                             <asp:TemplateField HeaderText="Delete">
                                                 <ItemStyle Width="30px" />
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="LnkDel0" runat="server" CommandArgument='<%#Eval("LID") %>'
+                                                    <asp:LinkButton ID="LnkDel0" runat="server" CommandArgument='<%#Eval("LeaveId") %>'
                                                         CommandName="rej" ForeColor="Red" Text="Delete"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>

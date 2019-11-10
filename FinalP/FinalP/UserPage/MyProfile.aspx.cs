@@ -19,7 +19,7 @@ namespace FinalP.UserPage
             {
                 DsablTxtBx();
                 DataTable dt2 = objBll.UserDet(Convert.ToInt32(Session["UserId"]));
-                DataTable dt1 = objBll.UserEmp(dt2.Rows[0]["Email"].ToString());
+                DataTable dt1 = objBll.UserEmp2(dt2.Rows[0]["Email"].ToString());
                 Session["Eid"] = Convert.ToInt32(dt1.Rows[0]["EmpId"]);
                 DataTable dt = objBll.GetEmpDet(Convert.ToInt32(Session["Eid"]));                
                 TbPost.Text = dt.Rows[0]["PostName"].ToString();
@@ -95,6 +95,7 @@ namespace FinalP.UserPage
             objBll.MarSts = TbMarSts.Text;
             objBll.Pan = TbPan.Text;
             objBll.Degree = TbDeg.Text;
+            objBll.EmpId = Convert.ToInt32(Session["Eid"]);
             objBll.UpdateEmp();
             MessageBox.Show("Details Updated successfully");
             BtnEdit.Visible = true;

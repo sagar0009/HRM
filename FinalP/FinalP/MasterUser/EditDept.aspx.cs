@@ -30,12 +30,11 @@ namespace FinalP.MasterUser
         protected void GVDept_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             Session["did"] = e.CommandArgument.ToString();
-            if (e.CommandName=="Remove")
-            {
-                
+            if (e.CommandName=="remove")
+            {                
                 objBll.UpdateDeptSts(Convert.ToInt32(e.CommandArgument.ToString()));
                 LoadGv();
-            }
+            }          
         }
 
         protected void BtnSave_Click(object sender, EventArgs e)
@@ -49,12 +48,7 @@ namespace FinalP.MasterUser
             {
                 MessageBox.Show("Enter the new name and status");
             }
-        }
-
-        protected void LnkEdit_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 1;
-        }
+        }       
 
         protected void BtnAdd_Click(object sender, EventArgs e)
         {
@@ -62,6 +56,16 @@ namespace FinalP.MasterUser
             {
                 objBll.InsertDept(TBDeptName.Text);
             }
+        }
+
+        protected void BtnEdit_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 1;
+        }
+
+        protected void BtnView_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 0;
         }
     }
 }

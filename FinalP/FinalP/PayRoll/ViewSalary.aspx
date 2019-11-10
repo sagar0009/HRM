@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PayRoll/PayRoll.Master" AutoEventWireup="true" CodeBehind="ViewSalary.aspx.cs" Inherits="FinalP.PayRoll.ViewSalary" %>
 
+<%@ Register Assembly="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css">
         .tbl {
@@ -37,6 +39,11 @@
                                 PostBackUrl="SalaryReport.aspx" Text="BACK" Width="80px" />
                         </td>
                         <td>My Salary Detail</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" />
+                        </td>
                     </tr>
                 </table>
             </td>

@@ -18,7 +18,7 @@ namespace FinalP
 {
     public partial class VacancyReceived : System.Web.UI.Page
     {
-       ClsBll objBll = new ClsBll();
+        ClsBll objBll = new ClsBll();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -33,7 +33,7 @@ namespace FinalP
             GVAppRec.DataSource = objBll.GetRecAppDet();
             GVAppRec.DataBind();
 
-        }       
+        }
 
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -117,10 +117,10 @@ namespace FinalP
 
         protected void BtnSearch_Click(object sender, EventArgs e)
         {
-            if(TBSearch.Text!=string.Empty)
+            if (TBSearch.Text != string.Empty)
             {
-                if(DDSearch.SelectedValue!="-1")
-                {  
+                if (DDSearch.SelectedValue != "-1")
+                {
                     objBll.Key = TBSearch.Text;
                     objBll.Index = DDSearch.SelectedItem.Text;
                     GVAppRec.DataSource = null;
@@ -140,8 +140,17 @@ namespace FinalP
 
         protected void GVAppRec_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-           DataTable dt= objBll.GetCvUrl(Convert.ToInt32(e.CommandArgument.ToString())) ;
-            Response.Write("<script>window.open('"+ dt.Rows[0]["Path"].ToString() + "');</script>");
+            DataTable dt = objBll.GetCvUrl(Convert.ToInt32(e.CommandArgument.ToString()));
+            string FullFilePath = dt.Rows[0]["Path"].ToString();
+            FileInfo file = new FileInfo(FullFilePath);
+            if (file.Exists)
+            {
+                Response.ContentType = "application/vnd.ms-word";
+                Response.AddHeader("Content-Disposition", "inline; filename=\"" + file.Name + "\"");
+                Response.AddHeader("Content-Length", file.Length.ToString());
+                Response.TransmitFile(file.FullName);
+            }
+            //Response.Write("<script>window.open('"+ dt.Rows[0]["Path"].ToString() + "');</script>");
             //Response.Redirect(dt.Rows[0]["Path"].ToString());
         }
     }
