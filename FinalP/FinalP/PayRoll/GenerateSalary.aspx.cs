@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -53,6 +54,7 @@ namespace FinalP.PayRoll
         {            
             MultiView1.ActiveViewIndex = 0;
             DataTable dt = objBll.GetEmpByEid(Convert.ToInt32(DdlEmp.SelectedValue));
+            Session["em"]= dt.Rows[0]["Email"].ToString();
             LblAccNo.Text = dt.Rows[0]["BankAcN"].ToString();
             LblBasicPay.Text = dt.Rows[0]["BasicPay"].ToString();
             LblSalary.Text = dt.Rows[0]["Salary"].ToString();
@@ -101,15 +103,37 @@ namespace FinalP.PayRoll
             }
             LblTax.Text = tax.ToString();
 
-            LblNetSal.Text = Convert.ToString(12 * GrossSal - tax);
+            LblNetSal.Text = Convert.ToString(GrossSal - tax);
         }
-        
+
+        private void SendRegistrationAlert(string UserName, string amt, string mn, string yr)
+        {
+            string body = PopulateMailBody(UserName, amt, mn, yr);
+            EmailEngine.SendMail(UserName, "Welcome to ABC HRMS.", body);
+        }
+
+        private string PopulateMailBody(string UserName, string amt, string mn, string yr)
+        {
+            string body = String.Empty;
+
+            using (StreamReader reader = new StreamReader(Server.MapPath("~/SalaryReceipt.html")))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("[Fname]", UserName);
+            body = body.Replace("[amt]", amt);
+            body = body.Replace("[month]", mn);
+            body = body.Replace("[year]", yr);
+            return body;
+        }
+
         protected void BtnGenerate_Click(object sender, EventArgs e)
         {
             try
             {
                 objBll.InsertSalDet(Convert.ToInt32(DdlEmp.SelectedValue),Convert.ToInt32(LblTax.Text), Convert.ToInt32(LblTotWD.Text), Convert.ToInt32(LblLeave.Text), Convert.ToInt32(LblTotSal.Text), Convert.ToInt32(LblLeaveDeduce.Text), Convert.ToInt32(LblNetSal.Text), Convert.ToInt32(DdlYear.SelectedValue.ToString()), Convert.ToInt32(DdlMonth.SelectedIndex),pf,cit);
                 MessageBox.Show("salary of "+"'" + LblName.Text + "'\n"+ " for Year " + DdlYear.SelectedItem.Text + " Month " + DdlMonth.SelectedItem.Text+"\n Inserted Successfully");
+                SendRegistrationAlert(Session["em"].ToString(), LblNetSal.Text, DdlYear.SelectedItem.Text, DdlMonth.SelectedItem.Text);
                 MultiView1.ActiveViewIndex = -1;
             }
             catch(Exception ex)
