@@ -175,6 +175,16 @@
                                             </td>
                                             <td>&nbsp;</td>
                                         </tr>
+                                         <tr>
+                                            <td class="style6">CIT No :</td>
+                                            <td class="style9">
+                                                <asp:Label ID="LblCitNo" runat="server"></asp:Label>
+                                            </td>
+                                            <td class="style6">PF NO :</td>
+                                            <td>
+                                                <asp:Label ID="LblPfNo" runat="server"></asp:Label>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td class="style6">Total working Days</td>
                                             <td class="style9">
@@ -196,9 +206,10 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="style6">&nbsp;</td>
+                                            <td class="style6">Tax Deduction:</td>
                                             <td class="style9">
-                                                &nbsp;</td>
+                                                <asp:Label ID="LblTax" runat="server">0</asp:Label>
+                                            </td>
                                             <td class="style6">Net Salary : </td>
                                             <td>
                                                 <asp:Label ID="LblNetSal" runat="server">0</asp:Label>

@@ -31,13 +31,33 @@
         .style9 {
             width: 186px;
         }
+
+        .st {
+            width: 186px;
+            text-align: right;
+        }
+
+        .hdleft {
+            text-align: left;
+            color: darkblue;
+            width: 250px;
+        }
+
+        }
+
+        .hdrt {
+            text-align: left;
+            color: darkblue;
+            width: 186px;
+        }
+
+        .auto-style1 {
+            width: 92px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-     <table class="tbl">
-        <tr>
-            <td class="tblhead">Generate Salary</td>
-        </tr>
+    <table class="tbl">
         <tr>
             <td>&nbsp;</td>
         </tr>
@@ -86,14 +106,14 @@
                                 ControlToValidate="DdlMonth" ErrorMessage="Select month" ForeColor="Red"
                                 InitialValue="SELECT" SetFocusOnError="True"></asp:RequiredFieldValidator>
                         </td>
-                    </tr>                  
+                    </tr>
                 </table>
             </td>
         </tr>
         <tr>
             <td>
                 <asp:Button ID="BtnSelect" runat="server" CssClass="btn" Text="SELECT"
-                                OnClick="BtnSelect_Click" Width="104px" /></td>
+                    OnClick="BtnSelect_Click" Width="104px" /></td>
         </tr>
         <tr>
             <td>
@@ -106,81 +126,95 @@
                     <asp:View ID="View1" runat="server">
                         <table style="width: 100%">
                             <tr>
+                                <td class="tblhead">General Details</td>
+                            </tr>
+                            <tr>
                                 <td bgcolor="#FFFFCC">
                                     <table class="style3">
-                                        <tr>                                            
-                                            <td class="style6">Account Number :</td>
+                                        <tr>
+                                            <td class="style6">Full Name : </td>
                                             <td class="style9">
-                                                <asp:Label ID="LblAccNo" runat="server"></asp:Label>
+                                                <asp:Label ID="LblFname" runat="server"></asp:Label>
                                             </td>
+                                            <td class="style6">Email : </td>
+                                            <td>
+                                                <asp:Label ID="LblEm" runat="server"></asp:Label>
+                                            </td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style6">Gender :</td>
+                                            <td class="style9">
+                                                <asp:Label ID="LblGender" runat="server"></asp:Label>
+                                            </td>
+                                            <td class="style6">MaritalStatus : </td>
+                                            <td>
+                                                <asp:Label ID="LblMar" runat="server"></asp:Label>
+                                            </td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style6">Address :</td>
+                                            <td class="style9">
+                                                <asp:TextBox ID="TBAdd" runat="server" Rows="2" Columns="15" TextMode="MultiLine"></asp:TextBox>
+                                            </td>
+                                            <td class="style6">Mobile : </td>
+                                            <td>
+                                                <asp:Label ID="LblMob" runat="server"></asp:Label>
+                                            </td>
+                                            <td>&nbsp;</td>
                                         </tr>
                                         <tr>
                                             <td class="style6">Department:</td>
                                             <td class="style9">
                                                 <asp:Label ID="LblDept" runat="server"></asp:Label>
                                             </td>
-                                            <td class="style6">TravelAllowance : </td>
+                                            <td class="style6">Position : </td>
                                             <td>
-                                                <asp:Label ID="LblTravAll" runat="server"></asp:Label>                                               
+                                                <asp:Label ID="LblPost" runat="server"></asp:Label>
                                             </td>
                                             <td>&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td class="style6">Basic Pay :</td>
+                                            <td class="style6">CIT No. :</td>
                                             <td class="style9">
-                                                <asp:Label ID="LblBasicPay" runat="server"></asp:Label>
+                                                <asp:Label ID="LblCitN" runat="server"></asp:Label>
                                             </td>
-                                            <td class="style6">LunchAllowance : </td>
+                                            <td class="style6">CIT % : </td>
                                             <td>
-                                               <asp:Label ID="LblLunAll" runat="server"></asp:Label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="style6">Salary : </td>
-                                            <td class="style9">
-                                                <asp:Label ID="LblSalary" runat="server"></asp:Label>
-                                            </td>
-                                            <td class="style6">MedicalAllowance : </td>
-                                            <td>
-                                                <asp:Label ID="LblMedAll" runat="server"></asp:Label>
+                                                <asp:Label ID="LblCitPer" runat="server"></asp:Label>
                                             </td>
                                             <td>&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td class="style6">Total working Days</td>
+                                            <td class="style6">PF No.:</td>
                                             <td class="style9">
-                                                <asp:Label ID="LblTotWD" runat="server">0</asp:Label>
+                                                <asp:Label ID="LblPfN" runat="server"></asp:Label>
                                             </td>
-                                            <td class="style6">Total Salary</td>
+                                            <td class="style6">PF % : </td>
                                             <td>
-                                                <asp:Label ID="LblTotSal" runat="server">0</asp:Label>
+                                                <asp:Label ID="LblPfPer" runat="server"></asp:Label>
                                             </td>
+                                            <td>&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td class="style6">Total Leave :</td>
+                                            <td class="style6">PAN :</td>
                                             <td class="style9">
-                                                <asp:Label ID="LblLeave" runat="server">0</asp:Label>
+                                                <asp:Label ID="LblPan" runat="server"></asp:Label>
                                             </td>
-                                            <td class="style6">Leave Deduction : </td>
+                                            <td class="style6">Bank Name : </td>
                                             <td>
-                                                <asp:Label ID="LblLeaveDeduce" runat="server">0</asp:Label>
+                                                <asp:Label ID="LblBank" runat="server"></asp:Label>
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="style6">&nbsp;</td>
-                                            <td class="style9">
-                                                &nbsp;</td>
-                                            <td class="style6">Net Salary : </td>
-                                            <td>
-                                                <asp:Label ID="LblNetSal" runat="server">0</asp:Label>
-                                            </td>
+                                            <td>&nbsp;</td>
                                         </tr>
                                         <tr>
                                             <td>&nbsp;</td>
                                             <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
+                                            <td>
+                                                <asp:Button ID="BtnDet" runat="server" Text="Salary Details" OnClick="BtnDet_Click" />
+                                            </td>
                                         </tr>
-
                                     </table>
                                 </td>
                             </tr>
@@ -188,6 +222,152 @@
                                 <td>&nbsp;</td>
                             </tr>
                         </table>
+                    </asp:View>
+                    <asp:View ID="View2" runat="server">
+
+                         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+                                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+                                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+                                    <script type="text/javascript">
+                                        $("body").on("click", "#BtnPrint", function () {
+                                            html2canvas($('[id*=MyDet]')[0], {
+                                                onrendered: function (canvas) {
+                                                    var data = canvas.toDataURL();
+                                                    var docDefinition = {
+                                                        content: [{
+                                                            image: data,
+                                                            width: 500
+                                                        }]
+                                                    };
+                                                    pdfMake.createPdf(docDefinition).download("SalaryDetails.pdf");
+                                                }
+                                            });
+                                        });
+                                    </script>
+
+                        <div id="MyDet" runat="server">
+                            <table style="width: 100%" border="1">
+                                <tr>
+                                    <td class="tblhead">Salary Details</td>
+                                </tr>
+                                <tr>
+
+                                    <td class="style6">Account Number :</td>
+                                    <td class="style9">
+                                        <asp:Label ID="LblAccNo" runat="server"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style6">Total working Days</td>
+                                    <td class="style9">
+                                        <asp:Label ID="LblTotWD" runat="server">0</asp:Label>
+                                    </td>
+                                    <td class="style6">Total Leave :</td>
+                                    <td class="style9">
+                                        <asp:Label ID="LblLeave" runat="server">0</asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="hdleft">Addition(+) </td>
+                                    <td class="hdrt">Amount 
+                                    </td>
+                                    <td class="hdleft">Deduction(-)</td>
+                                    <td class="hdrt">Amount
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="style6">Basic Pay :</td>
+                                    <td class="st">
+                                        <asp:Label ID="LblBpay" runat="server">0</asp:Label>
+                                    </td>
+                                    <td class="style6">PF : </td>
+                                    <td class="st">
+                                        <asp:Label ID="LblPf" runat="server">0</asp:Label>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="style6">Salary :</td>
+                                    <td class="st">
+                                        <asp:Label ID="LblSal" runat="server">0</asp:Label>
+                                    </td>
+                                    <td class="style6">CIT : </td>
+                                    <td class="st">
+                                        <asp:Label ID="LblCit" runat="server">0</asp:Label>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="style6">Medical Allowance:</td>
+                                    <td class="st">
+                                        <asp:Label ID="LblMed" runat="server">0</asp:Label>
+                                    </td>
+                                    <td class="style6">Leave Deduce : </td>
+                                    <td class="st">
+                                        <asp:Label ID="LblLveDed" runat="server">0</asp:Label>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="style6">Lunch Allowance :</td>
+                                    <td class="st">
+                                        <asp:Label ID="LblLnch" runat="server">0</asp:Label>
+                                    </td>
+                                    <td class="style6">Tax Deduction </td>
+                                    <td class="st">
+                                        <asp:Label ID="LblTax" runat="server">0</asp:Label>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="style6">Travelling Allowance:</td>
+                                    <td class="st">
+                                        <asp:Label ID="LblTrav" runat="server">0</asp:Label>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="style6">PF Employeer :</td>
+                                    <td class="st">
+                                        <asp:Label ID="LblPfEmp" runat="server">0</asp:Label>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="hdleft">Sub Total:</td>
+                                    <td class="hdrt">
+                                        <asp:Label ID="LblSubAdd" runat="server">0</asp:Label>
+                                    </td>
+                                    <td class="hdleft">Sub Total:</td>
+                                    <td class="hdrt">
+                                        <asp:Label ID="LblSubDed" runat="server">0</asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hdleft" >Net Salary:</td>
+                                    <td class="hdleft">
+                                        <asp:Label ID="LblNetSal" runat="server">0</asp:Label>
+                                    </td>
+                                    <td>
+                                        <input id="BtnPrint" type="button" value="Print" class="auto-style1" />
+                                    </td>
+                                    <td>
+                                        <asp:Button ID="BtnBack" runat="server" Text="Back" OnClick="BtnBack_Click" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </asp:View>
                 </asp:MultiView>
             </td>

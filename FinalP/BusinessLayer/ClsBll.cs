@@ -552,9 +552,9 @@ namespace BusinessLayer
             return ClsDll.ExecuteDTByProcedure("spGetSalaryDet", parameters);
         }
 
-        public void InsertSalDet(int eid, int wd, int lv, int ts, int td, int ns, int yr, int mn)
+        public void InsertSalDet(int eid,int tx, int wd, int lv, int ts, int td, int ns, int yr, int mn,double pf,double cit)
         {
-            SqlParameter[] parameters = new SqlParameter[8];
+            SqlParameter[] parameters = new SqlParameter[11];
             parameters[0] = ClsDll.AddParameter("@eid", eid, SqlDbType.Int, 10);
             parameters[1] = ClsDll.AddParameter("@wd", wd, SqlDbType.Int, 10);
             parameters[2] = ClsDll.AddParameter("@tl", lv, SqlDbType.Int, 10);
@@ -563,6 +563,9 @@ namespace BusinessLayer
             parameters[5] = ClsDll.AddParameter("@ns", ns, SqlDbType.Int, 10);
             parameters[6] = ClsDll.AddParameter("@yr", yr, SqlDbType.Int, 10);
             parameters[7] = ClsDll.AddParameter("@mn", mn, SqlDbType.Int, 10);
+            parameters[8] = ClsDll.AddParameter("@tx", tx, SqlDbType.Int, 10);
+            parameters[9] = ClsDll.AddParameter("@pf", pf, SqlDbType.Int, 10);
+            parameters[10] = ClsDll.AddParameter("@cit", cit, SqlDbType.Int, 10);
             ClsDll.ExecuteDTByProcedure("spInsertSalDet", parameters);
         }
 

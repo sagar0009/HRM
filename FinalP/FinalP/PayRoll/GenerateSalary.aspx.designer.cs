@@ -195,6 +195,24 @@ namespace FinalP.PayRoll
         protected global::System.Web.UI.WebControls.Label LblMedAll;
 
         /// <summary>
+        /// LblCitNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblCitNo;
+
+        /// <summary>
+        /// LblPfNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblPfNo;
+
+        /// <summary>
         /// LblTotWD control.
         /// </summary>
         /// <remarks>
@@ -229,6 +247,15 @@ namespace FinalP.PayRoll
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LblLeaveDeduce;
+
+        /// <summary>
+        /// LblTax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTax;
 
         /// <summary>
         /// LblNetSal control.

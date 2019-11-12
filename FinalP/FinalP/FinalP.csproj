@@ -108,6 +108,7 @@
     <Content Include="Attendance\Leave.aspx" />
     <Content Include="Attendance\StyleSheet1.css" />
     <Content Include="DashBoard.aspx" />
+    <Content Include="DivExportTest.aspx" />
     <Content Include="EditPostDetails.aspx" />
     <Content Include="EmpImage\typ.jpg" />
     <Content Include="Images\Company.png" />
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="DashBoard.aspx.designer.cs">
       <DependentUpon>DashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DivExportTest.aspx.cs">
+      <DependentUpon>DivExportTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DivExportTest.aspx.designer.cs">
+      <DependentUpon>DivExportTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditPostDetails.aspx.cs">
       <DependentUpon>EditPostDetails.aspx</DependentUpon>

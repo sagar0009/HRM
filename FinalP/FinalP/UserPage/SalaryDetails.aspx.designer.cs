@@ -87,13 +87,58 @@ namespace FinalP.UserPage
         protected global::System.Web.UI.WebControls.View View1;
 
         /// <summary>
-        /// LblAccNo control.
+        /// LblFname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblAccNo;
+        protected global::System.Web.UI.WebControls.Label LblFname;
+
+        /// <summary>
+        /// LblEm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblEm;
+
+        /// <summary>
+        /// LblGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblGender;
+
+        /// <summary>
+        /// LblMar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblMar;
+
+        /// <summary>
+        /// TBAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBAdd;
+
+        /// <summary>
+        /// LblMob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblMob;
 
         /// <summary>
         /// LblDept control.
@@ -105,49 +150,103 @@ namespace FinalP.UserPage
         protected global::System.Web.UI.WebControls.Label LblDept;
 
         /// <summary>
-        /// LblTravAll control.
+        /// LblPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTravAll;
+        protected global::System.Web.UI.WebControls.Label LblPost;
 
         /// <summary>
-        /// LblBasicPay control.
+        /// LblCitN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblBasicPay;
+        protected global::System.Web.UI.WebControls.Label LblCitN;
 
         /// <summary>
-        /// LblLunAll control.
+        /// LblCitPer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblLunAll;
+        protected global::System.Web.UI.WebControls.Label LblCitPer;
 
         /// <summary>
-        /// LblSalary control.
+        /// LblPfN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblSalary;
+        protected global::System.Web.UI.WebControls.Label LblPfN;
 
         /// <summary>
-        /// LblMedAll control.
+        /// LblPfPer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMedAll;
+        protected global::System.Web.UI.WebControls.Label LblPfPer;
+
+        /// <summary>
+        /// LblPan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblPan;
+
+        /// <summary>
+        /// LblBank control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblBank;
+
+        /// <summary>
+        /// BtnDet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnDet;
+
+        /// <summary>
+        /// View2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View2;
+
+        /// <summary>
+        /// MyDet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MyDet;
+
+        /// <summary>
+        /// LblAccNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblAccNo;
 
         /// <summary>
         /// LblTotWD control.
@@ -159,15 +258,6 @@ namespace FinalP.UserPage
         protected global::System.Web.UI.WebControls.Label LblTotWD;
 
         /// <summary>
-        /// LblTotSal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotSal;
-
-        /// <summary>
         /// LblLeave control.
         /// </summary>
         /// <remarks>
@@ -177,13 +267,112 @@ namespace FinalP.UserPage
         protected global::System.Web.UI.WebControls.Label LblLeave;
 
         /// <summary>
-        /// LblLeaveDeduce control.
+        /// LblBpay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblLeaveDeduce;
+        protected global::System.Web.UI.WebControls.Label LblBpay;
+
+        /// <summary>
+        /// LblPf control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblPf;
+
+        /// <summary>
+        /// LblSal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblSal;
+
+        /// <summary>
+        /// LblCit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblCit;
+
+        /// <summary>
+        /// LblMed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblMed;
+
+        /// <summary>
+        /// LblLveDed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblLveDed;
+
+        /// <summary>
+        /// LblLnch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblLnch;
+
+        /// <summary>
+        /// LblTax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTax;
+
+        /// <summary>
+        /// LblTrav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTrav;
+
+        /// <summary>
+        /// LblPfEmp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblPfEmp;
+
+        /// <summary>
+        /// LblSubAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblSubAdd;
+
+        /// <summary>
+        /// LblSubDed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblSubDed;
 
         /// <summary>
         /// LblNetSal control.
@@ -193,5 +382,14 @@ namespace FinalP.UserPage
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LblNetSal;
+
+        /// <summary>
+        /// BtnBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnBack;
     }
 }

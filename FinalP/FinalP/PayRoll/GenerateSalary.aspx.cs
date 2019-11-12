@@ -13,6 +13,7 @@ namespace FinalP.PayRoll
     public partial class GenerateSalary : System.Web.UI.Page
     {
         public ClsBll objBll = new ClsBll();
+        private double pf = 0, cit = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -55,6 +56,8 @@ namespace FinalP.PayRoll
             LblAccNo.Text = dt.Rows[0]["BankAcN"].ToString();
             LblBasicPay.Text = dt.Rows[0]["BasicPay"].ToString();
             LblSalary.Text = dt.Rows[0]["Salary"].ToString();
+            LblCitNo.Text= dt.Rows[0]["CITNo"].ToString();
+            LblPfNo.Text= dt.Rows[0]["PFNo"].ToString();
             LblName.Text = dt.Rows[0]["FirstName"].ToString();
             LblName.Text += "\t"+dt.Rows[0]["LastName"].ToString();
             LblLunAll.Text = dt.Rows[0]["LunchAll"].ToString();
@@ -69,17 +72,43 @@ namespace FinalP.PayRoll
             DataTable dt2 = objBll.AbsDays(dateTime, Convert.ToInt32(DdlEmp.SelectedValue));
             LblLeave.Text = dt2.Rows[0][0].ToString();
             LblTotSal.Text = (Convert.ToInt32(LblSalary.Text) + Convert.ToInt32(LblBasicPay.Text) + Convert.ToInt32(LblMedAll.Text) + Convert.ToInt32(LblTravAll.Text) + Convert.ToInt32(LblLunAll.Text)).ToString();
-            LblLeaveDeduce.Text = Convert.ToString(Convert.ToInt32(LblSalary.Text) / 30 * int.Parse(LblLeave.Text));
-            LblNetSal.Text = Convert.ToString(int.Parse(LblTotSal.Text) - int.Parse(LblLeaveDeduce.Text));
-            
+            LblLeaveDeduce.Text = Convert.ToString(Convert.ToInt32(LblSalary.Text) / 30 * int.Parse(LblLeave.Text));            
 
+            //tax calculation
+            double tax = 0;
+            pf = Convert.ToInt32(dt.Rows[0]["PFPer"]) * Convert.ToInt32(LblSalary.Text) / 100;
+            cit = Convert.ToInt32(dt.Rows[0]["CITPer"]) * Convert.ToInt32(LblSalary.Text) / 100;
+            double GrossSal =Convert.ToInt32(LblTotSal.Text) - Convert.ToInt32(LblLeaveDeduce.Text) - pf - cit;
+            if(12*GrossSal<=350000)
+            {
+                tax = 0.01 * GrossSal;
+            }
+            else if(12*GrossSal<=450000)
+            {
+                tax = 3500 + 0.1 * (12 * GrossSal - 350000);
+            }
+            else if (12 * GrossSal <= 650000)
+            {
+                tax = 13500 + 0.2 * (12 * GrossSal - 450000);
+            }
+            else if (12 * GrossSal <= 2000000)
+            {
+                tax = 53500 + 0.3 * (12 * GrossSal - 650000);
+            }
+            else
+            {
+                tax = 458500 + .36 * (12 * GrossSal - 2000000);
+            }
+            LblTax.Text = tax.ToString();
+
+            LblNetSal.Text = Convert.ToString(12 * GrossSal - tax);
         }
-
+        
         protected void BtnGenerate_Click(object sender, EventArgs e)
         {
             try
             {
-                objBll.InsertSalDet(Convert.ToInt32(DdlEmp.SelectedValue), Convert.ToInt32(LblTotWD.Text), Convert.ToInt32(LblLeave.Text), Convert.ToInt32(LblTotSal.Text), Convert.ToInt32(LblLeaveDeduce.Text), Convert.ToInt32(LblNetSal.Text), Convert.ToInt32(DdlYear.SelectedValue.ToString()), Convert.ToInt32(DdlMonth.SelectedIndex));
+                objBll.InsertSalDet(Convert.ToInt32(DdlEmp.SelectedValue),Convert.ToInt32(LblTax.Text), Convert.ToInt32(LblTotWD.Text), Convert.ToInt32(LblLeave.Text), Convert.ToInt32(LblTotSal.Text), Convert.ToInt32(LblLeaveDeduce.Text), Convert.ToInt32(LblNetSal.Text), Convert.ToInt32(DdlYear.SelectedValue.ToString()), Convert.ToInt32(DdlMonth.SelectedIndex),pf,cit);
                 MessageBox.Show("salary of "+"'" + LblName.Text + "'\n"+ " for Year " + DdlYear.SelectedItem.Text + " Month " + DdlMonth.SelectedItem.Text+"\n Inserted Successfully");
                 MultiView1.ActiveViewIndex = -1;
             }
