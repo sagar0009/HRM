@@ -17,26 +17,34 @@ namespace FinalP.UserPage
 		{
             if(!IsPostBack)
             {
+                
                 DsablTxtBx();
-                DataTable dt2 = objBll.UserDet(Convert.ToInt32(Session["UserId"]));
-                DataTable dt1 = objBll.UserEmp2(dt2.Rows[0]["Email"].ToString());
-                Session["Eid"] = Convert.ToInt32(dt1.Rows[0]["EmpId"]);
-                DataTable dt = objBll.GetEmpDet(Convert.ToInt32(Session["Eid"]));                
-                TbPost.Text = dt.Rows[0]["PostName"].ToString();
-                TbPFN.Text = dt.Rows[0]["PFNo"].ToString();
-                TbPan.Text = dt.Rows[0]["PAN"].ToString();
-                TbMarSts.Text = dt.Rows[0]["MaritalStatus"].ToString();
-                TbGender.Text = dt.Rows[0]["Gender"].ToString();
-                TbEmail.Text = dt.Rows[0]["Email"].ToString();
-                TbDept.Text = dt.Rows[0]["DepartmentName"].ToString();
-                TbDeg.Text = dt.Rows[0]["Degree"].ToString();
-                TbClass.Text = dt.Rows[0]["ClsName"].ToString();
-                TbCitPer.Text = dt.Rows[0]["CITPer"].ToString();
-                TbCit.Text = dt.Rows[0]["CITNo"].ToString();
-                TbBnkNam.Text = dt.Rows[0]["BankName"].ToString();
-                TbAdd.Text = dt.Rows[0]["Address"].ToString();
-                TbAccNo.Text = dt.Rows[0]["BankAcN"].ToString();
-                BtnSave.Visible = false;
+                try
+                {
+                    DataTable dt2 = objBll.UserDet(Convert.ToInt32(Session["UserId"]));
+                    DataTable dt1 = objBll.UserEmp2(dt2.Rows[0]["Email"].ToString());
+                    Session["Eid"] = Convert.ToInt32(dt1.Rows[0]["EmpId"]);
+                    DataTable dt = objBll.GetEmpDet(Convert.ToInt32(Session["Eid"]));
+                    TbPost.Text = dt.Rows[0]["PostName"].ToString();
+                    TbPFN.Text = dt.Rows[0]["PFNo"].ToString();
+                    TbPan.Text = dt.Rows[0]["PAN"].ToString();
+                    TbMarSts.Text = dt.Rows[0]["MaritalStatus"].ToString();
+                    TbGender.Text = dt.Rows[0]["Gender"].ToString();
+                    TbEmail.Text = dt.Rows[0]["Email"].ToString();
+                    TbDept.Text = dt.Rows[0]["DepartmentName"].ToString();
+                    TbDeg.Text = dt.Rows[0]["Degree"].ToString();
+                    TbClass.Text = dt.Rows[0]["ClsName"].ToString();
+                    TbCitPer.Text = dt.Rows[0]["CITPer"].ToString();
+                    TbCit.Text = dt.Rows[0]["CITNo"].ToString();
+                    TbBnkNam.Text = dt.Rows[0]["BankName"].ToString();
+                    TbAdd.Text = dt.Rows[0]["Address"].ToString();
+                    TbAccNo.Text = dt.Rows[0]["BankAcN"].ToString();
+                    BtnSave.Visible = false;
+                }
+                catch
+                {
+                    MessageBox.Show("No records found");
+                }
             }
 		}
 
